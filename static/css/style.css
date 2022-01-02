@@ -117,3 +117,21 @@ body {
 .social-links-inner-container-desktop {
     width: 25rem;
 }
+
+.social-links-button {
+    margin: 0 1rem 0.8rem 0;
+    border: none;
+}
+
+.social-links-container {
+    height: 22rem;
+    width: 5rem;
+    background-color: var(--red);
+    margin-bottom: 5rem;
+    display: none;
+    border-top-left-radius: 0.5rem; 
+}
+
+.social-links-inner-container {
+    height: 100%;
+}
