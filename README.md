@@ -1,4 +1,4 @@
-# Machienary Issue Reporting System
+# Machinery Issue Reporting System
 
 # Table of Contents
 * [Background](#background "Background")
