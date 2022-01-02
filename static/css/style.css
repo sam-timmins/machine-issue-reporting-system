@@ -95,3 +95,9 @@ body {
     background-color: var(--blue-opaque);
     border-radius: 0.5rem;
 }
+
+/* Footer */
+
+.footer {
+    height: 5rem;
+}
