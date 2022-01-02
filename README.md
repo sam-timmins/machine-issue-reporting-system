@@ -61,7 +61,7 @@ The target audience consists of approximately 150 students, both full time and p
 There are three members of staff, one technician and two lecturers.
 
 # Stakeholder Interviews
-I carried out short interviews with both a selection of staff and students that this project will affect. For an easier view of the requirements, I have split the results into *students* and *staff*.
+I carried out short interviews with both a selection of staff and students that this project will affect. All people interviewed will be *Users*, however for an easier view of the breakdown of requirements, I have split the results into *students* and *staff*.
 
 ## Student Persona
 These are the details of the students interviewed. Two criteria were taken into consideration when selecting appropriate candidates for interviews. Firstly that they are either a part-time or full-time student of TU Dublin, and also that the course they are enrolled on is within the engineering department.
