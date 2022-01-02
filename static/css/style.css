@@ -63,6 +63,17 @@ body {
     background-color: var(--blue);
 }
 
+/* Hover & Focus Effects */
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link-blue:hover,
+.nav-link-blue:focus,
+.social-link-desktop:hover,
+.social-link-desktop:focus {
+    color: var(--orange);
+}
+
 /* Navbar */
 
 .navbar {
@@ -74,12 +85,6 @@ body {
     color: var(--white);
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.nav-link-blue:hover,
-.nav-link-blue:focus {
-    color: var(--orange);
-}
 
 .navbar-dark .navbar-toggler {
     border-color:var(--blue);
@@ -100,4 +105,15 @@ body {
 
 .footer {
     height: 5rem;
+}
+
+.social-link {
+    width: 4rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    color: var(--white);
+}
+
+.social-links-inner-container-desktop {
+    width: 25rem;
 }
