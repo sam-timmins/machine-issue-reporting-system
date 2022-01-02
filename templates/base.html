@@ -8,6 +8,15 @@
 
 <body>
 
+    <nav>
+        <!-- Navbar for devices <768px -->
+        {% include 'components/navbar/mobile.html' %}
+        
+        <!-- Navbar for devices ≥768px -->
+        {% include 'components/navbar/desktop.html' %}
+    </nav>
+
+
     <main>
         {% block content %}
         <!-- Content goes here -->
