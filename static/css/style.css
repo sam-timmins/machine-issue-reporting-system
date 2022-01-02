@@ -74,6 +74,12 @@ body {
     color: var(--orange);
 }
 
+/* Buttons */
+
+.btn-red {
+    background-color: var(--red);
+}
+
 /* Navbar */
 
 .navbar {
