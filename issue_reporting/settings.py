@@ -54,6 +54,10 @@ INSTALLED_APPS = [
 ]
 
 
+# Number of sites for using the one database
+SITE_ID = 1
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
