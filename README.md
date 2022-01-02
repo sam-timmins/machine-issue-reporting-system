@@ -208,7 +208,22 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 
 # Wireframes
+The landing page, login screens and edit information pages will be a very simple look with an image in the background and the form centred on all screen sizes.
 
+![Homepage and Forms](readme/docs/wireframes/form-wireframe.png)
+
+
+The other screens, dashboard and current issues screens will display the items in a simple grid display to keep the pages uniform.
+
+![Dashboard](readme/docs/wireframes/dashboard-wireframe.png)
+
+The individual machine page will be simple and will hold the title, description, image and the report an issue form.
+
+![Machine Page](readme/docs/wireframes/machine-page-wireframe.png)
+
+The manage users page will be displayed as a simple table 
+
+<!-- ADD WIREFRAME WHEN BALSAMIC LICENCE FOR 2022 IS RELEASED -->
 
 \
 &nbsp;
