@@ -174,16 +174,30 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 ### Strategy Description
 
-#### User 
+#### Student 
 
 |Item Description | Importance Score | Feasibility Score | Outcome |
 | --------------- | ----------| -----------| ----------|
+| See what defects or issues have been reported | 5 | 5 | 10 |
+| See what defects or issues I have reported | 5 | 5 | 10 |
+| Clear display in a landing page | 5 | 5 | 10 |
+| Clear navigation process | 5 | 5 | 10 |
+| Ability to use the system on a mobile phone | 5 | 5 | 10 |
 
 
 #### Site Owner
 
 |Item Description | Importance Score | Feasibility Score | Outcome |
 | --------------- | ----------| -----------| ----------|
+| A higher level account than a standard user | 5 | 5 | 10 |
+| See any problems with machines that have been reported | 5 | 5 | 10 |
+| Manage the users | 5 | 5 | 10 |
+| Delete an issue when it is rectified | 5 | 5 | 10 |
+| Delete a machine| 5 | 5 | 10 |
+| Edit a machine's details| 5 | 5 | 10 |
+| Create a new machine with a description| 5 | 5 | 10 |
+| Create a new machine with an image| 5 | 5 | 10 |
+| TU Dublin colour pallet | 5 | 5 | 10 |
 
 
 \
