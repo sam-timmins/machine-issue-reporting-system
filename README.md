@@ -53,7 +53,7 @@
 With the restrictions in place within teaching in the Irish Universities due to the Coronavirus pandemic, the improved organisation of working methods to reduce contact with staff and students over more trivial tasks have to be looked at. With this in mind, TU Dublin's engineering department has been looking to implement a machinery issue reporting system for the many machines to which the students have access. Currently, the engineering department is using a manual process where students write into a diary, where unnecessary physical touchpoints are created, or send an email where there is potential for loss of information to happen. They are looking to create an automated system to improve the procedure for all stakeholders.
 
 # Mission Statement
-
+Provide a fully automated, easily used and aesthetically pleasing machinery issue reporting system for TU Dublin.
 
 # Target Audience
 
