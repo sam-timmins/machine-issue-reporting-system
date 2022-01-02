@@ -24,3 +24,41 @@ body {
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
 }
+
+
+/* Fonts */
+
+.text-small {
+    font-size: 1.5rem;
+}
+
+.text-medium {
+    font-size: 2rem;
+}
+
+.text-large {
+    font-size: 3rem;
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+
+/* General Styles */
+
+.border-bottom-orange {
+    border-bottom: 2px solid var(--orange);
+}
+
+.border-top-orange {
+    border-top: 2px solid var(--orange);
+}
+
+.background-color-blue {
+    background-color: var(--blue);
+}
