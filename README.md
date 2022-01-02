@@ -103,24 +103,52 @@ From the resulting interviews, the user goals have been defined:
 * I expect that when I report an issue I can see that it has been logged
 * I expect to be able to report issues on multiple machines
 
-## Site Owners Persona
-
+## Staff Persona
+These are the details of the staff interviewed. The staff members will all be teaching in TU Dublin, within the engineering department. There are three staff that fit this category, two lecturers and one technician. Unfortunately, I was only able to interview one lecturer.
 
 | Title | Description 
 | -- | --
+| Name | Keith Colton
+| Age | 40
+| Position | Assistant Lecturer in Product Design
+| Education | Postgraduate Diploma Third Level Learning and Teaching, MSc Sports Engineering
 
 
-## Site Owners Goals
+## Staff Goals
+From the resulting interview, the site owner's goals have been defined:
+* Create a machine with a short description
+* Delete a machine when required
+* Edit a machine's details when required 
+* See any issues that have been reported
+* Change the status of a machine with an issue
+* Delete an issue when it has been rectified
+* Clear navigation process
+* Visually clear that it is a TU Dublin application
 
 
-## Site Owners Stories
+## Staff Stories
+* As a site owner, I want to see any issues with machines that have been reported
+* As a site owner, I want to delete an issue when it is rectified
+* As a site owner, I want to provide a description of the machine for the user
+* As a site owner, I want to provide an image of the machine for the user
+* As a site owner, I want to manage the users
 
-
-## Site Owners Requirements and Expectations
+## Staff Requirements and Expectations
 ### Requirements
-
+* A higher level account than a student
+* Different sections in the login to manage the different tasks
+* Create, Read, Update and Delete functionality
+* Simple and well laid out
+* Visually appealing
+* TU Dublin colour pallet
+* Clean and modern looking
 
 ### Expectations
+* I expect to quickly manage users
+* I expect to quickly manage machines
+* I expect to quickly delete issues on machines when required
+* I expect to know this application is associated with TU Dublin
+
 
 
 ## Strategy
