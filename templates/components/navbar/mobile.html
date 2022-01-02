@@ -17,3 +17,29 @@
     <span id="site-logo-mobile" class="sr-only">A link with a blue background, white text that navigates to the homepage in the same tab</span>
 
 {% endif %}
+
+
+
+<!-- Small screen navigation <= 992px -->
+{% if user.is_authenticated %}
+
+<!-- Hamburger icon for toggling off canvas nav -->
+<button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false"
+    aria-label="Toggle navigation slides from the right of the screen">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Off canvas navbar -->
+<div class=" offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header mx-3">
+        <!-- Add link to dashboard -->
+        <a href="" class="logo logo-off-canvas"
+            aria-label="Link to the dashboard screen (opens in the same tab)">
+            <p id="offcanvasRightLabel" class="m-0 logo-nav-sm logo heading-text" data-bs-dismiss="offcanvas">TU Dublin</p>
+        </a>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"
+            aria-label="Closes the slide out menu"></button>
+    </div>
+</div>
+
+{% endif %}
