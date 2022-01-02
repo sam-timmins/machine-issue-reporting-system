@@ -63,25 +63,45 @@ There are three members of staff, one technician and two lecturers.
 # Stakeholder Interviews
 I carried out short interviews with both a selection of staff and students that this project will affect. For an easier view of the requirements, I have split the results into *students* and *staff*.
 
-## User Persona
-
+## Student Persona
+These are the details of the students interviewed. Two criteria were taken into consideration when selecting appropriate candidates for interviews. Firstly that they are either a part-time or full-time student of TU Dublin, and also that the course they are enrolled on is within the engineering department.
 
 | Name | Age | Course | Education |
 | -- | -- | -- | -- |
+| Don Heslip| 22 | Automation Engineering | Leaving Cert |
+| Aodhgon Smith | 19 | Aviation Technology | Leaving Cert |
+| Niall McCarthy | 34 | Design Technology and Innovation | Leaving Cert |
+| Elaine Cross | 22 | Structural Engineering | Leaving Cert |
 
+## Student Goals
+From the resulting interviews, the user goals have been defined:
+* See what defects or issues have been reported
+* See what defects or issues I have reported
+* Clear display in a landing page
+* Clear navigation process
+* Ability to use the system on a mobile phone
 
-## User Goals
+## Student Stories
+* As a student, I want to have a clear and defined landing page
+* As a student, I want to be able to report aa issue on a machine
+* As a student, I want to see any issues that I have reported
+* As a student, I want to see the machine's name and description
+* As a student, I want to see if there are any issues already reported on a machine
+* As a student, I want to know this is a TU Dublin application
 
-
-## User Stories
-
-
-## User Requirements and Expectations
+## Student Requirements and Expectations
 ### Requirements
-
+* Simple and well laid out
+* Visually appealing
+* TU Dublin colour pallet
+* Clean and modern looking
+* Easy to report an issue in just a few clicks
+* Responsive design is required (Mobile first) as users may be viewing the site on Mobile, Tablet or Desktop
 
 ### Expectations
-
+* I expect to use the application on any size device without the experience effected
+* I expect that when I report an issue I can see that it has been logged
+* I expect to be able to report issues on multiple machines
 
 ## Site Owners Persona
 
