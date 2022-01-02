@@ -74,7 +74,10 @@ body {
     color: var(--white);
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link-blue:hover,
+.nav-link-blue:focus {
     color: var(--orange);
 }
 
