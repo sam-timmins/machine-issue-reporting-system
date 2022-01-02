@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 # Status of the machine in Machine
 STATUS = ((0, 'Faulty'), (1, 'Working'))
+# Status of the issue in Issue
+ISSUE_RECTIFIED = ((0, 'Not Rectified'), (1, 'Rectified'))
 
 
 class Machine(models.Model):
