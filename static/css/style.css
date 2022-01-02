@@ -62,3 +62,18 @@ body {
 .background-color-blue {
     background-color: var(--blue);
 }
+
+/* Navbar */
+
+.navbar {
+    height: 5rem;
+    z-index: 3;
+}
+
+.nav-link {
+    color: var(--white);
+}
+
+.nav-link:hover {
+    color: var(--orange);
+}
