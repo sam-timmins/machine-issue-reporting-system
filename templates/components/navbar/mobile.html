@@ -36,10 +36,12 @@
     <div class="offcanvas-header mx-3">
         <!-- Off canvas navbar logo -->
         <!-- Add link to dashboard -->
-        <a href="" class="logo logo-off-canvas" aria-label="Link to the dashboard screen (opens in the same tab)">
-            <p id="offcanvasRightLabel" class="m-0 logo-nav-sm logo heading-text" data-bs-dismiss="offcanvas">TU Dublin
+        <a href="" class="text-decoration-none" aria-labelledby="off-canvas-logo-sm">
+            <p id="offcanvasRightLabel" class="m-0 text-blue text-medium nav-link-blue" data-bs-dismiss="offcanvas">TU Dublin
             </p>
         </a>
+        <span id="off-canvas-logo-sm" class="sr-only">A link with blue text that navigates to the dashboard page 
+            in the same tab</span>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
             aria-label="Closes the slide out menu"></button>
     </div>
@@ -49,10 +51,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="d-md-none mx-auto p-0">
-                    <div class="my-5 mobile-nav-links-container d-flex flex-column justify-content-around">
+                    <div class="my-2 mobile-nav-links-container d-flex flex-column justify-content-around">
                         
                         <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="nav-link p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
                                 <!-- Add link to dashboard -->
                                 <a href="" class="nav-link ms-1 text-medium" aria-labelledby="dashboard-sm">
                                     <i class="fas fa-home me-3"></i> Dashboard
@@ -63,7 +65,7 @@
                         </div>
 
                         <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="nav-link p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
                                 <!-- Add link to issues page -->
                                 <a href="" class="nav-link ms-1 text-medium" aria-labelledby="issues-sm">
                                     <i class="fas fa-exclamation-triangle me-3"></i> Issues
@@ -74,7 +76,7 @@
                         </div>
 
                         <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="nav-link p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
                                 <!-- Add link to users -->
                                 <a href="" class="nav-link ms-1 text-medium" aria-labelledby="profile-sm">
                                     <i class="fas fa-user me-3"></i> Profile
@@ -85,7 +87,7 @@
                         </div>
 
                         <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="nav-link p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
                                 <a href="{% url 'account_logout' %}" class="nav-link ms-1 text-medium"
                                     aria-labelledby="logout-sm">
                                     <i class="fas fa-sign-out-alt me-3"></i> Logout
@@ -94,7 +96,7 @@
                                     icon of an arrow that navigates to the logout page in the same tab</span>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
