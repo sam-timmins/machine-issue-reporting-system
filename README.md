@@ -310,7 +310,9 @@ The data schema was created using [dbdiagram](https://dbdiagram.io/home "dbdiagr
 | machine | FK from Machine || On delete cascade, set related_name |
 | user | FK from User || On delete set to deleted_user, set null, set related_name |
 
+### User
 
+This will be initally built at the start of the app as an empty model, giving me the oportunity to adapt the Django User fields if required.
 
 ## Forms
 
