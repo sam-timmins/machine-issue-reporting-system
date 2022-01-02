@@ -6,3 +6,12 @@ font-family: 'Lato', sans-serif;
 Content - font-weight 300
 font-family: 'Roboto', sans-serif;
 */
+
+:root {
+    --blue: #004C6C;
+    --blue-opaque: rgba(0, 76, 108, 0.9);
+    --red: #A90F26;
+    --orange: #BF510D;
+    --green: #005C48;
+    --white: #ffffff;
+}
