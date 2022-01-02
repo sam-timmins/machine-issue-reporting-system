@@ -74,6 +74,15 @@ body {
     color: var(--white);
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link:focus {
     color: var(--orange);
+}
+
+.navbar-dark .navbar-toggler {
+    border-color:var(--blue);
+}
+
+.navbar-toggler-icon {
+    height: 3rem;
+    width: 3rem;
 }
