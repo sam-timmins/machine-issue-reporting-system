@@ -1,0 +1,107 @@
+<!-- Change the href from homepage to dashboard depending on authentication status -->
+{% if user.is_authenticated %}
+
+<!-- Link to dashboard -->
+<a href="#" class="text-decoration-none nav-link" aria-labelledby="site-logo-auth-mobile">
+    <p id="offcanvasRightLabel" class="m-0 text-medium">TU Dublin</p>
+</a>
+<span id="site-logo-auth-mobile" class="sr-only">A link with a blue background, white text that navigates to the
+    dashboard page in the same tab</span>
+
+{% else %}
+
+<!-- Link to homepage -->
+<a href="#" class="text-decoration-none nav-link" aria-labelledby="site-logo-mobile">
+    <p id="offcanvasRightLabel" class="m-0 text-medium">TU Dublin</p>
+</a>
+<span id="site-logo-mobile" class="sr-only">A link with a blue background, white text that navigates to the homepage in
+    the same tab</span>
+
+{% endif %}
+
+
+
+<!-- Small screen navigation <= 992px -->
+{% if user.is_authenticated %}
+
+<!-- Hamburger icon for toggling off canvas nav -->
+<button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight" aria-expanded="false"
+    aria-label="Toggle navigation slides from the right of the screen">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Off canvas navbar -->
+<div class=" offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header mx-3">
+        <!-- Off canvas navbar logo -->
+        <!-- Add link to dashboard -->
+        <a href="" class="text-decoration-none" aria-labelledby="off-canvas-logo-sm">
+            <p id="offcanvasRightLabel" class="m-0 text-blue text-medium nav-link-blue" data-bs-dismiss="offcanvas">TU Dublin
+            </p>
+        </a>
+        <span id="off-canvas-logo-sm" class="sr-only">A link with blue text that navigates to the dashboard page 
+            in the same tab</span>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Closes the slide out menu"></button>
+    </div>
+
+    <!-- Navigation links -->
+    <div class="offcanvas-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-md-none mx-auto p-0">
+                    <div class="my-2 mobile-nav-links-container d-flex flex-column justify-content-around">
+                        
+                        <div class="p-1 my-2 nav-link-mobile-border">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
+                                <!-- Add link to dashboard -->
+                                <a href="" class="nav-link ms-1 text-medium" aria-labelledby="dashboard-sm">
+                                    <i class="fas fa-home me-3"></i> Dashboard
+                                </a>
+                                <span id="dashboard-sm" class="sr-only">A link with a blue background, white text and an
+                                    icon of a house that navigates to the dashboard page in the same tab</span>
+                            </div>
+                        </div>
+
+                        <div class="p-1 my-2 nav-link-mobile-border">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
+                                <!-- Add link to issues page -->
+                                <a href="" class="nav-link ms-1 text-medium" aria-labelledby="issues-sm">
+                                    <i class="fas fa-exclamation-triangle me-3"></i> Issues
+                                </a>
+                                <span id="issues-sm" class="sr-only">A link with a blue background, white text and an
+                                    icon of a warning that navigates to the issues page in the same tab</span>
+                            </div>
+                        </div>
+
+                        <div class="p-1 my-2 nav-link-mobile-border">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
+                                <!-- Add link to users -->
+                                <a href="" class="nav-link ms-1 text-medium" aria-labelledby="profile-sm">
+                                    <i class="fas fa-user me-3"></i> Profile
+                                </a>
+                                <span id="profile-sm" class="sr-only">A link with white text and an icon of a person that 
+                                    navigates to the user prfoile page in the same tab</span>
+                            </div>
+                        </div>
+
+                        <div class="p-1 my-2 nav-link-mobile-border">
+                            <div class="p-5" data-bs-dismiss="offcanvas">
+                                <a href="{% url 'account_logout' %}" class="nav-link ms-1 text-medium"
+                                    aria-labelledby="logout-sm">
+                                    <i class="fas fa-sign-out-alt me-3"></i> Logout
+                                </a>
+                                <span id="logout-sm" class="sr-only">A link with a blue background, white text and an
+                                    icon of an arrow that navigates to the logout page in the same tab</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}

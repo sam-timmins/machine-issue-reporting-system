@@ -1,3 +1,97 @@
-* {
-    background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+/*
+Headings - font-weight 900
+font-family: 'Lato', sans-serif;
+
+Content - font-weight 300
+font-family: 'Roboto', sans-serif;
+*/
+
+:root {
+    --blue: #004C6C;
+    --blue-opaque: rgba(0, 76, 108, 0.9);
+    --red: #A90F26;
+    --orange: #BF510D;
+    --green: #005C48;
+    --white: #ffffff;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Fonts */
+
+.text-small {
+    font-size: 1.5rem;
+}
+
+.text-medium {
+    font-size: 2rem;
+}
+
+.text-large {
+    font-size: 3rem;
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+
+/* General Styles */
+
+.border-bottom-orange {
+    border-bottom: 2px solid var(--orange);
+}
+
+.border-top-orange {
+    border-top: 2px solid var(--orange);
+}
+
+.background-color-blue {
+    background-color: var(--blue);
+}
+
+/* Navbar */
+
+.navbar {
+    height: 5rem;
+    z-index: 3;
+}
+
+.nav-link {
+    color: var(--white);
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link-blue:hover,
+.nav-link-blue:focus {
+    color: var(--orange);
+}
+
+.navbar-dark .navbar-toggler {
+    border-color:var(--blue);
+}
+
+.navbar-toggler-icon {
+    height: 3rem;
+    width: 3rem;
+}
+
+.nav-link-mobile-border {
+    border-left: 1.5rem solid var(--orange);
+    background-color: var(--blue-opaque);
+    border-radius: 0.5rem;
 }
