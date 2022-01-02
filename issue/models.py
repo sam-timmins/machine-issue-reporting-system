@@ -7,6 +7,8 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Faulty'), (1, 'Working'))
 # Status of the issue in Issue
 ISSUE_RECTIFIED = ((0, 'Not Rectified'), (1, 'Rectified'))
+# Text displayed if user is deleted
+DELETED_USER = 'Deleted User'
 
 
 class Machine(models.Model):
