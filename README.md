@@ -270,15 +270,45 @@ The colours all pass the [WebAIM](https://webaim.org/resources/contrastchecker/ 
 
 
 # Structure
+## App Flow
+The basic template views displays have been planned out using [Lucid](https://lucid.co/ "Lucid").
+
+| Colour | Details|
+|---|---|
+| Blue | The user authentication process |
+| Green | Visible to all users  |
+| Yellow | Visible to only staff |
+
+![App Flow](readme/docs/designs/site-structure.png)
+
 
 ## Data Schema
+The data schema was created using [dbdiagram](https://dbdiagram.io/home "dbdiagram").
 
+![Data Schema](readme/docs/designs/data-structure.png)
 
 
 ## Models
 
+### Machine
+
 | Name | Key | Type | Other Details |
 | -- | -- | -- | -- |
+| name | | CharField | Max length 50 and unique |
+| slug | | SlugField | Max length 200 and unique|
+| description | | TextField | |
+| status || IntegerField | From STATUS and default of 1 (Working)|
+| image ||CloudinaryField| Set default as 'placeholder' |
+
+### Issues
+
+| Name | Key | Type | Other Details |
+| -- | -- | -- | -- |
+| description | | TextField | |
+| created_at || DateTimeField | Auto, now|
+| rectified ||BooleanField| From ISSUE_RECTIFIEDand default of 0 (Not Rectified) |
+| machine | FK from Machine || On delete cascade, set related_name |
+| user | FK from User || On delete set to deleted_user, set null, set related_name |
 
 
 
