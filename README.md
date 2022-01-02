@@ -58,6 +58,8 @@ Provide a fully automated, easily used and aesthetically pleasing machinery issu
 # Target Audience
 The target audience consists of approximately 150 students, both full time and part-time. The students are of a similar educational standard due to the course entry requirements but there is a selection that has extra educational needs so this needs to be addressed with accessibility built into the application.
 
+There are three members of staff, one technician and two lecturers.
+
 # Stakeholder Interviews
 
 
