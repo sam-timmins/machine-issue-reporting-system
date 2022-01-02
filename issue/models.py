@@ -24,6 +24,23 @@ class Machine(models.Model):
         return f"{self.name}"
 
 
+class Issue(models.Model):
+    """
+    Recording issue information
+    """
+    
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    machine = models.ForeignKey(Machine, on_delete=models.CASCADE, related_name='issues')
+    user = models.ForeignKey(User, on_delete=models.SET(DELETED_USER), null=True, related_name="issue_username")
+    rectified = models.IntegerField(choices=ISSUE_RECTIFIED, default=0)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"{self.machine}"
+
 
 class User(AbstractUser):
     """
