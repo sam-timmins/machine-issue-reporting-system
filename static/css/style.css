@@ -86,3 +86,9 @@ body {
     height: 3rem;
     width: 3rem;
 }
+
+.nav-link-mobile-border {
+    border-left: 1.5rem solid var(--orange);
+    background-color: var(--blue-opaque);
+    border-radius: 0.5rem;
+}
