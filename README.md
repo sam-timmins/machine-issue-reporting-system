@@ -233,22 +233,40 @@ The manage users page will be displayed as a simple table
 
 
 ## Design Choices
-
+Because this project is being created for TU Dublin, and all the user's requirements include the need for it to be within keeping of the existing designs, the following design choices will be based on this.
 
 ### Fonts
-
+The font that TU Dublin currently uses is [Visuelt-Regular](https://www.colophon-foundry.org/typefaces/visuelt/ "Visuelt-Regular"), this, however, is a font that would have to be bought and not something that is going to happen with this project. Because of this, I have picked a font from [Google Fonts](https://fonts.google.com/ "Fonts") that is as close as I can get to keep the user experience as close as possible.
 
 #### Content 
-
+Using a font weight of 300, [Roboto](https://fonts.google.com/specimen/Roboto "Roboto")
 
 #### Headings
-
+Using a font-weight of 900 and styled to be uppercase, [Lato](https://fonts.google.com/specimen/Lato "Lato")
 
 
 ### Colours
+The colours will be set variables within the CSS file using the names in the table below.
 
 | Colour | HEX | Usage |
 |--|--| --|
+| Blue | #004C6C | Navigation bar, Footer, Cards, Tables |
+| White | #FFFFFF | Site background, Text |
+| Orange | #BF510D | Buttons, Links,  |
+| Red | #A90F26 | Buttons, Links |
+| Green | #005C48 | Buttons, Links |
+
+To keep the user experience consistent, the colour red will be used for deletion, orange for editing and green for the creation or to cancel an action.
+
+![Colour Pallet](readme/docs/designs/colour-pallet.png)
+
+The colours all pass the [WebAIM](https://webaim.org/resources/contrastchecker/ "WebAIM") tests and the results can be seen below.
+
+* [Blue](readme/docs/designs/contrast-checker-blue.png)
+* [Orange](readme/docs/designs/contrast-checker-orange.png)
+* [Red](readme/docs/designs/contrast-checker-red.png)
+* [Green](readme/docs/designs/contrast-checker-green.png)
+
 
 
 # Structure
