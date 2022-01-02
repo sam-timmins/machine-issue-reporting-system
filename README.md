@@ -61,7 +61,7 @@ The target audience consists of approximately 150 students, both full time and p
 There are three members of staff, one technician and two lecturers.
 
 # Stakeholder Interviews
-
+I carried out short interviews with both a selection of staff and students that this project will affect. For an easier view of the requirements, I have split the results into *students* and *staff*.
 
 ## User Persona
 
