@@ -341,17 +341,37 @@ The data schema was created using [dbdiagram](https://dbdiagram.io/home "dbdiagr
 ## Languages
 | Languages | Description | Link |
 |--|--|--|
-
+|HTML|[HTML](https://en.wikipedia.org/wiki/HTML5 "HTML") | for the structure of the site
+|CSS|[CSS](https://en.wikipedia.org/wiki/CSS "CSS") | for the design of the site
+|JavaScript|[JavaScript](https://en.wikipedia.org/wiki/JavaScript "JS") | for the design of the site
+|jQuery|[jQuery](https://jquery.com/ "jQuery") | for animations in the site
+|Python|[Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python") | for the backend interactions
+|Markdown|[Markdown](https://en.wikipedia.org/wiki/Markdown) | for the content in my README file
 
 ## Libraries and Frameworks
 | Libraries / Frameworks | Description | Link |
 |--|--|--|
-
+|Django|Database Driven Framework| [django](https://en.wikipedia.org/wiki/Django_(web_framework) "django")|
+|gunicorn|HTTP Interface Server|[gunicorn](https://en.wikipedia.org/wiki/Gunicorn "gunicorn")|
+|psycopg2| Database adaptor | [psycopg2](https://wiki.postgresql.org/wiki/Psycopg "psycogg2")
+|cloudinary |Image management|[cloudinary](https://cloudinary.com/ "cloudinary")|
+|django auth|User authentication|[auth](https://docs.djangoproject.com/en/3.2/topics/auth/ "auth")|
+|django widgit tweaks|Formats forms||
+|django booking|Manages bookings|[booking](https://djangopackages.org/packages/p/django-booking/ "booking")|
 
 ## Tools
 | Tools | Description | Link |
 |--|--|--|
-
+| Google Fonts| Fonts |[Google Fonts](https://fonts.google.com/ "Fonts")|
+| WebAIM| Colour contrast checks |[WebAIM](https://webaim.org/resources/contrastchecker/ "WebAIM")|
+| Lucid | Site structure design | [Lucid](https://lucid.co/ "Lucid")
+| dbdiagram | Data schema design | [dbdiagram](https://dbdiagram.io/home "dbdiagram")
+| coolors|Colour pallet| [coolors](https://coolors.co/ "coolors")|
+| GitPod | Development environment |[Gitpod](https://www.gitpod.io/ "Gitpod")
+| Balsamic | Wireframes |[Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
+| Bootstrap | Responsive design |[Bootstrap](https://getbootstrap.com "Bootstrap")
+| Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")
+| Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
 
 # Testing
 
