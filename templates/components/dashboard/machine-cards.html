@@ -1,0 +1,55 @@
+{% load static %}
+
+<!-- Individual machine cards -->
+{% for machine in machine_list %}
+
+<div class="col-md-6 col-lg-4 my-5 m-auto">
+    <div class="card shadow">
+
+        <!-- Add link to individual machine -->
+        <a href="#" class="text-decoration-none card-content" aria-labelledby="dashboard-card-machine">
+
+            <!-- Add default image -->
+            {% if "placeholder" in machine.image.url %}
+            <img class="card-img-top" src="{% static 'images/tu-dublin-logo.jpeg' %}" alt="TU Dublin Logo">
+            {% else %}
+            <img class="card-img-top" src=" {{ machine.image.url }}" alt="Image of {{ machine.name }}">
+            {% endif %}
+
+            <div class="card-body dashboard-card-body">
+                <h5 class="p-3 text-center m-0 text-blue text-large">{{ machine.name }}
+
+                    <!-- Shows alert message if the machine is faulty -->
+                    {% if not machine.status %}
+                    <span class="btn btn-red text-large text-white position-absolute top-0 start-0 machine-status-alert">Current
+                        Issues</span>
+                    {% endif %}
+                </h5>
+            </div>
+
+        </a>
+        <hr class="m-0">
+        <span id="dashboard-card-machine" class="sr-only">A card with the name and image of {{ machine.name }}. Link
+            opens a detailed view of the machine in the same tab</span>
+
+
+        <!-- Show Edit and Delete buttons if user is staff -->
+        {% if request.user.is_staff %}
+        <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
+            <!-- Add link to delete -->
+            <a href="#"
+                class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
+                <i class="fas fa-trash-alt me-4"></i>
+                Delete
+            </a>
+            <!-- Add link to edit -->
+            <a href="#"
+                class="btn btn-orange text-white text-medium d-flex flex-row justify-content-center align-items-center">
+                <i class="fas fa-pen me-4"></i>
+                Edit
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}

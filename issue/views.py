@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 from django.views import generic
+from django.urls import reverse_lazy
 
 from .models import Machine
 
@@ -19,3 +20,14 @@ class Dashboard(generic.ListView):
     """
     queryset = Machine.objects.all().order_by('status', 'name')
     template_name = 'pages/dashboard.html'
+
+
+class CreateMachine(CreateView):
+    """
+    Views the Create Machine page with all fields available to create a
+    new object using the Machine model
+    """
+    template_name = 'pages/create-machine.html'
+    fields = '__all__'
+    queryset = Machine.objects
+    success_url = reverse_lazy('dashboard')
