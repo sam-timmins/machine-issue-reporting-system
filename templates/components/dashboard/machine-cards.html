@@ -37,7 +37,7 @@
         {% if request.user.is_staff %}
         <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
             <!-- Add link to delete -->
-            <a href="#"
+            <a href="{% url 'delete-machine' machine.pk %}"
                 class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
                 <i class="fas fa-trash-alt me-4"></i>
                 Delete
