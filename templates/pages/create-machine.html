@@ -5,27 +5,30 @@
 {% block content %}
 
 
-<div class="row mt-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center form-page-container">
+<div
+    class="row mt-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center form-page-container">
     <div class="col-12 col-md-8 col-lg-4 form-border">
         <form method="post">
             {% csrf_token %}
 
             <div>
                 {% for error in field.errors %}
-                    <span>{{ error }}</span>
+                <span>{{ error }}</span>
                 {% endfor %}
             </div>
 
             {{ form.non_field_errors }}
-            <h1 class="text-center text-white background-color-blue p-3 border-bottom-orange round-corners">Create a Machine</h1>
+            <h1 class="text-center text-white background-color-blue p-3 border-bottom-orange round-corners">Create a
+                Machine</h1>
             <div class="row">
                 <div class="col-md-6">
                     <div class="my-3 my-md-5 d-flex flex-column flex-md-row justify-content-center align-items-center">
                         {{ form.name.errors }}
                         <label for="{{ form.name_for_label }}" class="align-self-md-start mb-3 me-2">Name:</label>
                         <div>
-                            <span aria-labelledby="name-helper" class="form-input">{{ form.name }}</span>
-                            <div class="form-text" id="name-helper">Unique name required</div>
+                            <span aria-labelledby="create-machine-name" class="form-input">{{ form.name }}</span>
+                            <div class="form-text">Unique name required</div>
+                            <span class="sr-only" id="create-machine-name">A required text input for the name of the machine, must be a unique name</span>
                         </div>
                     </div>
                 </div>
@@ -34,8 +37,9 @@
                         {{ form.slug.errors }}
                         <label for="{{ form.slug_for_label }}" class="align-self-md-start mb-3 me-3">ID:</label>
                         <div>
-                            <span aria-labelledby="slug-helper" class="form-input">{{ form.slug }}</span>
-                            <div class="form-text" id="slug-helper">No spaces between text</div>
+                            <span aria-labelledby="create-machine-slug" class="form-input">{{ form.slug }}</span>
+                            <div class="form-text">No spaces between text</div>
+                            <span class="sr-only">A required text input for the id of the machine, must be a unique id with no spaces.</span>
                         </div>
                     </div>
                 </div>
@@ -45,22 +49,24 @@
                 {{ form.status.errors }}
                 <label for="{{ form.status_for_label }}" class="align-self-md-start me-3">Status:</label>
                 <div>
-                    <span class="form-input">{{ form.status }}</span>
+                    <span class="form-input" aria-labelledby="create-machine-status">{{ form.status }}</span>
                 </div>
+                <span class="sr-only" id="create-machine-status">A required select input for the status of a machine, default set to working, second option is faulty</span>
             </div>
 
             <div class="my-3 d-flex flex-column justify-content-center align-items-center">
                 {{ form.description.errors }}
                 <div class="row justify-content-center align-items-center my-3 my-md-5">
                     <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
-                        <label for="{{ form.description.for_label }}"
-                            class="align-self-md-start mb-3">Machine Description:</label>
+                        <label for="{{ form.description.for_label }}" class="align-self-md-start mb-3" aria-labelledby="create-machine-description">
+                            Machine Description:</label>
                     </div>
                     <div class="col-md-6">
                         <div
                             class="d-flex flex-column flex-md-row d-flex flex-column justify-content-center align-items-center">
                             {{ form.description }}</div>
                     </div>
+                    <span class="sr-only" id="create-machine-description">A required textarea for a detailed description of the machine</span>
                 </div>
             </div>
 
@@ -68,21 +74,30 @@
                 {{ form.image.errors }}
                 <label for="{{ form.image_for_label }}" class="align-self-md-start mb-3 me-3">Image:</label>
                 <div>
-                    <span class="form-input image-input d-flex justify-content-center align-items-center">{{ form.image }}
-
+                    <span
+                        class="form-input image-input d-flex justify-content-center align-items-center" aria-labelledby="create-machine-image">{{ form.image }}</span>
                 </div>
+                <span id="create-machine-image">A grey button for an optional upload image input</span>
             </div>
 
-            <!-- Add accessability tags -->
             <div class="form-group d-flex justify-content-around align-items-center mt-5">
-                <button class="btn btn-green text-white text-medium d-flex flex-row justify-content-center align-items-center" type="submit">
+                <button
+                    class="btn btn-green text-white text-medium d-flex flex-row justify-content-center align-items-center"
+                    type="submit" aria-labelledby="cancel-create-machine">
                     <i class="fas fa-plus me-3"></i>
                     Create
                 </button>
-                <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium d-flex flex-row justify-content-center align-items-center">
+                <span class="sr-only" id="cancel-create-machine">Green button with white writing and a plus icon,
+                    navigates to the dashboard saving the form details.</span>
+
+                <a href="{% url 'dashboard' %}"
+                    class="btn btn-orange text-white text-medium d-flex flex-row justify-content-center align-items-center"
+                    aria-labelledby="cancel-create-machine">
                     <i class="fas fa-arrow-right me-3"></i>
                     Cancel
                 </a>
+                <span class="sr-only" id="cancel-create-machine">Orange button with white writing and a back arrow icon,
+                    navigates to the dashboard without saving.</span>
             </div>
         </form>
     </div>
