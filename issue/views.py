@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView
 from django.views import generic
 from django.urls import reverse_lazy
@@ -31,3 +31,14 @@ class CreateMachine(CreateView):
     fields = '__all__'
     queryset = Machine.objects
     success_url = reverse_lazy('dashboard')
+
+
+def delete_machine(request, pk):
+    """
+    Deletes the machine from the database using it's primary key
+    """
+
+    machine = Machine.objects.get(pk=pk)
+    machine.delete()
+
+    return redirect('dashboard')

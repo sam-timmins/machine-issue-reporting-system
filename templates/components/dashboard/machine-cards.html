@@ -36,8 +36,8 @@
         <!-- Show Edit and Delete buttons if user is staff -->
         {% if request.user.is_staff %}
         <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
-            <!-- Add link to delete -->
-            <a href="#"
+
+            <a data-bs-toggle="modal" data-bs-target="#deleteMachine{{ machine.id }}"
                 class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
                 <i class="fas fa-trash-alt me-4"></i>
                 Delete
@@ -52,4 +52,8 @@
         {% endif %}
     </div>
 </div>
+
+<!-- Delete machine modal -->
+{% include 'components/dashboard/delete-machine-modal.html' %}
+
 {% endfor %}
