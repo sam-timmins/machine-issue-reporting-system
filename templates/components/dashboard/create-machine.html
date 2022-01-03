@@ -6,7 +6,7 @@
 
         <!-- Create machine image and title -->
         <!-- Add link to create a machine page -->
-        <a href="#" class="text-decoration-none card-content" aria-labelledby="dashboard-create-machine">
+        <a href="{% url 'create-machine' %}" class="text-decoration-none card-content" aria-labelledby="dashboard-create-machine">
 
             <img class="card-img-top" src="{% static 'images/tu-dublin-logo .jpeg' %}" alt="Image of TU Dublin Logo">
 
@@ -21,7 +21,7 @@
 
         <!-- Create machine button -->
         <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
-            <a href="#"
+            <a href="{% url 'create-machine' %}"
                 class="btn btn-green text-white text-medium d-flex flex-row justify-content-center align-items-center"
                 aria-labelledby="dashboard-create-machine-button">
                 <i class="fas fa-plus me-3"></i>
