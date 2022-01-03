@@ -3,6 +3,19 @@
 
 {% block content %}
 
-Dashboard
+<section>
+    <!-- Machienary cards -->
+    <div class="pb-5 my-2">
+        <div class="container mx-auto">
+            <div class="row">
+
+                <!-- Create a machine card -->
+                {% include 'components/dashboard/create-machine.html' %}
+
+            </div>
+        </div>
+    </div>
+
+</section>
 
 {% endblock content %}
