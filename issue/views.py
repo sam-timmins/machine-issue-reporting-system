@@ -33,6 +33,13 @@ class CreateMachine(CreateView):
     success_url = reverse_lazy('dashboard')
 
 
+class EditMachine(TemplateView):
+    """
+    Views the homepage
+    """
+    template_name = 'pages/edit-machine.html'
+
+
 def delete_machine(request, pk):
     """
     Deletes the machine from the database using it's primary key
