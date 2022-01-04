@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, UpdateView
 from django.views import generic
 from django.urls import reverse_lazy
 
@@ -33,11 +33,16 @@ class CreateMachine(CreateView):
     success_url = reverse_lazy('dashboard')
 
 
-class EditMachine(TemplateView):
+class EditMachine(UpdateView):
     """
-    Views the homepage
+    Views the Edit Machine page with 'name', 'description', 'image'
+    and 'status' as available fields using the Machine model
     """
+    queryset = Machine.objects
     template_name = 'pages/edit-machine.html'
+    fields = ['name', 'description', 'image', 'status']
+    pk_url_kwarg = 'pk'
+    success_url = reverse_lazy('dashboard')
 
 
 def delete_machine(request, pk):
