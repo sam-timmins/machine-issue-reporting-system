@@ -44,7 +44,7 @@
             </a>
             <span class="sr-only" id="dashboard-delete-machine-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the machine</span>
             <!-- Add link to edit -->
-            <a href="#" aria-labelledby="dashboard-edit-machine-button"
+            <a href="{% url 'edit-machine' machine.id %}" aria-labelledby="dashboard-edit-machine-button"
                 class="btn btn-orange text-white text-medium d-flex flex-row justify-content-center align-items-center">
                 <i class="fas fa-pen me-4"></i>
                 Edit
