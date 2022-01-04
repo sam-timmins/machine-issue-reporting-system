@@ -5,6 +5,7 @@
 {% block content %}
 
 
+<!-- Edit machine form -->
 <div
     class="row mt-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center form-page-container">
     <div class="col-12 col-md-8 col-xl-6 form-border">
@@ -20,7 +21,7 @@
             {{ form.non_field_errors }}
             <h1 class="text-center text-white background-color-blue p-3 border-bottom-orange round-corners">Edit
                 {{ machine.name }}</h1>
-            <div class="row">
+            <div class="row container-fluid m-0">
                 <div class="col-md-6">
                     <div class="my-3 my-md-5 d-flex flex-column flex-md-row justify-content-center align-items-center">
                         {{ form.name.errors }}
@@ -46,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="my-3 d-flex flex-column justify-content-center align-items-center">
+            <div class="my-3 mx-0 d-flex flex-column justify-content-center align-items-center container-fluid">
                 {{ form.description.errors }}
                 <div class="row justify-content-center align-items-center my-3 my-md-5">
                     <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
@@ -66,13 +67,13 @@
 
 
             {{ form.image.errors }}
-            <div class="row d-flex flex-row">
+            <div class="row d-flex flex-row container-fluid m-0 mt-md-5">
                 <div class="col-12 col-md-4">
                     <div
                         class="mt-3 my-md-5 d-flex flex-column flex-md-row justify-content-center align-items-center justify-content-md-end">
-                    
-                    <label for="{{ form.image_for_label }}" class="text-center mb-3 me-3">Image:</label>
-</div>
+
+                        <label for="{{ form.image_for_label }}" class="text-center mb-3 me-3">Image:</label>
+                    </div>
                 </div>
 
                 <div class="col-md-8">
@@ -85,14 +86,14 @@
                         input</span>
                 </div>
             </div>
+
+
+            <!-- Update and cancel buttons -->
+            {% include 'components/edit-machine/buttons.html' %}
+
+        </form>
     </div>
-
-    {% include 'components/edit-machine/buttons.html' %}
-    
-    </form>
 </div>
-</div>
-
 
 
 {% endblock content %}
