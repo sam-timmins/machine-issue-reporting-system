@@ -1,5 +1,76 @@
+{% extends "layout/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
 Machine details
+
+<a data-bs-toggle="modal" data-bs-target="#createIssue"
+    aria-labelledby="dashboard-delete-machine-button"
+    class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
+    <i class="fas fa-trash-alt me-4"></i>
+    Create
+</a>
 
 {{ machine.name }}
 
 {{ machine.description }}
+
+<!-- Modal -->
+<div class="modal fade " id="createIssue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header background-color-blue text-white border-bottom-orange">
+                <h5 class="text-medium" id="staticBackdropLabel">Create Issue</h5>
+                <button type="button" class="text-white text-medium close-btn round-corners" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="issue-form-comtainer py-5 p-md-5 mt-5" id="create-issue-form-section">
+                    <!-- Report Issue Form-->
+                    <h2 class="heading-text page-header mt-3 py-3 text-center">Report an Issue</h2>
+                    <p class="p-2 text-center">Please fill out the description with as much detail as possible</p>
+                    <form method="POST" class="p-3 create-issue-form" id="create-issue-form">
+                        <div class="row container-fluid d-flex justify-content-between align-items-center">
+                            {% csrf_token %}
+                
+                            {% for field in issue_form %}
+                            <div class="form-group">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field | add_class:'form-control' }}
+                            </div>
+                            {% endfor %}
+                
+                
+                
+
+                
+                </div>
+            </div>
+            <div class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
+
+                <button type="submit" class="btn btn-green text-white text-medium"">
+                    <i class="fas fa-caret-right me-3"></i>
+                    Submit
+                </button>
+
+                <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal" aria-labelledby="cancel-delete-machine">
+                    <i class="fas fa-arrow-right me-2"></i>
+                    Cancel</button>
+                <span class="sr-only" id="cancel-delete-machine">An orange button with white text and a back arrow icon, closes the modal and returns to the dashboard</span>
+
+            </div>
+    
+        </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
