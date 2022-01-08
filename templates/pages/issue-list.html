@@ -2,6 +2,52 @@
 
 {% block content %}
 
-issues
-           
+<div class="pb-5 my-2">
+    <div class="container mx-auto">
+        <div class="row">
+
+            {% for issue in issue_list %}
+            {% if not issue.rectified %}
+
+            <div class="col-md-6 col-lg-4 my-5 m-auto">
+                <div class="card shadow">
+                    <div class="card-body p-0">
+                        <div
+                            class="background-color-blue border-bottom-orange text-center text-white text-large p-md-3">
+                            {{ issue.machine }}
+                        </div>
+
+                        {% if issue.user %}
+                        <p class="mx-3 my-4">Reported By: <span class="text-blue">{{ issue.user }}</span></p>
+                        {% else %}
+                        <p class="mx-3 my-4">Reported By: <span class="text-blue">USER DELETED</span>
+                        </p>
+                        {% endif %}
+                        <p class="mx-3 my-4">Reported On: <span class="text-blue">{{ issue.created_at }}</span></p>
+                        <p class="mx-3 my-4">Description: <span class="text-blue">{{ issue.description }}</span></p>
+
+
+                        <hr class="m-0">
+                        <!-- Delete issue button -->
+
+                        {% if request.user.is_staff %}
+                        <div class="text-center p-3 my-3">
+                            <a href="" type="button" class="btn btn-red text-white text-medium">
+                                Rectify
+                            </a>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
