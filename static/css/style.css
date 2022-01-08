@@ -66,6 +66,10 @@ body {
     border-radius: 0.5rem
 }
 
+.card {
+    border-color: var(--blue);
+}
+
 /* Hover & Focus Effects */
 
 .nav-link:hover,
@@ -215,3 +219,4 @@ select {
 #file-upload-button {
     background-color: var(--blue);
 }
+
