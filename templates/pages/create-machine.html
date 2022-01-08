@@ -4,9 +4,11 @@
 
 {% block content %}
 
-
+ 
 <div class="row my-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
     <div class="col-12 col-md-8 col-lg-6 card p-0">
+
+        <!-- Create a machine form -->
         <form method="post">
             {% csrf_token %}
 
@@ -19,6 +21,7 @@
                     <div class="row container-fluid m-auto">
                         {% csrf_token %}
 
+                        <!-- Fields -->
                         <div class="form-group d-flex flex-column my-md-4 my-2">
                             <label for="{{ form.name.id_for_label }}"
                                 class="text-medium align-self-start mt-3 mb-2">Name: </label>
@@ -59,8 +62,8 @@
 
                     </div>
 
+                    <!-- Buttons -->
                     <div class="modal-footer d-flex justify-content-around align-items-center">
-
                         <button type="submit" class="btn btn-green text-white text-medium"
                             aria-labelledby="submit-issue-form">
                             <i class=" fas fa-caret-right me-3"></i>
@@ -70,7 +73,6 @@
                             pointing
                             caret
                             icon, submits the issue form and closes the modal</span>
-
 
                         <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
                             aria-labelledby="cancel-issue-form">
