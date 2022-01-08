@@ -44,6 +44,10 @@ body {
     color: var(--blue);
 }
 
+.text-blue-opaque {
+    color: var(--blue-opaque);
+}
+
 .text-white {
     color: var(--white);
 }
