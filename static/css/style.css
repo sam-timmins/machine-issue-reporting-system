@@ -48,6 +48,10 @@ body {
     color: var(--blue-opaque);
 }
 
+.text-red {
+    color: var(--red);
+}
+
 .text-white {
     color: var(--white);
 }
@@ -124,6 +128,15 @@ body {
     box-shadow: 0px 0px 5px 2px var(--orange);
 }
 
+/* Forms */
+
+.errorlist li {
+    list-style: none;
+}
+
+.errorlist {
+    margin: auto;
+}
 
 /* Containers */
 .form-page-container {
