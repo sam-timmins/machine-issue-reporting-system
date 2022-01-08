@@ -8,4 +8,5 @@ urlpatterns = [
     path("dashboard/create/machine/", views.CreateMachine.as_view(), name="create-machine"),
     path("dashboard/edit/machine/<int:pk>", views.EditMachine.as_view(), name="edit-machine"),
     path("dashboard/delete/machine/<int:pk>", views.delete_machine, name="delete-machine"),
+    path("dashboard/machine/details/<slug:slug>/", views.MachineDetail.as_view(), name="machine-details"),
 ]

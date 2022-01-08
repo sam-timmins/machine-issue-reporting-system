@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, CreateView, UpdateView
-from django.views import generic
+from django.views import generic, View
 from django.urls import reverse_lazy
 
 from .models import Machine
+from .forms import IssueForm
 
 
 class Homepage(TemplateView):
@@ -54,3 +55,52 @@ def delete_machine(request, pk):
     machine.delete()
 
     return redirect('dashboard')
+
+
+class MachineDetail(View):
+    """
+    Create a view for an individual machine which
+    includes the reporting an issue form. On submission of a
+    vaild form, changes the status of the machine and saves to
+    both Machine and issue models.
+    """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Machine.objects
+        machine = get_object_or_404(queryset, slug=slug)
+        issues = machine.issues
+
+        return render(
+            request,
+            'pages/machine-details.html',
+            {
+                'machine': machine,
+                'issues': issues,
+                'issue_form': IssueForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Machine.objects
+        machine = get_object_or_404(queryset, slug=slug)
+        issues = machine.issues
+        issue_form = IssueForm(data=request.POST)
+
+        if issue_form.is_valid():
+            issue_form.instance.user = request.user
+            issue = issue_form.save(commit=False)
+            issue.machine = machine
+            machine.status = False
+            machine.save()
+            issue.save()
+        else:
+            issue_form = IssueForm()
+
+        return render(
+            request,
+            'pages/machine-details.html',
+            {
+                'machine': machine,
+                'issues': issues,
+                'issue_form': IssueForm()
+            },
+        )
