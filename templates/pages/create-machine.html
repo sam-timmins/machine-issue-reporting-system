@@ -74,13 +74,13 @@
                             caret
                             icon, submits the issue form and closes the modal</span>
 
-                        <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
-                            aria-labelledby="cancel-issue-form">
+                        <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
+                            aria-labelledby="cancel-create-machine-form">
                             <i class="fas fa-arrow-right me-2"></i>
-                            Cancel</button>
-                        <span class="sr-only" id="cancel-issue-form">An orange button with white text and a back
+                            Cancel</a>
+                        <span class="sr-only" id="cancel-create-machine-form">An orange button with white text and a back
                             arrow
-                            icon, closes the modal and returns to the machine page</span>
+                            icon, closes the returns to the dashboard page without saving</span>
 
                     </div>
                 </div>
