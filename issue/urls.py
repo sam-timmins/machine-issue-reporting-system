@@ -9,4 +9,5 @@ urlpatterns = [
     path("dashboard/edit/machine/<int:pk>", views.EditMachine.as_view(), name="edit-machine"),
     path("dashboard/delete/machine/<int:pk>", views.delete_machine, name="delete-machine"),
     path("dashboard/machine/details/<slug:slug>/", views.MachineDetail.as_view(), name="machine-details"),
+    path("open/issues/", views.IssueList.as_view(), name="open-issues"),
 ]
