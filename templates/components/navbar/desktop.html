@@ -2,15 +2,15 @@
 {% if user.is_authenticated %}
         <ul class="d-none d-md-flex flex-row m-0 list-unstyled">
             <li class="ms-3 ms-lg-5">
-                <!-- Add link to dashboard -->
+
                 <a href="{% url 'dashboard' %}" class="nav-link me-5 text-medium" aria-labelledby="dashboard-sm">
                     <i class="fas fa-home me-2"></i> Dashboard
                 </a>
                 <span id="dashboard-lg" class="sr-only">A link with white text and an icon of a house that navigates to the dashboard page in the same tab</span>
             </li>
             <li class="ms-3 ms-lg-5">
-                <!-- Add link to issues page -->
-                <a href="" class="nav-link me-5 text-medium" aria-labelledby="issues-lg">
+
+                <a href="{% url 'open-issues' %}" class="nav-link me-5 text-medium" aria-labelledby="issues-lg">
                     <i class="fas fa-exclamation-triangle me-2"></i> Issues
                 </a>
                 <span id="issues-lg" class="sr-only">A link with white text and an icon of a warning that navigates to the issues page in the same tab</span>
