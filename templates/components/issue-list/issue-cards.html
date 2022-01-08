@@ -27,8 +27,8 @@
 
 
                         <hr class="m-0">
-                        <!-- Delete issue button -->
 
+                        <!-- Delete issue button -->
                         {% if request.user.is_staff %}
 
                          <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
@@ -46,40 +46,8 @@
 
             {% endif %}
 
-
-            
-<!-- Modal -->
-<div class="modal fade " id="deleteIssue{{ issue.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header background-color-blue text-white border-bottom-orange">
-            <h5 class="text-medium" id="staticBackdropLabel">Delete Issue</h5>
-            <button type="button" class="text-white text-medium close-btn round-corners" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="modal-body text-center">
-            <p class="text-large">{{issue.machine}}</p>
-            <p class="text-medium">Issue: <span class="text-blue">{{issue.description}}</span></p>
-            
-            <p>Are you sure the above has been rectified and you would like to delete this issue?</p>
-            
-        </div>
-        <div class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
-
-            <a href="{% url 'delete-issue' issue.pk %}" type="button" class="btn btn-red text-white text-medium">
-                <i class="fas fa-trash-alt me-3"></i>
-                Delete
-            </a>
-            <span class="sr-only" id="confirm-delete-machine">A red button with white text and the icon of a dustbin, permanently deletes the machine</span>
-
-            <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal" aria-labelledby="cancel-delete-machine">
-                <i class="fas fa-arrow-right me-2"></i>
-                Cancel</button>
-            <span class="sr-only" id="cancel-delete-machine">An orange button with white text and a back arrow icon, closes the modal and returns to the dashboard</span>
-        </div>
-    </div>
-</div>
-</div>
+                <!-- Delete issue modal  -->
+                {% include 'components/issue-list/delete-issue-modal.html' %}
 
             {% endfor %}
 
