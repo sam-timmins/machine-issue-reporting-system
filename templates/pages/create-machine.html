@@ -6,12 +6,74 @@
 
 
 <div
-    class="row mt-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center form-page-container">
-    <div class="col-12 col-md-8 col-lg-4 form-border">
+    class="row my-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6 card p-0">
         <form method="post">
             {% csrf_token %}
 
-            <div>
+            <div class="background-color-blue text-white border-bottom-orange">
+                <h5 class="text-large text-center p-3" id="staticBackdropLabel">Create Machine</h5>
+            </div>
+            <div class="modal-body text-center">
+                <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
+                    
+                    <form method="POST" class="p-3" id="create-issue-form">
+                        
+                        <div class="row container-fluid m-auto">
+                            {% csrf_token %}                        
+                                                   
+                            <div class="form-group d-flex flex-column my-md-4 my-2">
+                                <label for="{{ form.name.id_for_label }}" class="text-medium align-self-start mt-3 mb-2">Name: </label>
+                                <span class="form-input mx-3">{{ form.name | add_class:'form-control text-small' }}</span>
+                                <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
+                            </div>
+
+                            <div class="form-group d-flex flex-column my-md-4 my-2">
+                                <label for="{{ form.slug.id_for_label }}" class="text-medium align-self-start mt-3 mb-2">ID: </label>
+                                <span class="form-input mx-3">{{ form.slug | add_class:'form-control text-small' }}</span>
+                                <span class="text-small text-start text-blue-opaque mx-3">Must have no spaces</span>
+                            </div>
+
+                            <div class="form-group d-flex flex-column my-md-4 my-2">
+                                <label for="{{ form.description.id_for_label }}" class="text-medium align-self-start mt-3 mb-2">Description: </label>
+                                <span class="form-input mx-3">{{ form.description | add_class:'form-control text-small' }}</span>
+                            </div>
+
+                            <div class="form-group d-flex flex-column my-md-4 my-2">
+                                <label for="{{ form.status.id_for_label }}" class="text-medium align-self-start mt-3 mb-2">Status: </label>
+                                <span class="form-input mx-3">{{ form.status | add_class:'form-control text-small' }}</span>
+                            </div>
+
+                            <div class="form-group d-flex flex-column my-md-4 my-2">
+                                <label for="{{ form.image.id_for_label }}" class="text-medium align-self-start mt-3 mb-2">Image: </label>
+                                <span class="form-input mx-3">{{ form.image | add_class:'form-control text-small' }}</span>
+                            </div>
+
+                        </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-around align-items-center">
+
+                    <button type="submit" class="btn btn-green text-white text-medium" aria-labelledby="submit-issue-form">
+                    <i class=" fas fa-caret-right me-3"></i>
+                        Submit
+                    </button>
+                    <span class="sr-only" id="submit-issue-form">A green button with white text and a right pointing caret
+                        icon, submits the issue form and closes the modal</span>
+
+
+                    <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
+                        aria-labelledby="cancel-issue-form">
+                        <i class="fas fa-arrow-right me-2"></i>
+                        Cancel</button>
+                    <span class="sr-only" id="cancel-issue-form">An orange button with white text and a back arrow
+                        icon, closes the modal and returns to the machine page</span>
+
+                </div>
+
+                </form>
+            </div>
+
+            <!-- <div>
                 {% for error in field.errors %}
                 <span>{{ error }}</span>
                 {% endfor %}
@@ -98,7 +160,7 @@
                 </a>
                 <span class="sr-only" id="cancel-create-machine">Orange button with white writing and a back arrow icon,
                     navigates to the dashboard without saving.</span>
-            </div>
+            </div> -->
         </form>
     </div>
 </div>
