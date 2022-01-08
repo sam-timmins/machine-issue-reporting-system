@@ -4,6 +4,7 @@ from django.views import generic, View
 from django.urls import reverse_lazy
 
 from .models import Machine
+from .forms import IssueForm
 
 
 class Homepage(TemplateView):
@@ -66,11 +67,40 @@ class MachineDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Machine.objects
         machine = get_object_or_404(queryset, slug=slug)
+        issues = machine.issues
 
         return render(
             request,
             'pages/machine-details.html',
             {
                 'machine': machine,
+                'issues': issues,
+                'issue_form': IssueForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Machine.objects
+        machine = get_object_or_404(queryset, slug=slug)
+        issues = machine.issues
+        issue_form = IssueForm(data=request.POST)
+
+        if issue_form.is_valid():
+            issue_form.instance.user = request.user
+            issue = issue_form.save(commit=False)
+            issue.machine = machine
+            machine.status = False
+            machine.save()
+            issue.save()
+        else:
+            issue_form = IssueForm()
+
+        return render(
+            request,
+            'pages/machine-details.html',
+            {
+                'machine': machine,
+                'issues': issues,
+                'issue_form': IssueForm()
             },
         )
