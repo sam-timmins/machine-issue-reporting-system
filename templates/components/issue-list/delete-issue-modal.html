@@ -19,12 +19,13 @@
             <div
                 class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
 
-                <a href="{% url 'delete-issue' issue.pk %}" type="button" class="btn btn-red text-white text-medium">
+                <a href="{% url 'delete-issue' issue.pk %}" type="button" class="btn btn-red text-white text-medium"
+                    aria-labelledby="confirm-delete-issue">
                     <i class="fas fa-trash-alt me-3"></i>
                     Delete
                 </a>
-                <span class="sr-only" id="confirm-delete-machine">A red button with white text and the icon of a
-                    dustbin, permanently deletes the machine</span>
+                <span class="sr-only" id="confirm-delete-issue">A red button with white text and the icon of a
+                    dustbin, permanently deletes the issue</span>
 
                 <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
                     aria-labelledby="cancel-delete-machine">
