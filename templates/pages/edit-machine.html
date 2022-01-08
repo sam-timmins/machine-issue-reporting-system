@@ -6,91 +6,62 @@
 
 
 <!-- Edit machine form -->
-<div
-    class="row mt-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center form-page-container">
-    <div class="col-12 col-md-8 col-xl-6 form-border">
+
+<div class="row my-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6 card p-0">
+        <div class="background-color-blue text-white border-bottom-orange">
+            <h5 class="text-large text-center p-3" id="staticBackdropLabel">Edit Machine</h5>
+        </div>
+
+        <!-- Create a machine form -->
         <form method="post">
             {% csrf_token %}
 
-            <div>
-                {% for error in field.errors %}
-                <span>{{ error }}</span>
-                {% endfor %}
-            </div>
+            <div class="text-center">
+                <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
 
-            {{ form.non_field_errors }}
-            <h1 class="text-center text-white background-color-blue p-3 border-bottom-orange round-corners">Edit
-                {{ machine.name }}</h1>
-            <div class="row container-fluid m-0">
-                <div class="col-md-6">
-                    <div class="my-3 my-md-5 d-flex flex-column flex-md-row justify-content-center align-items-center">
-                        {{ form.name.errors }}
-                        <label for="{{ form.name_for_label }}" class="align-self-md-start mb-3 me-2">Name:</label>
-                        <div>
-                            <span aria-labelledby="create-machine-name" class="form-input">{{ form.name }}</span>
-                            <div class="form-text">Unique name required</div>
-                            <span class="sr-only" id="create-machine-name">A required text input for the name of the
-                                machine, must be a unique name</span>
+                    <div class="row container-fluid m-auto">
+                        {% csrf_token %}
+
+                        <!-- Fields -->
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.name.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Name: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.name.errors }}</span>
+                            <span class="form-input mx-3">{{ form.name | add_class:'form-control text-small' }}</span>
+                            <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="my-3 my-md-5 d-flex flex-column flex-md-row justify-content-center align-items-center">
-                        {{ form.status.errors }}
-                        <label for="{{ form.status_for_label }}" class="align-self-md-start me-3">Status:</label>
-                        <div>
-                            <span class="form-input" aria-labelledby="create-machine-status">{{ form.status }}</span>
+
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.description.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Description: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.description.errors }}</span>
+                            <span
+                                class="form-input mx-3">{{ form.description | add_class:'form-control text-small' }}</span>
                         </div>
-                        <span class="sr-only" id="create-machine-status">A required select input for the status of a
-                            machine, default set to working, second option is faulty</span>
+
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.status.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Status: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.status.errors }}</span>
+                            <span class="form-input mx-3">{{ form.status | add_class:'form-control text-small' }}</span>
+                        </div>
+
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.image.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Image: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.image.errors }}</span>
+                            <span
+                                class="form-input mx-3 text-start">{{ form.image | add_class:'form-control text-small' }}</span>
+                        </div>
+
                     </div>
+
+                    <!-- Update and cancel buttons -->
+                    {% include 'components/edit-machine/buttons.html' %}
+
                 </div>
             </div>
-
-            <div class="my-3 mx-0 d-flex flex-column justify-content-center align-items-center container-fluid">
-                {{ form.description.errors }}
-                <div class="row justify-content-center align-items-center my-3 my-md-5">
-                    <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
-                        <label for="{{ form.description.for_label }}" class="align-self-md-start mb-3"
-                            aria-labelledby="create-machine-description">
-                            Machine Description:</label>
-                    </div>
-                    <div class="col-md-6">
-                        <div
-                            class="d-flex flex-column flex-md-row d-flex flex-column justify-content-center align-items-center">
-                            {{ form.description }}</div>
-                    </div>
-                    <span class="sr-only" id="create-machine-description">A required textarea for a detailed description
-                        of the machine</span>
-                </div>
-            </div>
-
-
-            {{ form.image.errors }}
-            <div class="row d-flex flex-row container-fluid m-0 mt-md-5">
-                <div class="col-12 col-md-4">
-                    <div
-                        class="mt-3 my-md-5 d-flex flex-column flex-md-row justify-content-center align-items-center justify-content-md-end">
-
-                        <label for="{{ form.image_for_label }}" class="text-center mb-3 me-3">Image:</label>
-                    </div>
-                </div>
-
-                <div class="col-md-8">
-                    <div>
-                        <span
-                            class="form-input image-input d-flex flex-column justify-content-center align-items-center"
-                            aria-labelledby="create-machine-image">{{ form.image }}</span>
-                    </div>
-                    <span class="sr-only" id="create-machine-image">A grey button for an optional upload image
-                        input</span>
-                </div>
-            </div>
-
-
-            <!-- Update and cancel buttons -->
-            {% include 'components/edit-machine/buttons.html' %}
-
         </form>
     </div>
 </div>
