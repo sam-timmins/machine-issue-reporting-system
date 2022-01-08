@@ -113,3 +113,14 @@ class MachineDetail(View):
                 'issue_form': IssueForm()
             },
         )
+
+
+def delete_issue(request, pk):
+    """
+    Deletes the issue from the database using it's primary key
+    """
+
+    issue = Issue.objects.get(pk=pk)
+    issue.delete()
+
+    return redirect('open-issues')
