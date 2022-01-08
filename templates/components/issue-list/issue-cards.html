@@ -31,7 +31,7 @@
 
                         {% if request.user.is_staff %}
                         <div class="text-center p-3 my-3">
-                            <a href="" type="button" class="btn btn-red text-white text-medium">
+                            <a href="{% url 'delete-issue' issue.pk %}" type="button" class="btn btn-red text-white text-medium">
                                 Rectify
                             </a>
                         </div>
