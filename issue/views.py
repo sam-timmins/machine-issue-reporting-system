@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, CreateView, UpdateView
 from django.views import generic, View
 from django.urls import reverse_lazy
 
-from .models import Machine
+from .models import Machine, Issue
 from .forms import IssueForm
 
 
@@ -21,6 +21,15 @@ class Dashboard(generic.ListView):
     """
     queryset = Machine.objects.all().order_by('status', 'name')
     template_name = 'pages/dashboard.html'
+
+
+class IssueList(generic.ListView):
+    """
+    View for display of the issue model ordered by newest
+    to oldest entry
+    """
+    queryset = Issue.objects.order_by('-created_at')
+    template_name = 'pages/issue-list.html'
 
 
 class CreateMachine(CreateView):
