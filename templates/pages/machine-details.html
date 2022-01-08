@@ -1,6 +1,5 @@
 {% extends "layout/base.html" %}
 
-{% load widget_tweaks %}
 
 {% block content %}
 
@@ -15,64 +14,8 @@
 </div>
 
 
-
-<!-- Report an issue modal -->
-<div class="modal fade " id="createIssue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header background-color-blue text-white border-bottom-orange">
-                <h5 class="text-medium" id="staticBackdropLabel">Create Issue</h5>
-                <button type="button" class="text-white text-medium close-btn round-corners" data-bs-dismiss="modal"
-                    aria-label="Close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body text-center">
-                <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
-                    
-                    <!-- Report issue form-->
-                    <h2 class="text-large text-center">{{ machine.name }}</h2>
-                    <p class="p-2 text-center">Please fill out the description with as much detail as possible</p>
-                    <form method="POST" class="p-3" id="create-issue-form">
-                        
-                        <div class="row container-fluid d-flex justify-content-between align-items-center m-auto">
-                            {% csrf_token %}
-
-                            {% for field in issue_form %}
-                            <div class="form-group">
-                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                {{ field | add_class:'form-control text-small' }}
-                            </div>
-                            {% endfor %}
-
-                        </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-around align-items-center">
-
-                    <button type="submit" class="btn btn-green text-white text-medium" aria-labelledby="submit-issue-form">
-                    <i class=" fas fa-caret-right me-3"></i>
-                        Submit
-                    </button>
-                    <span class="sr-only" id="submit-issue-form">A green button with white text and a right pointing caret
-                        icon, submits the issue form and closes the modal</span>
-
-
-                    <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
-                        aria-labelledby="cancel-issue-form">
-                        <i class="fas fa-arrow-right me-2"></i>
-                        Cancel</button>
-                    <span class="sr-only" id="cancel-issue-form">An orange button with white text and a back arrow
-                        icon, closes the modal and returns to the machine page</span>
-
-                </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+<!-- Create an issue modal -->
+{% include 'components/individual-machine/create-issue-modal.html' %}
 
 
 
