@@ -48,7 +48,6 @@ body {
     color: var(--white);
 }
 
-
 /* General Styles */
 
 .border-bottom-orange {
@@ -94,6 +93,10 @@ body {
 
 .btn-orange {
     background-color: var(--orange);
+}
+
+.btn-wide {
+    width: auto;
 }
 
 .close-btn {
