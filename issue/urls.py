@@ -10,4 +10,5 @@ urlpatterns = [
     path("dashboard/delete/machine/<int:pk>", views.delete_machine, name="delete-machine"),
     path("dashboard/machine/details/<slug:slug>/", views.MachineDetail.as_view(), name="machine-details"),
     path("open/issues/", views.IssueList.as_view(), name="open-issues"),
+    path("dashboard/delete/issue/<int:pk>", views.delete_issue, name="delete-issue"),
 ]

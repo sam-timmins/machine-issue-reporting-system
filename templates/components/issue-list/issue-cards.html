@@ -1,5 +1,3 @@
-
-
 <!-- Individual issue cards  -->
 <div class="pb-5 my-2">
     <div class="container mx-auto">
@@ -27,13 +25,18 @@
 
 
                         <hr class="m-0">
-                        <!-- Delete issue button -->
 
+                        <!-- Delete issue button -->
                         {% if request.user.is_staff %}
-                        <div class="text-center p-3 my-3">
-                            <a href="" type="button" class="btn btn-red text-white text-medium">
-                                Rectify
+
+                        <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
+                            <a data-bs-toggle="modal" data-bs-target="#deleteIssue{{ issue.id }}"
+                                aria-labelledby="delete-issue-button"
+                                class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
+                                <i class="fas fa-trash-alt me-4"></i>
+                                Delete
                             </a>
+                            <span id="delete-issue-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the issue</span>
                         </div>
                         {% endif %}
 
@@ -42,6 +45,9 @@
             </div>
 
             {% endif %}
+
+            <!-- Delete issue modal  -->
+            {% include 'components/issue-list/delete-issue-modal.html' %}
 
             {% endfor %}
 
