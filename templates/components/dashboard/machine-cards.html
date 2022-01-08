@@ -7,7 +7,7 @@
     <div class="card shadow">
 
         <!-- Add link to individual machine -->
-        <a href="#" class="text-decoration-none card-content" aria-labelledby="dashboard-card-machine">
+        <a href="{% url 'machine-details' machine.slug %}" class="text-decoration-none card-content" aria-labelledby="dashboard-card-machine">
 
             <!-- Add default image -->
             {% if "placeholder" in machine.image.url %}
