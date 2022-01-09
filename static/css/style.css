@@ -40,6 +40,11 @@ body {
     font-size: 3rem;
 }
 
+.text-xlarge {
+    font-size: 5rem;
+}
+
+
 .text-blue {
     color: var(--blue);
 }
@@ -70,12 +75,24 @@ body {
     background-color: var(--blue);
 }
 
+.background-color-orange {
+    background-color: var(--orange);
+}
+
+.background-color-red {
+    background-color: var(--red);
+}
+
 .round-corners {
     border-radius: 0.5rem
 }
 
 .card {
     border-color: var(--blue);
+}
+
+.box-shadow-blue {
+    box-shadow: 0px 0px 5px 0px var(--blue);
 }
 
 /* Hover & Focus Effects */
@@ -143,6 +160,23 @@ body {
     margin-bottom: 7rem;
 }
 
+.hero-container {
+    background: url("../images/landing-image2.jpg") center center;
+    background-size: cover;
+    background-color:var(--blue-opaque);
+    height: 75vh;
+}
+
+.cut-box-container {
+    height: 15rem;
+    width: 30rem;
+    clip-path: polygon(100% 0%, 100% 64%, 82% 100%, 0% 100%, 0% 0%);
+}
+
+.landing-content-container {
+    height: auto;
+}
+        
 /* Navbar */
 
 .navbar {
