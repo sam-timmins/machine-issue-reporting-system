@@ -168,6 +168,10 @@ body {
     width: 30rem;
     clip-path: polygon(100% 0%, 100% 64%, 82% 100%, 0% 100%, 0% 0%);
 }
+
+.landing-content-container {
+    height: auto;
+}
         
 /* Navbar */
 
