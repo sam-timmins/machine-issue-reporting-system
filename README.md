@@ -208,9 +208,14 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 
 # Wireframes
-The landing page, login screens and edit information pages will be a very simple look with an image in the background and the form centred on all screen sizes.
+Originally, the design was that the user immediately was bought to the login page, however, following the agile process, I received feedback from the client that this was no longer the case and they requested a landing page. This is the wireframe for this page.
 
-![Homepage and Forms](readme/docs/wireframes/form-wireframe.png)
+![Landing Page](readme/docs/wireframes/landing-page-wireframe.png)
+
+
+Login screens and edit information pages will be a very simple look with an image in the background and the form centred on all screen sizes.
+
+![Forms](readme/docs/wireframes/form-wireframe.png)
 
 
 The other screens, dashboard and current issues screens will display the items in a simple grid display to keep the pages uniform.
