@@ -128,9 +128,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Substitutes the Django User model for the custom built user model
-AUTH_USER_MODEL = 'issue.User'
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
