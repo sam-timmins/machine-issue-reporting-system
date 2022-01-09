@@ -143,6 +143,12 @@ body {
     margin-bottom: 7rem;
 }
 
+.hero-container {
+    background: url("../images/landing-image.jpg") center center;
+    background-size: cover;
+    background-color:var(--blue-opaque);   
+}
+
 /* Navbar */
 
 .navbar {
