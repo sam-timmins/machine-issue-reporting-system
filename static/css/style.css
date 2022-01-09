@@ -79,6 +79,10 @@ body {
     background-color: var(--orange);
 }
 
+.background-color-red {
+    background-color: var(--red);
+}
+
 .round-corners {
     border-radius: 0.5rem
 }
