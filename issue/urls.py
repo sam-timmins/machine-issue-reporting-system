@@ -11,4 +11,5 @@ urlpatterns = [
     path("dashboard/machine/details/<slug:slug>/", views.MachineDetail.as_view(), name="machine-details"),
     path("open/issues/", views.IssueList.as_view(), name="open-issues"),
     path("dashboard/delete/issue/<int:pk>", views.delete_issue, name="delete-issue"),
+    path("user/edit/profile/", views.UserEditProfile.as_view(), name="edit-profile"),
 ]
