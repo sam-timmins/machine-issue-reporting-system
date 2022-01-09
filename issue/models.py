@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
@@ -27,13 +27,6 @@ class Machine(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-
-
-class User(AbstractUser):
-    """
-    Customizable User model, inheriting from Django's AbstractUser
-    """
-    pass
 
 
 class Issue(models.Model):
