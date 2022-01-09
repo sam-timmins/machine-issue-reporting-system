@@ -1,12 +1,88 @@
 {% extends "layout/base.html" %}
 
 
+{% load widget_tweaks %}
+
 {% block content %}
 
-<section>
+ 
+<div class="row my-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6 card p-0">
 
-    edit profile
+        <!-- Create a machine form -->
+        <form method="post">
+            {% csrf_token %}
 
-</section>
+            <div class="background-color-blue text-white border-bottom-orange">
+                <h5 class="text-large text-center p-3" id="staticBackdropLabel">Edit Profile</h5>
+            </div>
+            <div class="modal-body">
+                <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
+
+                    <div class="row container-fluid m-auto">
+                        {% csrf_token %}
+
+                        <!-- Fields -->
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.username.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Username: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.username.errors }}</span>
+                            <span class="form-input mx-3">{{ form.username | add_class:'form-control text-small' }}</span>
+                            <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
+                        </div>
+
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.email.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Email: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.email.errors }}</span>
+                            <span class="form-input mx-3">{{ form.email | add_class:'form-control text-small' }}</span>
+                            <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
+                        </div>
+
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.first_name.id_for_label }}" class="text-medium align-self-start mt-3 mb-2">First Name:
+                            </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.first_name.errors }}</span>
+                            <span class="form-input mx-3">{{ form.first_name | add_class:'form-control text-small' }}</span>
+                        </div>
+
+                        <div class="form-group d-flex flex-column my-md-4 my-2">
+                            <label for="{{ form.last_name.id_for_label }}"
+                                class="text-medium align-self-start mt-3 mb-2">Last Name: </label>
+                            <span class="m-0 p-0 text-red text-start">{{ form.last_name.errors }}</span>
+                            <span
+                                class="form-input mx-3 mb-5">{{ form.last_name | add_class:'form-control text-small' }}</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="modal-footer d-flex justify-content-around align-items-center">
+                        <button type="submit" class="btn btn-green text-white text-medium"
+                            aria-labelledby="submit-issue-form">
+                            <i class=" fas fa-caret-right me-3"></i>
+                            Update
+                        </button>
+                        <span class="sr-only" id="submit-issue-form">A green button with white text and a right
+                            pointing
+                            caret
+                            icon, submits the issue form and closes the modal</span>
+
+                        <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
+                            aria-labelledby="cancel-create-machine-form">
+                            <i class="fas fa-arrow-right me-2"></i>
+                            Cancel</a>
+                        <span class="sr-only" id="cancel-create-machine-form">An orange button with white text and a back
+                            arrow
+                            icon, closes the returns to the dashboard page without saving</span>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 
 {% endblock content %}
