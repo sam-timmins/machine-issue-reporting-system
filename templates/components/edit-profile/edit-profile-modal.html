@@ -1,0 +1,40 @@
+
+<!-- Confirm edit profile modal -->
+
+<div class="modal fade " id="editProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header background-color-blue text-white border-bottom-orange">
+                <h5 class="text-medium" id="staticBackdropLabel">Update Profile</h5>
+                <button type="button" class="text-white text-medium close-btn round-corners" data-bs-dismiss="modal"
+                    aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="modal-body text-center">
+                <p class="text-blue text-medium my-3">Are you happy to update your profile?</p>
+            </div>
+
+            <div
+                class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
+
+                <button type="submit" class="btn btn-green text-white text-medium" aria-labelledby="submit-issue-form">
+                    <i class=" fas fa-caret-right me-3"></i>
+                    Update
+                </button>
+                <span class="sr-only" id="submit-issue-form">A green button with white text and a right
+                    pointing
+                    caret
+                    icon, submits the profile changes and redirects to the dashboard</span>
+
+                <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
+                    aria-labelledby="cancel-delete-machine">
+                    <i class="fas fa-arrow-right me-2"></i>
+                    Cancel</button>
+                <span class="sr-only" id="cancel-delete-machine">An orange button with white text and a back
+                    arrow icon,
+                    closes the modal and returns to the edit profile page</span>
+            </div>
+        </div>
+    </div>
+</div>

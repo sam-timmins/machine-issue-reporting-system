@@ -1,8 +1,6 @@
 {% extends "layout/base.html" %}
 
 
-{% load widget_tweaks %}
-
 {% block content %}
 
 
@@ -23,111 +21,18 @@
                         {% csrf_token %}
 
                         <!-- Fields -->
-                        <div class="form-group d-flex flex-column my-md-4 my-2">
-                            <label for="{{ form.username.id_for_label }}"
-                                class="text-medium align-self-start mt-3 mb-2">Username: </label>
-                            <span class="m-0 p-0 text-red text-start">{{ form.username.errors }}</span>
-                            <span
-                                class="form-input mx-3">{{ form.username | add_class:'form-control text-small' }}</span>
-                            <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
-                        </div>
-
-                        <div class="form-group d-flex flex-column my-md-4 my-2">
-                            <label for="{{ form.email.id_for_label }}"
-                                class="text-medium align-self-start mt-3 mb-2">Email: </label>
-                            <span class="m-0 p-0 text-red text-start">{{ form.email.errors }}</span>
-                            <span class="form-input mx-3">{{ form.email | add_class:'form-control text-small' }}</span>
-                            <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
-                        </div>
-
-                        <div class="form-group d-flex flex-column my-md-4 my-2">
-                            <label for="{{ form.first_name.id_for_label }}"
-                                class="text-medium align-self-start mt-3 mb-2">First Name:
-                            </label>
-                            <span class="m-0 p-0 text-red text-start">{{ form.first_name.errors }}</span>
-                            <span
-                                class="form-input mx-3">{{ form.first_name | add_class:'form-control text-small' }}</span>
-                        </div>
-
-                        <div class="form-group d-flex flex-column my-md-4 my-2">
-                            <label for="{{ form.last_name.id_for_label }}"
-                                class="text-medium align-self-start mt-3 mb-2">Last Name: </label>
-                            <span class="m-0 p-0 text-red text-start">{{ form.last_name.errors }}</span>
-                            <span
-                                class="form-input mx-3 mb-5">{{ form.last_name | add_class:'form-control text-small' }}</span>
-                        </div>
+                        {% include 'components/edit-profile/edit-profile-fields.html' %}
 
                     </div>
 
-                    <!-- Buttons -->
-                    <div class="modal-footer d-flex justify-content-around align-items-center">
-                        <a class="btn btn-green text-white text-medium" aria-labelledby="submit-issue-form"
-                            data-bs-toggle="modal" data-bs-target="#editProfile">
-                            <i class=" fas fa-caret-right me-3"></i>
-                            Update
-                        </a>
-                        <span class="sr-only" id="submit-issue-form">A green button with white text and a right
-                            pointing
-                            caret
-                            icon, submits the issue form and closes the modal</span>
-
-                        <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
-                            aria-labelledby="cancel-create-machine-form">
-                            <i class="fas fa-arrow-right me-2"></i>
-                            Cancel</a>
-                        <span class="sr-only" id="cancel-create-machine-form">An orange button with white text and a
-                            back
-                            arrow
-                            icon, closes the returns to the dashboard page without saving</span>
-                    </div>
+                        <!-- Buttons -->
+                        {% include 'components/edit-profile/edit-profile-buttons.html' %}
 
                 </div>
             </div>
-
-
 
             <!-- Confirm edit profile modal -->
-
-            <div class="modal fade " id="editProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header background-color-blue text-white border-bottom-orange">
-                            <h5 class="text-medium" id="staticBackdropLabel">Update Profile</h5>
-                            <button type="button" class="text-white text-medium close-btn round-corners"
-                                data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <p class="text-blue text-medium my-3">Are you happy to update your profile?</p>
-
-
-
-                        </div>
-                        <div
-                            class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
-
-                            <button type="submit" class="btn btn-green text-white text-medium"
-                                aria-labelledby="submit-issue-form">
-                                <i class=" fas fa-caret-right me-3"></i>
-                                Update
-                            </button>
-                            <span class="sr-only" id="submit-issue-form">A green button with white text and a right
-                                pointing
-                                caret
-                                icon, submits the profile changes and redirects to the dashboard</span>
-
-                            <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal"
-                                aria-labelledby="cancel-delete-machine">
-                                <i class="fas fa-arrow-right me-2"></i>
-                                Cancel</button>
-                            <span class="sr-only" id="cancel-delete-machine">An orange button with white text and a back
-                                arrow icon,
-                                closes the modal and returns to the edit profile page</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            {% include 'components/edit-profile/edit-profile-modal.html' %}
 
         </form>
     </div>
