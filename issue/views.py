@@ -16,11 +16,16 @@ class Homepage(TemplateView):
 
 class UserEditProfile(UpdateView):
     """
-    Views the Edit User Profile page using the EditProfileForm
+    Views the Edit User Profile page
     using the User model
     """
     queryset = User.objects
-    fields = '__all__'
+    fields = [
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            ]
     template_name = 'pages/edit-profile.html'
     success_url = reverse_lazy('dashboard')
 
