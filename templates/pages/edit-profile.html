@@ -1,0 +1,40 @@
+{% extends "layout/base.html" %}
+
+
+{% block content %}
+
+
+<div class="row my-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6 card p-0">
+
+        <!-- Create a machine form -->
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="background-color-blue text-white border-bottom-orange">
+                <h5 class="text-large text-center p-3" id="staticBackdropLabel">Edit Profile</h5>
+            </div>
+            <div class="modal-body">
+                <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
+
+                    <div class="row container-fluid m-auto">
+                        {% csrf_token %}
+
+                        <!-- Fields -->
+                        {% include 'components/edit-profile/edit-profile-fields.html' %}
+
+                    </div>
+
+                        <!-- Buttons -->
+                        {% include 'components/edit-profile/edit-profile-buttons.html' %}
+
+                </div>
+            </div>
+
+            <!-- Confirm edit profile modal -->
+            {% include 'components/edit-profile/edit-profile-modal.html' %}
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

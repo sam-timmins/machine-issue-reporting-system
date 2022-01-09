@@ -1,0 +1,23 @@
+
+<!-- Buttons -->
+
+<div class="modal-footer d-flex justify-content-around align-items-center">
+    <a class="btn btn-green text-white text-medium" aria-labelledby="submit-issue-form"
+        data-bs-toggle="modal" data-bs-target="#editProfile">
+        <i class=" fas fa-caret-right me-3"></i>
+        Update
+    </a>
+    <span class="sr-only" id="submit-issue-form">A green button with white text and a right
+        pointing
+        caret
+        icon, submits the issue form and closes the modal</span>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
+        aria-labelledby="cancel-create-machine-form">
+        <i class="fas fa-arrow-right me-2"></i>
+        Cancel</a>
+    <span class="sr-only" id="cancel-create-machine-form">An orange button with white text and a
+        back
+        arrow
+        icon, closes the returns to the dashboard page without saving</span>
+</div>

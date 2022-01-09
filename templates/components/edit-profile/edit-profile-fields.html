@@ -1,0 +1,37 @@
+{% load widget_tweaks %}
+
+<!-- Fields -->
+
+<div class="form-group d-flex flex-column my-md-4 my-2">
+    <label for="{{ form.username.id_for_label }}"
+        class="text-medium align-self-start mt-3 mb-2">Username: </label>
+    <span class="m-0 p-0 text-red text-start">{{ form.username.errors }}</span>
+    <span
+        class="form-input mx-3">{{ form.username | add_class:'form-control text-small' }}</span>
+    <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
+</div>
+
+<div class="form-group d-flex flex-column my-md-4 my-2">
+    <label for="{{ form.email.id_for_label }}"
+        class="text-medium align-self-start mt-3 mb-2">Email: </label>
+    <span class="m-0 p-0 text-red text-start">{{ form.email.errors }}</span>
+    <span class="form-input mx-3">{{ form.email | add_class:'form-control text-small' }}</span>
+    <span class="text-small text-start text-blue-opaque mx-3">Must be unique</span>
+</div>
+
+<div class="form-group d-flex flex-column my-md-4 my-2">
+    <label for="{{ form.first_name.id_for_label }}"
+        class="text-medium align-self-start mt-3 mb-2">First Name:
+    </label>
+    <span class="m-0 p-0 text-red text-start">{{ form.first_name.errors }}</span>
+    <span
+        class="form-input mx-3">{{ form.first_name | add_class:'form-control text-small' }}</span>
+</div>
+
+<div class="form-group d-flex flex-column my-md-4 my-2">
+    <label for="{{ form.last_name.id_for_label }}"
+        class="text-medium align-self-start mt-3 mb-2">Last Name: </label>
+    <span class="m-0 p-0 text-red text-start">{{ form.last_name.errors }}</span>
+    <span
+        class="form-input mx-3 mb-5">{{ form.last_name | add_class:'form-control text-small' }}</span>
+</div>
