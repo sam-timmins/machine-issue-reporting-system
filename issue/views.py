@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, CreateView, UpdateView
 from django.views import generic, View
 from django.urls import reverse_lazy
 
-from .models import Machine, Issue
+from .models import Machine, Issue, User
 from .forms import IssueForm
 
 
@@ -12,6 +12,20 @@ class Homepage(TemplateView):
     Views the homepage
     """
     template_name = 'index.html'
+
+
+class UserEditProfile(UpdateView):
+    """
+    Views the Edit User Profile page using the EditProfileForm
+    using the User model
+    """
+    queryset = User.objects
+    fields = '__all__'
+    template_name = 'pages/edit-profile.html'
+    success_url = reverse_lazy('dashboard')
+
+    def get_object(self):
+        return self.request.user
 
 
 class Dashboard(generic.ListView):
