@@ -21,7 +21,6 @@
 
 
 <!-- Small screen navigation <= 992px -->
-{% if user.is_authenticated %}
 
 <!-- Hamburger icon for toggling off canvas nav -->
 <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -51,7 +50,7 @@
             <div class="col-12">
                 <div class="d-md-none mx-auto p-0">
                     <div class="my-2 mobile-nav-links-container d-flex flex-column justify-content-around">
-                        
+                        {% if user.is_authenticated %}
                         <div class="p-1 my-2 nav-link-mobile-border">
                             <div class="p-5" data-bs-dismiss="offcanvas">
 
@@ -95,7 +94,8 @@
                                     icon of an arrow that navigates to the logout page in the same tab</span>
                             </div>
                         </div>
-
+                        {% endif %}
+                        
                     </div>
                 </div>
             </div>
@@ -103,4 +103,3 @@
     </div>
 </div>
 
-{% endif %}
