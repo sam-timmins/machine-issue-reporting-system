@@ -62,6 +62,7 @@ SITE_ID = 1
 # Redirection URLs
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/dashboard'
 
 
 MIDDLEWARE = [
