@@ -51,49 +51,73 @@
                 <div class="d-md-none mx-auto p-0">
                     <div class="my-2 mobile-nav-links-container d-flex flex-column justify-content-around">
                         {% if user.is_authenticated %}
-                        <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-1 my-2 nav-link-mobile-border">
+                                <div class="p-5" data-bs-dismiss="offcanvas">
 
-                                <a href="{% url 'dashboard' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="dashboard-sm">
-                                    <i class="fas fa-home me-3"></i> Dashboard
-                                </a>
-                                <span id="dashboard-sm" class="sr-only">A link with a blue background, white text and an
-                                    icon of a house that navigates to the dashboard page in the same tab</span>
+                                    <a href="{% url 'dashboard' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="dashboard-sm">
+                                        <i class="fas fa-home me-3"></i> Dashboard
+                                    </a>
+                                    <span id="dashboard-sm" class="sr-only">A link with a blue background, white text and an
+                                        icon of a house that navigates to the dashboard page in the same tab</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-1 my-2 nav-link-mobile-border">
+                                <div class="p-5" data-bs-dismiss="offcanvas">
 
-                                <a href="{% url 'open-issues' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="issues-sm">
-                                    <i class="fas fa-exclamation-triangle me-3"></i> Issues
-                                </a>
-                                <span id="issues-sm" class="sr-only">A link with a blue background, white text and an
-                                    icon of a warning that navigates to the issues page in the same tab</span>
+                                    <a href="{% url 'open-issues' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="issues-sm">
+                                        <i class="fas fa-exclamation-triangle me-3"></i> Issues
+                                    </a>
+                                    <span id="issues-sm" class="sr-only">A link with a blue background, white text and an
+                                        icon of a warning that navigates to the issues page in the same tab</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="p-5" data-bs-dismiss="offcanvas">
+                            <div class="p-1 my-2 nav-link-mobile-border">
+                                <div class="p-5" data-bs-dismiss="offcanvas">
 
-                                <a href="{% url 'edit-profile' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="profile-sm">
-                                    <i class="fas fa-user me-3"></i> Profile
-                                </a>
-                                <span id="profile-sm" class="sr-only">A link with white text and an icon of a person that 
-                                    navigates to the user prfoile page in the same tab</span>
+                                    <a href="{% url 'edit-profile' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="profile-sm">
+                                        <i class="fas fa-user me-3"></i> Profile
+                                    </a>
+                                    <span id="profile-sm" class="sr-only">A link with white text and an icon of a person that 
+                                        navigates to the user prfoile page in the same tab</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-1 my-2 nav-link-mobile-border">
-                            <div class="p-5" data-bs-dismiss="offcanvas">
-                                <a href="{% url 'account_logout' %}" class="nav-link nav-active ms-1 text-medium"
-                                    aria-labelledby="logout-sm">
-                                    <i class="fas fa-sign-out-alt me-3"></i> Logout
-                                </a>
-                                <span id="logout-sm" class="sr-only">A link with a blue background, white text and an
-                                    icon of an arrow that navigates to the logout page in the same tab</span>
+                            <div class="p-1 my-2 nav-link-mobile-border">
+                                <div class="p-5" data-bs-dismiss="offcanvas">
+                                    <a href="{% url 'account_logout' %}" class="nav-link nav-active ms-1 text-medium"
+                                        aria-labelledby="logout-sm">
+                                        <i class="fas fa-sign-out-alt me-3"></i> Logout
+                                    </a>
+                                    <span id="logout-sm" class="sr-only">A link with a blue background, white text and an
+                                        icon of an arrow that navigates to the logout page in the same tab</span>
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
+
+                        {% if user.is_anonymous %}
+                            <div class="p-1 my-2 nav-link-mobile-border">
+                                <div class="p-5" data-bs-dismiss="offcanvas">
+
+                                    <a href="{% url 'account_login' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="profile-sm">
+                                        <i class="fas fa-lock me-3"></i> Login
+                                    </a>
+                                    <span id="profile-sm" class="sr-only">A link with white text and an icon of a lock that 
+                                        navigates to the user login page in the same tab</span>
+                                </div>
+                            </div>
+
+                            <div class="p-1 my-2 nav-link-mobile-border">
+                                <div class="p-5" data-bs-dismiss="offcanvas">
+                                    <a href="{% url 'account_signup' %}" class="nav-link nav-active ms-1 text-medium"
+                                        aria-labelledby="logout-sm">
+                                        <i class="fas fa-user-circle me-3"></i> Signup
+                                    </a>
+                                    <span id="logout-sm" class="sr-only">A link with a blue background, white text and an
+                                        icon of an person in a circle that navigates to the sign up page in the same tab</span>
+                                </div>
+                            </div>
                         {% endif %}
                         
                     </div>
