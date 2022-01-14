@@ -1,0 +1,9 @@
+<!-- Displays messages -->
+
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success" id="msg" role="alert">
+        <i class="far fa-check-circle me-3"></i> {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
