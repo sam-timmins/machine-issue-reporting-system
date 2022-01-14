@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, CreateView, UpdateView
 from django.views import generic, View
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 from .models import Machine, Issue, User
 from .forms import IssueForm
@@ -81,6 +82,8 @@ def delete_machine(request, pk):
 
     machine = Machine.objects.get(pk=pk)
     machine.delete()
+
+    messages.success(request, 'Successfully deleted machine')
 
     return redirect('dashboard')
 
