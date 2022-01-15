@@ -1,0 +1,16 @@
+
+<!-- Displays messages -->
+
+<div class="row container-fluid p-0 m-0">
+    <div class="col position-absolute end-0 p-0">
+
+        {% for message in messages %}
+
+            <div class="alert {{ message.tags }} alert-message text-center" id="msg" role="alert">
+                <i class="far fa-check-circle me-3"></i> {{ message | safe }}
+            </div>
+
+        {% endfor %}
+
+    </div>
+</div>

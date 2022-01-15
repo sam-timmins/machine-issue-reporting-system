@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, CreateView, UpdateView
 from django.views import generic, View
 from django.urls import reverse_lazy
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Machine, Issue, User
 from .forms import IssueForm
@@ -14,7 +16,7 @@ class Homepage(TemplateView):
     template_name = 'index.html'
 
 
-class UserEditProfile(UpdateView):
+class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
     Views the Edit User Profile page
     using the User model
@@ -28,6 +30,10 @@ class UserEditProfile(UpdateView):
             ]
     template_name = 'pages/edit-profile.html'
     success_url = reverse_lazy('dashboard')
+    success_message = '%(username)s successfully updated'
+    
+    def add_message(self):
+        return self.success_message
 
     def get_object(self):
         return self.request.user
@@ -51,7 +57,7 @@ class IssueList(generic.ListView):
     template_name = 'pages/issue-list.html'
 
 
-class CreateMachine(CreateView):
+class CreateMachine(SuccessMessageMixin, CreateView):
     """
     Views the Create Machine page with all fields available to create a
     new object using the Machine model
@@ -60,9 +66,13 @@ class CreateMachine(CreateView):
     fields = '__all__'
     queryset = Machine.objects
     success_url = reverse_lazy('dashboard')
+    success_message = '%(name)s was successfully created'
+    
+    def add_message(self):
+        return self.success_message
 
 
-class EditMachine(UpdateView):
+class EditMachine(SuccessMessageMixin, UpdateView):
     """
     Views the Edit Machine page with 'name', 'description', 'image'
     and 'status' as available fields using the Machine model
@@ -72,6 +82,10 @@ class EditMachine(UpdateView):
     fields = ['name', 'description', 'image', 'status']
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('dashboard')
+    success_message = '%(name)s was successfully edited'
+    
+    def add_message(self):
+        return self.success_message
 
 
 def delete_machine(request, pk):
@@ -81,6 +95,8 @@ def delete_machine(request, pk):
 
     machine = Machine.objects.get(pk=pk)
     machine.delete()
+
+    messages.success(request, 'Successfully deleted machine')
 
     return redirect('dashboard')
 
@@ -141,5 +157,7 @@ def delete_issue(request, pk):
 
     issue = Issue.objects.get(pk=pk)
     issue.delete()
+
+    messages.success(request, 'Successfully deleted issue')
 
     return redirect('open-issues')
