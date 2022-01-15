@@ -1,48 +1,73 @@
-
 <!-- Navigation links if the user is authenticated -->
 
 {% if user.is_authenticated %}
-    <div class="p-1 my-2 nav-link-mobile-border">
-        <div class="p-5" data-bs-dismiss="offcanvas">
+{% if user.is_staff %}
+<div class="p-1 my-2 nav-link-mobile-border">
+    <div class="p-5">
+        <ul class="list-unstyled">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-medium" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-home me-3"></i> Dashboard
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" data-bs-dismiss="offcanvas">
+                    <li><a class="dropdown-item text-small px-3" href="{% url 'dashboard' %}">View Machines</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-small px-3" href="{% url 'create-machine' %}">Create Machine</a>
+                    </li>
 
-            <a href="{% url 'dashboard' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="dashboard-sm">
-                <i class="fas fa-home me-3"></i> Dashboard
-            </a>
-            <span id="dashboard-sm" class="sr-only">A link with a blue background, white text and an
-                icon of a house that navigates to the dashboard page in the same tab</span>
-        </div>
+                </ul>
+            </li>
+        </ul>
     </div>
+</div>
+{% endif %}
 
-    <div class="p-1 my-2 nav-link-mobile-border">
-        <div class="p-5" data-bs-dismiss="offcanvas">
+{% if not user.is_staff %}
+<div class="p-1 my-2 nav-link-mobile-border">
+    <div class="p-5" data-bs-dismiss="offcanvas">
 
-            <a href="{% url 'open-issues' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="issues-sm">
-                <i class="fas fa-exclamation-triangle me-3"></i> Issues
-            </a>
-            <span id="issues-sm" class="sr-only">A link with a blue background, white text and an
-                icon of a warning that navigates to the issues page in the same tab</span>
-        </div>
+        <a href="{% url 'dashboard' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="dashboard-sm">
+            <i class="fas fa-home me-3"></i> Dashboard
+        </a>
+        <span id="dashboard-sm" class="sr-only">A link with a blue background, white text and an
+            icon of a house that navigates to the dashboard page in the same tab</span>
     </div>
+</div>
+{% endif %}
 
-    <div class="p-1 my-2 nav-link-mobile-border">
-        <div class="p-5" data-bs-dismiss="offcanvas">
+<div class="p-1 my-2 nav-link-mobile-border">
+    <div class="p-5" data-bs-dismiss="offcanvas">
 
-            <a href="{% url 'edit-profile' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="profile-sm">
-                <i class="fas fa-user me-3"></i> Profile
-            </a>
-            <span id="profile-sm" class="sr-only">A link with white text and an icon of a person
-                that
-                navigates to the user prfoile page in the same tab</span>
-        </div>
+        <a href="{% url 'open-issues' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="issues-sm">
+            <i class="fas fa-exclamation-triangle me-3"></i> Issues
+        </a>
+        <span id="issues-sm" class="sr-only">A link with a blue background, white text and an
+            icon of a warning that navigates to the issues page in the same tab</span>
     </div>
+</div>
 
-    <div class="p-1 my-2 nav-link-mobile-border">
-        <div class="p-5" data-bs-dismiss="offcanvas">
-            <a href="{% url 'account_logout' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="logout-sm">
-                <i class="fas fa-sign-out-alt me-3"></i> Logout
-            </a>
-            <span id="logout-sm" class="sr-only">A link with a blue background, white text and an
-                icon of an arrow that navigates to the logout page in the same tab</span>
-        </div>
+<div class="p-1 my-2 nav-link-mobile-border">
+    <div class="p-5" data-bs-dismiss="offcanvas">
+
+        <a href="{% url 'edit-profile' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="profile-sm">
+            <i class="fas fa-user me-3"></i> Profile
+        </a>
+        <span id="profile-sm" class="sr-only">A link with white text and an icon of a person
+            that
+            navigates to the user prfoile page in the same tab</span>
     </div>
+</div>
+
+<div class="p-1 my-2 nav-link-mobile-border">
+    <div class="p-5" data-bs-dismiss="offcanvas">
+        <a href="{% url 'account_logout' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="logout-sm">
+            <i class="fas fa-sign-out-alt me-3"></i> Logout
+        </a>
+        <span id="logout-sm" class="sr-only">A link with a blue background, white text and an
+            icon of an arrow that navigates to the logout page in the same tab</span>
+    </div>
+</div>
 {% endif %}
