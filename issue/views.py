@@ -158,4 +158,6 @@ def delete_issue(request, pk):
     issue = Issue.objects.get(pk=pk)
     issue.delete()
 
+    messages.success(request, 'Successfully deleted issue')
+
     return redirect('open-issues')
