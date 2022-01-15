@@ -16,7 +16,7 @@ class Homepage(TemplateView):
     template_name = 'index.html'
 
 
-class UserEditProfile(UpdateView):
+class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
     Views the Edit User Profile page
     using the User model
@@ -30,6 +30,10 @@ class UserEditProfile(UpdateView):
             ]
     template_name = 'pages/edit-profile.html'
     success_url = reverse_lazy('dashboard')
+    success_message = 'Profile successfully updated'
+    
+    def add_message(self):
+        return self.success_message
 
     def get_object(self):
         return self.request.user
