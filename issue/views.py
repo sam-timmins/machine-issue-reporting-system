@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, CreateView, UpdateView
 from django.views import generic, View
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Machine, Issue, User
 from .forms import IssueForm
@@ -52,7 +53,7 @@ class IssueList(generic.ListView):
     template_name = 'pages/issue-list.html'
 
 
-class CreateMachine(CreateView):
+class CreateMachine(SuccessMessageMixin, CreateView):
     """
     Views the Create Machine page with all fields available to create a
     new object using the Machine model
@@ -61,6 +62,10 @@ class CreateMachine(CreateView):
     fields = '__all__'
     queryset = Machine.objects
     success_url = reverse_lazy('dashboard')
+    success_message = 'Machine successfully created'
+    
+    def add_message(self):
+        return self.success_message
 
 
 class EditMachine(UpdateView):
