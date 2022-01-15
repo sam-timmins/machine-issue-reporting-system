@@ -66,7 +66,7 @@ class CreateMachine(SuccessMessageMixin, CreateView):
     fields = '__all__'
     queryset = Machine.objects
     success_url = reverse_lazy('dashboard')
-    success_message = 'Machine successfully created'
+    success_message = '%(name)s was successfully created'
     
     def add_message(self):
         return self.success_message
