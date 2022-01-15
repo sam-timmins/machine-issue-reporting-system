@@ -55,6 +55,7 @@ class IssueList(generic.ListView):
     """
     queryset = Issue.objects.order_by('-created_at')
     template_name = 'pages/issue-list.html'
+    paginate_by = 6
 
 
 class CreateMachine(SuccessMessageMixin, CreateView):
