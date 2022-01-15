@@ -32,15 +32,19 @@
     {% if user.is_staff %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-active me-5 text-medium p-0" href="{% url 'dashboard' %}"
-                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="dashboard-staff-lg">
                 <i class="fas fa-home me-2"></i> Dashboard
             </a>
+            <span id="dashboard-staff-sm" class="sr-only">A link with white text and an icon of a house on the left and a down chevron on the 
+                right that opens a dropdown menu</span>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item text-small" href="{% url 'dashboard' %}">View Machines</a></li>
+                <li><a class="dropdown-item text-small" href="{% url 'dashboard' %}" aria-labelledby="dashboard-view-lg">View Machines</a></li>
+                <span id="dashboard-view-lg" class="sr-only">A link with blue text that navigates to the dashboard page in the same tab</span>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item text-small" href="{% url 'create-machine' %}">Create Machine</a></li>
+                <li><a class="dropdown-item text-small" href="{% url 'create-machine' %}" aria-labelledby="dashboard-create-lg">Create Machine</a></li>
+                <span id="dashboard-create-lg" class="sr-only">A link with blue text that navigates to the create a machine page in the same tab</span>
             </ul>
         </li>
     {% endif %}
