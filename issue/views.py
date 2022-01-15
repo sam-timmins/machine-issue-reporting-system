@@ -46,6 +46,7 @@ class Dashboard(generic.ListView):
     """
     queryset = Machine.objects.all().order_by('status', 'name')
     template_name = 'pages/dashboard.html'
+    paginate_by = 6
 
 
 class IssueList(generic.ListView):
