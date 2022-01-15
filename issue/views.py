@@ -155,10 +155,22 @@ class MachineDetail(View):
 def delete_issue(request, pk):
     """
     Deletes the issue from the database using it's primary key
+    and changes the status of the machine depending on if there are no
+    longer any open issues related to it.
     """
-
     issue = Issue.objects.get(pk=pk)
+    machine = issue.machine
+
     issue.delete()
+
+    all_issues = Issue.objects.all()
+    all_machines = Machine.objects.all()
+
+    for item in all_machines:
+
+        if item.__str__() not in list(x.__str__() for x in all_issues):
+            item.status = True
+            item.save()
 
     messages.success(request, 'Successfully deleted issue')
 
