@@ -68,7 +68,7 @@ class CreateMachine(SuccessMessageMixin, CreateView):
         return self.success_message
 
 
-class EditMachine(UpdateView):
+class EditMachine(SuccessMessageMixin, UpdateView):
     """
     Views the Edit Machine page with 'name', 'description', 'image'
     and 'status' as available fields using the Machine model
@@ -78,6 +78,10 @@ class EditMachine(UpdateView):
     fields = ['name', 'description', 'image', 'status']
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('dashboard')
+    success_message = 'Machine successfully edited'
+    
+    def add_message(self):
+        return self.success_message
 
 
 def delete_machine(request, pk):
