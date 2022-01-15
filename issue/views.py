@@ -82,7 +82,7 @@ class EditMachine(SuccessMessageMixin, UpdateView):
     fields = ['name', 'description', 'image', 'status']
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('dashboard')
-    success_message = 'Machine successfully edited'
+    success_message = '%(name)s was successfully edited'
     
     def add_message(self):
         return self.success_message
