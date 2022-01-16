@@ -166,6 +166,13 @@ body {
     margin-bottom: 7rem;
 }
 
+.image-container{
+    background: url("../images/landing-image.jpg") center center;
+    background-size: cover;
+    background-color:var(--blue-opaque);
+    height: 100vh;
+}
+
 .hero-container {
     background: url("../images/landing-image2.jpg") center center;
     background-size: cover;
