@@ -49,6 +49,14 @@
             <!-- Delete issue modal  -->
             {% include 'components/issue-list/delete-issue-modal.html' %}
 
+
+            <!-- Text if there are no issues -->
+            {% empty %}
+
+                <!-- No issue content -->
+                {% include 'components/issue-list/issue-page-empty.html' %}
+
+
             {% endfor %}
 
         </div>
