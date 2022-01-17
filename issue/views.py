@@ -132,7 +132,6 @@ class MachineDetail(View):
         issue_form = IssueForm(data=request.POST)
 
         messages.success(request, 'Issue for was successfully created.')
-        messages.error(request, 'The issue was not created, please try again.')
 
         if issue_form.is_valid():
             issue_form.instance.user = request.user
