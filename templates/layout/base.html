@@ -7,35 +7,38 @@
 </head>
 
 <body>
+    <div class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-dark px-4 position-sticky top-0 left-0 container-fluid border-bottom-orange background-color-blue text-white">
+            <!-- Navbar for devices <768px -->
+            {% include 'components/navbar/mobile.html' %}
+            
+            <!-- Navbar for devices ≥768px -->
+            {% include 'components/navbar/desktop.html' %}
+        </nav>
 
-    <nav class="navbar navbar-dark px-4 position-sticky top-0 left-0 container-fluid border-bottom-orange background-color-blue text-white">
-        <!-- Navbar for devices <768px -->
-        {% include 'components/navbar/mobile.html' %}
-        
-        <!-- Navbar for devices ≥768px -->
-        {% include 'components/navbar/desktop.html' %}
-    </nav>
-
-    <section>
-        <!-- Messages -->
-        {% include 'components/messages/messages.html' %}
-    </section>
-
-
-    <main>
-        {% block content %}
-        <!-- Content goes here -->
-        {% endblock content %}
-    </main>
+        <section>
+            <!-- Messages -->
+            {% include 'components/messages/messages.html' %}
+        </section>
 
 
-    <footer>
-        <!-- Footer -->
-        {% include 'components/footer/footer-container.html' %}
+        <main class="flex-fill">
+            
+            {% block content %}
+            <!-- Content goes here --> 
+            {% endblock content %}
 
-    </footer>
+        </main>
 
 
+        <footer>
+            <!-- Footer -->
+            {% include 'components/footer/footer-container.html' %}
+
+        </footer>
+
+    </div>
+    
     {% include 'layout/script.html' %}
 
 </body>
