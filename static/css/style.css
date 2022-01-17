@@ -171,6 +171,9 @@ body {
     background-size: cover;
     background-color:var(--blue-opaque);
     height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .hero-container {
