@@ -221,6 +221,7 @@ body {
 
 .footer {
     height: 5rem;
+    z-index: 3;
 }
 
 .social-link {
