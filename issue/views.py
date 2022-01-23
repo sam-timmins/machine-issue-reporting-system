@@ -9,6 +9,44 @@ from .models import Machine, Issue, User
 from .forms import IssueForm
 
 
+def delete_issue(request, pk):
+    """
+    Deletes the issue from the database using it's primary key
+    and changes the status of the machine depending on if there are no
+    longer any open issues related to it.
+    """
+    issue = Issue.objects.get(pk=pk)
+    machine = issue.machine
+
+    issue.delete()
+
+    all_issues = Issue.objects.all()
+    all_machines = Machine.objects.all()
+
+    for item in all_machines:
+
+        if item.__str__() not in list(x.__str__() for x in all_issues):
+            item.status = True
+            item.save()
+
+    messages.success(request, 'Successfully deleted issue')
+
+    return redirect('open-issues')
+
+
+def delete_machine(request, pk):
+    """
+    Deletes the machine from the database using it's primary key
+    """
+
+    machine = Machine.objects.get(pk=pk)
+    machine.delete()
+
+    messages.success(request, 'Successfully deleted machine')
+
+    return redirect('dashboard')
+
+
 class Homepage(TemplateView):
     """
     Views the homepage
@@ -31,7 +69,7 @@ class UserEditProfile(SuccessMessageMixin, UpdateView):
     template_name = 'pages/edit-profile.html'
     success_url = reverse_lazy('dashboard')
     success_message = '%(username)s successfully updated'
-    
+
     def add_message(self):
         return self.success_message
 
@@ -69,7 +107,7 @@ class CreateMachine(SuccessMessageMixin, CreateView):
     queryset = Machine.objects
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully created'
-    
+
     def add_message(self):
         return self.success_message
 
@@ -85,22 +123,9 @@ class EditMachine(SuccessMessageMixin, UpdateView):
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully edited'
-    
+
     def add_message(self):
         return self.success_message
-
-
-def delete_machine(request, pk):
-    """
-    Deletes the machine from the database using it's primary key
-    """
-
-    machine = Machine.objects.get(pk=pk)
-    machine.delete()
-
-    messages.success(request, 'Successfully deleted machine')
-
-    return redirect('dashboard')
 
 
 class MachineDetail(View):
@@ -152,28 +177,3 @@ class MachineDetail(View):
                 'issue_form': IssueForm()
             },
         )
-
-
-def delete_issue(request, pk):
-    """
-    Deletes the issue from the database using it's primary key
-    and changes the status of the machine depending on if there are no
-    longer any open issues related to it.
-    """
-    issue = Issue.objects.get(pk=pk)
-    machine = issue.machine
-
-    issue.delete()
-
-    all_issues = Issue.objects.all()
-    all_machines = Machine.objects.all()
-
-    for item in all_machines:
-
-        if item.__str__() not in list(x.__str__() for x in all_issues):
-            item.status = True
-            item.save()
-
-    messages.success(request, 'Successfully deleted issue')
-
-    return redirect('open-issues')
