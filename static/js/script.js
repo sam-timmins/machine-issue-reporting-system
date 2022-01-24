@@ -4,6 +4,12 @@ $("#social-links-button").click(function () {
 })
 
 
+// Toggle search bar container
+$("#searchbar-button").click(function () {
+    $("#searchbar").toggle("fade", 200)
+})
+
+
 // Hides the alert after 3 seconds
 setTimeout(function () {
         $("#msg").animate({'opacity':0}, 3000);
