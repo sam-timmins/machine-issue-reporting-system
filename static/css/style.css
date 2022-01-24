@@ -83,6 +83,10 @@ body {
     background-color: var(--red);
 }
 
+.background-color-opaque {
+    background-color: var(--blue-opaque);
+}
+
 .round-corners {
     border-radius: 0.5rem
 }
@@ -124,6 +128,10 @@ body {
     background-color: var(--orange);
 }
 
+.btn-white {
+    background-color: var(--white);
+}
+
 .btn-wide {
     width: auto;
 }
@@ -133,6 +141,12 @@ body {
     border: none;
     width: 3rem;
     height: 3rem;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+    box-shadow: 0px 0px 5px 2px var(--orange) !important;
+    color: var(--orange);
 }
 
 .btn:hover,
@@ -191,6 +205,13 @@ body {
 
 .landing-content-container {
     height: auto;
+}
+
+.searchbar-container {
+    display: none;
+    position: fixed;
+    top: 5rem;
+    right: 0;
 }
         
 /* Navbar */
