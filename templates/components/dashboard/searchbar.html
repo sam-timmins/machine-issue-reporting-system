@@ -1,5 +1,5 @@
 <div class="searchbar-container background-color-opaque p-3 border-bottom-orange" id="searchbar">
-    <form action="" method="get" class="align-items-center">
+    <form action="{% url 'search-machines' %}" method="get" class="align-items-center">
         {% csrf_token %}
         <input type="text" class="my-0 me-3" name="searchbar" placeholder="Search">
         <button type="submit" class="btn btn-wide btn-white text-small text-blue align-items-center">
