@@ -4,8 +4,13 @@ $("#social-links-button").click(function () {
 })
 
 
-// Toggle search bar container
-$("#searchbar-button").click(function () {
+// Toggle search bar container on mobile
+$("#searchbar-button-machines-mobile").click(function () {
+    $("#searchbar").toggle("fade", 200)
+})
+
+// Toggle search bar container on desktop
+$("#searchbar-button-machines-desktop").click(function () {
     $("#searchbar").toggle("fade", 200)
 })
 
