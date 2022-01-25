@@ -108,6 +108,24 @@ class IssueList(generic.ListView):
     paginate_by = 6
 
 
+class SearchIssues(ListView):
+    """
+    Searches the machine model
+    """
+    model = Issue
+    template_name = 'pages/issue-list.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('searchbar-issues')
+
+        results = Issue.objects.filter(description__icontains=query)
+
+        if len(results) == 0:
+            return Issue.objects.order_by('-created_at')
+        else:
+            return results
+
+
 class CreateMachine(SuccessMessageMixin, CreateView):
     """
     Views the Create Machine page with all fields available to create a
