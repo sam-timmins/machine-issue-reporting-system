@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView, CreateView, UpdateView
+from django.views.generic import TemplateView, CreateView, UpdateView, ListView
 from django.views import generic, View
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -53,7 +53,7 @@ class Homepage(TemplateView):
     """
     template_name = 'index.html'
 
-
+    
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
     Views the Edit User Profile page
@@ -86,6 +86,17 @@ class Dashboard(generic.ListView):
     template_name = 'pages/dashboard.html'
     paginate_by = 6
 
+
+class SearchMachines(ListView):
+    """
+    Searches the machine model
+    """
+    model = Machine
+    template_name = 'pages/dashboard.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('searchbar')
+        return Machine.objects.filter(name__icontains=query)
 
 class IssueList(generic.ListView):
     """
