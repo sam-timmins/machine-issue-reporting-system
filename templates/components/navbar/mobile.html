@@ -1,17 +1,23 @@
-
 <!-- Changes logo href if the user is authenticated -->
 {% include 'components/navbar/navbar-logo.html' %}
 
 
 <!-- Small screen navigation <= 992px -->
 
-<!-- Hamburger icon for toggling off canvas nav -->
-<button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-    aria-controls="offcanvasRight" aria-expanded="false"
-    aria-label="Toggle navigation slides from the right of the screen">
-    <span class="navbar-toggler-icon"></span>
-</button>
+<div>
+    <!-- Search bar for machines -->
+    <button id="searchbar-button" class="px-2 py-0 btn btn-wide btn-white text-medium text-blue align-items-center me-3"
+        aria-label="Search">
+        <i class="fas fa-search"></i>
+    </button>
 
+    <!-- Hamburger icon for toggling off canvas nav -->
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight" aria-expanded="false"
+        aria-label="Toggle navigation slides from the right of the screen">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
 <!-- Off canvas navbar -->
 <div class=" offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header mx-3">
@@ -34,7 +40,7 @@
             <div class="col-12">
                 <div class="d-md-none mx-auto p-0">
                     <div class="my-2 mobile-nav-links-container d-flex flex-column justify-content-around">
-                        
+
                         <!-- Navigation links if the user is authenticated -->
                         {% include 'components/navbar/mobile-authenticated.html' %}
 
