@@ -6,10 +6,14 @@
         <div class="row d-flex flex-row justify-content-center align-items-center">
             <div class="col-12 col-md-8 col-lg-6">
                 <input type="text" class="my-0 me-3 w-75" name="searchbar-issues" placeholder="Search Issues">
-                <button type="submit" class="btn btn-wide btn-white text-small text-blue align-items-center">
+                <button type="submit" class="btn btn-wide btn-white text-small text-blue align-items-center me-2">
                     <i class="fas fa-search"></i>
                 </button>
+                <a href="{% url 'open-issues' %}" class="btn btn-wide btn-white text-small text-blue align-items-center">
+                    <i class="fas fa-times m-1"></i>
+                </a>
             </div>
         </div>
     </form>
+
 </div>
