@@ -8,6 +8,11 @@ $('#main-content').on('click', function(){
     $('#social-links').hide("fade", 200)
 });
 
+// Closes the social links container when the screen is scrolled
+$(window).scroll(function(){
+    $('#social-links').hide("fade", 200)
+})
+
 
 // Toggle search bar container on mobile
 $("#searchbar-button-machines-mobile").click(function () {
