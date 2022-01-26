@@ -120,7 +120,7 @@ class SearchIssues(ListView):
 
         results = Issue.objects.filter(description__icontains=query)
 
-        if len(results) == 0:
+        if not results:
             return Issue.objects.order_by('-created_at')
         else:
             return results
