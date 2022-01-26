@@ -3,6 +3,16 @@ $("#social-links-button").click(function () {
     $("#social-links").toggle("fade", 200)
 })
 
+// Closes the social links container when the main content is clicked
+$('#main-content').on('click', function(){
+    $('#social-links').hide("fade", 200)
+});
+
+// Closes the social links container when the screen is scrolled
+$(window).scroll(function(){
+    $('#social-links').hide("fade", 200)
+})
+
 
 // Toggle search bar container on mobile
 $("#searchbar-button-machines-mobile").click(function () {
@@ -15,7 +25,7 @@ $("#searchbar-button-machines-desktop").click(function () {
 })
 
 // Closes the searchbar when the main content is clicked
-$('#main-content').on('click', function(){
+$('#main-content').click(function(){
     $('#searchbar').hide("fade", 200)
 });
 
