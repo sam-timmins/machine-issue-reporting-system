@@ -3,6 +3,11 @@ $("#social-links-button").click(function () {
     $("#social-links").toggle("fade", 200)
 })
 
+// Closes the social links container when the main content is clicked
+$('#main-content').on('click', function(){
+    $('#social-links').hide("fade", 200)
+});
+
 
 // Toggle search bar container on mobile
 $("#searchbar-button-machines-mobile").click(function () {
