@@ -25,7 +25,7 @@ $("#searchbar-button-machines-desktop").click(function () {
 })
 
 // Closes the searchbar when the main content is clicked
-$('#main-content').on('click', function(){
+$('#main-content').click(function(){
     $('#searchbar').hide("fade", 200)
 });
 
