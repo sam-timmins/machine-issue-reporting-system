@@ -1,0 +1,15 @@
+
+
+<div class="background-color-opaque p-3 border-bottom-orange text-center m-3" id="searchbar-issues">
+    <form action="{% url 'search-issues' %}" method="get" class="align-items-center container-fluid">
+        {% csrf_token %}
+        <div class="row d-flex flex-row justify-content-center align-items-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <input type="text" class="my-0 me-3 w-75" name="searchbar-issues" placeholder="Search Issues">
+                <button type="submit" class="btn btn-wide btn-white text-small text-blue align-items-center">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView, CreateView, UpdateView
+from django.views.generic import TemplateView, CreateView, UpdateView, ListView
 from django.views import generic, View
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -53,7 +53,7 @@ class Homepage(TemplateView):
     """
     template_name = 'index.html'
 
-
+    
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
     Views the Edit User Profile page
@@ -87,6 +87,17 @@ class Dashboard(generic.ListView):
     paginate_by = 6
 
 
+class SearchMachines(ListView):
+    """
+    Searches the machine model
+    """
+    model = Machine
+    template_name = 'pages/dashboard.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('searchbar')
+        return Machine.objects.filter(name__icontains=query)
+
 class IssueList(generic.ListView):
     """
     View for display of the issue model ordered by newest
@@ -95,6 +106,24 @@ class IssueList(generic.ListView):
     queryset = Issue.objects.order_by('-created_at')
     template_name = 'pages/issue-list.html'
     paginate_by = 6
+
+
+class SearchIssues(ListView):
+    """
+    Searches the machine model
+    """
+    model = Issue
+    template_name = 'pages/issue-list.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('searchbar-issues')
+
+        results = Issue.objects.filter(description__icontains=query)
+
+        if len(results) == 0:
+            return Issue.objects.order_by('-created_at')
+        else:
+            return results
 
 
 class CreateMachine(SuccessMessageMixin, CreateView):

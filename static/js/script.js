@@ -4,6 +4,22 @@ $("#social-links-button").click(function () {
 })
 
 
+// Toggle search bar container on mobile
+$("#searchbar-button-machines-mobile").click(function () {
+    $("#searchbar").toggle("fade", 200)
+})
+
+// Toggle search bar container on desktop
+$("#searchbar-button-machines-desktop").click(function () {
+    $("#searchbar").toggle("fade", 200)
+})
+
+// Closes the searchbar when the main content is clicked
+$('#main-content').on('click', function(){
+    $('#searchbar').hide("fade", 200)
+});
+
+
 // Hides the alert after 3 seconds
 setTimeout(function () {
         $("#msg").animate({'opacity':0}, 3000);
