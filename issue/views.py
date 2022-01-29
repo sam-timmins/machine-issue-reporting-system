@@ -93,6 +93,13 @@ class UserEditProfile(SuccessMessageMixin, UpdateView):
     def get_object(self):
         return self.request.user
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
 
 class Dashboard(generic.ListView):
     """
