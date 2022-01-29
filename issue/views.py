@@ -63,7 +63,10 @@ class Homepage(TemplateView):
     template_name = 'index.html'
 
     extra_context = {
-        'university_name': UNIVERSITY_NAME
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
         }
 
     
