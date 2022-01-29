@@ -85,6 +85,22 @@ class ViewAllUsers(generic.ListView):
         'twitter': TWITTER_LINK,
         }
 
+
+class EditStaffStatus(View):
+    def get(self, request, pk, *args, **kwargs):
+        queryset = User.objects
+        user = get_object_or_404(queryset, pk=pk)
+        profile = user.pk
+
+        return render(
+            request,
+            'pages/edit-staff-status.html',
+            {
+                'user': user,
+                'profile': profile,
+            },
+        )
+
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
