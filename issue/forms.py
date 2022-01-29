@@ -1,4 +1,4 @@
-from .models import Issue
+from .models import Issue, User
 
 from django import forms
 from django.contrib.auth.forms import UserChangeForm
