@@ -224,7 +224,11 @@ class MachineDetail(View):
             {
                 'machine': machine,
                 'issues': issues,
-                'issue_form': IssueForm()
+                'issue_form': IssueForm(),
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
             },
         )
 
@@ -252,6 +256,10 @@ class MachineDetail(View):
             {
                 'machine': machine,
                 'issues': issues,
-                'issue_form': IssueForm()
+                'issue_form': IssueForm(),
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
             },
         )
