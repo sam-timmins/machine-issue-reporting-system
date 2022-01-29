@@ -21,8 +21,9 @@
 
                     <!-- Shows alert message if the machine is faulty -->
                     {% if not machine.status %}
-                    <span class="btn btn-red text-large text-white position-absolute top-0 start-0 machine-status-alert">Current
-                        Issues</span>
+                    <span class="btn btn-red text-large text-white position-absolute top-0 start-0 machine-status-alert">
+                        {{ current_issue_text }}
+                    </span>
                     {% endif %}
                 </h5>
             </div>
