@@ -8,6 +8,16 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import Machine, Issue, User
 from .forms import IssueForm
 
+from env import (
+    UNIVERSITY_NAME,
+    FACEBOOK_LINK,
+    INSTAGRAM_LINK,
+    TWITTER_LINK,
+    MACHINE_CARDS_CURRENT_ISSUE_TEXT,
+    NO_ISSUES_MODAL_TITLE,
+    NO_ISSUES_TEXT
+)
+
 
 def delete_issue(request, pk):
     """
@@ -53,6 +63,13 @@ class Homepage(TemplateView):
     """
     template_name = 'index.html'
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
@@ -76,6 +93,13 @@ class UserEditProfile(SuccessMessageMixin, UpdateView):
     def get_object(self):
         return self.request.user
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
 
 class Dashboard(generic.ListView):
     """
@@ -85,6 +109,14 @@ class Dashboard(generic.ListView):
     queryset = Machine.objects.all().order_by('status', 'name')
     template_name = 'pages/dashboard.html'
     paginate_by = 6
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        'current_issue_text': MACHINE_CARDS_CURRENT_ISSUE_TEXT,
+        }
 
 
 class SearchMachines(ListView):
@@ -98,6 +130,7 @@ class SearchMachines(ListView):
         query = self.request.GET.get('searchbar')
         return Machine.objects.filter(name__icontains=query)
 
+
 class IssueList(generic.ListView):
     """
     View for display of the issue model ordered by newest
@@ -106,6 +139,15 @@ class IssueList(generic.ListView):
     queryset = Issue.objects.order_by('-created_at')
     template_name = 'pages/issue-list.html'
     paginate_by = 6
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        'no_issues_modal_title': NO_ISSUES_MODAL_TITLE,
+        'no_issue_text': NO_ISSUES_TEXT,
+        }
 
 
 class SearchIssues(ListView):
@@ -137,6 +179,13 @@ class CreateMachine(SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully created'
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
     def add_message(self):
         return self.success_message
 
@@ -152,6 +201,13 @@ class EditMachine(SuccessMessageMixin, UpdateView):
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully edited'
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
 
     def add_message(self):
         return self.success_message
@@ -175,7 +231,11 @@ class MachineDetail(View):
             {
                 'machine': machine,
                 'issues': issues,
-                'issue_form': IssueForm()
+                'issue_form': IssueForm(),
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
             },
         )
 
@@ -203,6 +263,10 @@ class MachineDetail(View):
             {
                 'machine': machine,
                 'issues': issues,
-                'issue_form': IssueForm()
+                'issue_form': IssueForm(),
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
             },
         )
