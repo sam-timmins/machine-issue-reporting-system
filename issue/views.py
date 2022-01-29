@@ -104,7 +104,7 @@ class EditStaffStatus(View):
     def post(self, request, pk, *args, **kwargs):
         queryset = User.objects
         user = get_object_or_404(queryset, pk=pk)
-        edit_staff_status_form = EditStaffStatusForm()(data=request.POST)
+        edit_staff_status_form = EditStaffStatusForm(data=request.POST)
         all_users = User.objects.all().order_by('-is_staff', 'last_name')
 
         if edit_staff_status_form.is_valid():
@@ -113,14 +113,14 @@ class EditStaffStatus(View):
             user.save()
 
         else:
-            edit_staff_status_form = EditStaffStatusForm()()
+            edit_staff_status_form = EditStaffStatusForm()
 
         return render(
             request,
             'pages/all-users.html',
             {
                 'all_users': all_users,
-                'edit_status-form': EditStaffStatusForm()()
+                'edit_status-form': EditStaffStatusForm()
             },
         )
 
