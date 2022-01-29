@@ -78,6 +78,13 @@ class ViewAllUsers(generic.ListView):
     queryset = User.objects.all().order_by('-is_staff', 'last_name')
     template_name = 'pages/all-users.html'
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
