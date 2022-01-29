@@ -172,6 +172,13 @@ class CreateMachine(SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully created'
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
     def add_message(self):
         return self.success_message
 
