@@ -111,6 +111,8 @@ class EditStaffStatus(View):
         edit_staff_status_form = EditStaffStatusForm(data=request.POST)
         all_users = User.objects.all().order_by('-is_staff', 'last_name')
 
+        messages.success(request, f"{user.username}'s staff status was successfully changed.")
+
         if edit_staff_status_form.is_valid():
 
             user.is_staff = not user.is_staff
