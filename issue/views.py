@@ -138,6 +138,7 @@ class IssueList(generic.ListView):
         'facebook': FACEBOOK_LINK,
         'instagram': INSTAGRAM_LINK,
         'twitter': TWITTER_LINK,
+        'no_issues_modal_title': NO_ISSUES_MODAL_TITLE,
         'no_issue_text': NO_ISSUES_TEXT,
         }
 
