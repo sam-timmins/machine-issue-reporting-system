@@ -98,6 +98,10 @@ class EditStaffStatus(View):
             {
                 'user': user,
                 'profile': profile,
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
             },
         )
 
@@ -120,7 +124,11 @@ class EditStaffStatus(View):
             'pages/all-users.html',
             {
                 'all_users': all_users,
-                'edit_status-form': EditStaffStatusForm()
+                'edit_status-form': EditStaffStatusForm(),
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
             },
         )
 
