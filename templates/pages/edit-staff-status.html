@@ -1,21 +1,36 @@
-<p>Username: {{ user.username }}</p>
-<p>First Name: {{ user.first_name }}</p>
-<p>Last Name: {{ user.last_name }}</p>
-<p>Email: {{ user.email }}</p>
+{% extends "layout/base.html" %}
 
+{% block title %}
+Edit Staff Status
+{% endblock title %}
 
+{% block content %}
 
-<form method="POST" id="edit-profile-form" class="text-white">
-    {% csrf_token %}
-    <div class="row">
-        <div class="col">
-            <label for="{{ user.is_staff }}">Is Staff Memeber:</label>
-            <input type="checkbox" name="{{ user.is_staff }}" id="{{ user.is_staff }}" {% if user.is_staff %} checked {% endif %}>
+<section>
 
+    <p>Username: {{ user.username }}</p>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    
+    
+    
+    <form method="POST" id="edit-staff-status-form">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <label for="staff-member">Is Staff Member:</label>
+                <input type="checkbox" name="staff-member" id="staff-member" {% if user.is_staff %} checked {% endif %}>
+    
+            </div>
         </div>
-    </div>
-        <div class="">
-            <button type="submit" class="">Update</button>
-        </div>
+            <div class="">
+                <button type="submit" class="">Update</button>
+            </div>
+    
+    </form>
 
-</form>
+</section>
+
+{% endblock content %}
+
