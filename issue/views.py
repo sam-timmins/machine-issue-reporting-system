@@ -62,6 +62,10 @@ class Homepage(TemplateView):
     """
     template_name = 'index.html'
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME
+        }
+
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
