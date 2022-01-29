@@ -8,6 +8,15 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import Machine, Issue, User
 from .forms import IssueForm
 
+from env import (
+    UNIVERSITY_NAME,
+    FACEBOOK_LINK,
+    INSTAGRAM_LINK,
+    TWITTER_LINK,
+    MACHINE_CARDS_CURRENT_ISSUE_TEXT,
+    NO_ISSUES_TEXT
+)
+
 
 def delete_issue(request, pk):
     """
