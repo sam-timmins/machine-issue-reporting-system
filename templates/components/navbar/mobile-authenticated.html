@@ -58,6 +58,41 @@
     </div>
 </div>
 
+{% if user.is_staff %}
+<div class="p-1 my-2 nav-link-mobile-border">
+    <div class="p-5">
+        <ul class="list-unstyled">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-medium" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="dashboard-staff-sm">
+                    <i class="fas fa-user me-3"></i> Profiles
+                </a>
+                <span id="dashboard-staff-sm" class="sr-only">A link with white text and an icon of a house on the left
+                    and a down chevron on the
+                    right that opens a dropdown menu</span>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" data-bs-dismiss="offcanvas">
+                    <li><a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'edit-profile' %}"
+                            aria-labelledby="dashboard-view-sm">Edit Profile</a></li>
+                    <span id="dashboard-view-sm" class="sr-only">A link with blue text that navigates to the edit
+                        profile
+                        page in the same tab</span>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-small px-3 mx-5 text-blue" href="#"
+                            aria-labelledby="dashboard-create-sm">All Users</a>
+                    </li>
+                    <span id="dashboard-create-sm" class="sr-only">A link with blue text that navigates to the all users
+                        page in the same tab</span>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+{% if not user.is_staff %}
 <div class="p-1 my-2 nav-link-mobile-border">
     <div class="p-5" data-bs-dismiss="offcanvas">
 
@@ -69,6 +104,7 @@
             navigates to the user prfoile page in the same tab</span>
     </div>
 </div>
+{% endif %}
 
 <div class="p-1 my-2 nav-link-mobile-border">
     <div class="p-5" data-bs-dismiss="offcanvas">
