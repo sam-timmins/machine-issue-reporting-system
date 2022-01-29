@@ -122,6 +122,7 @@ class SearchMachines(ListView):
         query = self.request.GET.get('searchbar')
         return Machine.objects.filter(name__icontains=query)
 
+
 class IssueList(generic.ListView):
     """
     View for display of the issue model ordered by newest
@@ -130,6 +131,14 @@ class IssueList(generic.ListView):
     queryset = Issue.objects.order_by('-created_at')
     template_name = 'pages/issue-list.html'
     paginate_by = 6
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        'no_issue_text': NO_ISSUES_TEXT,
+        }
 
 
 class SearchIssues(ListView):
