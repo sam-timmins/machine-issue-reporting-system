@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Machine, Issue, User
-from .forms import IssueForm
+from .forms import IssueForm, EditStaffStatusForm
 
 from env import (
     UNIVERSITY_NAME,
@@ -69,6 +69,70 @@ class Homepage(TemplateView):
         'instagram': INSTAGRAM_LINK,
         'twitter': TWITTER_LINK,
         }
+
+
+class ViewAllUsers(generic.ListView):
+    """
+    Views all users
+    """
+    queryset = User.objects.all().order_by('-is_staff', 'last_name')
+    template_name = 'pages/all-users.html'
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
+
+class EditStaffStatus(View):
+    def get(self, request, pk, *args, **kwargs):
+        queryset = User.objects
+        user = get_object_or_404(queryset, pk=pk)
+        profile = user.pk
+
+        return render(
+            request,
+            'pages/edit-staff-status.html',
+            {
+                'user': user,
+                'profile': profile,
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
+            },
+        )
+
+    def post(self, request, pk, *args, **kwargs):
+        queryset = User.objects
+        user = get_object_or_404(queryset, pk=pk)
+        edit_staff_status_form = EditStaffStatusForm(data=request.POST)
+        all_users = User.objects.all().order_by('-is_staff', 'last_name')
+
+        if edit_staff_status_form.is_valid():
+
+            user.is_staff = not user.is_staff
+            user.save()
+
+        else:
+            edit_staff_status_form = EditStaffStatusForm()
+
+        return render(
+            request,
+            'pages/all-users.html',
+            {
+                'all_users': all_users,
+                'edit_status-form': EditStaffStatusForm(),
+                'university_name': UNIVERSITY_NAME,
+                'facebook': FACEBOOK_LINK,
+                'instagram': INSTAGRAM_LINK,
+                'twitter': TWITTER_LINK,
+            },
+        )
+
+    
 
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):

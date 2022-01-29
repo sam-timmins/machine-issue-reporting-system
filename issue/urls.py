@@ -13,5 +13,7 @@ urlpatterns = [
     path("open/issues/", views.IssueList.as_view(), name="open-issues"),
     path("dashboard/delete/issue/<int:pk>", views.delete_issue, name="delete-issue"),
     path("search-issues/", views.SearchIssues.as_view(), name="search-issues"),
+    path("user/profile/all-users/", views.ViewAllUsers.as_view(), name="all-users"),
+    path("user/profile/edit/staff/status/<int:pk>", views.EditStaffStatus.as_view(), name="edit-staff-status"),
     path("user/edit/profile/", views.UserEditProfile.as_view(), name="edit-profile"),
 ]
