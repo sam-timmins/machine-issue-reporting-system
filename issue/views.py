@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Machine, Issue, User
-from .forms import IssueForm
+from .forms import IssueForm, EditProfileForm
 
 from env import (
     UNIVERSITY_NAME,
@@ -100,6 +100,31 @@ class EditStaffStatus(View):
                 'profile': profile,
             },
         )
+
+    def post(self, request, pk, *args, **kwargs):
+        queryset = User.objects
+        user = get_object_or_404(queryset, pk=pk)
+        edit_staff_status_form = EditProfileForm(data=request.POST)
+        all_users = User.objects.all().order_by('-is_staff', 'last_name')
+
+        if edit_staff_status_form.is_valid():
+
+            user.is_staff = not user.is_staff
+            user.save()
+
+        else:
+            edit_staff_status_form = EditProfileForm()
+
+        return render(
+            request,
+            'pages/all-users.html',
+            {
+                'all_users': all_users,
+                'edit_status-form': EditProfileForm()
+            },
+        )
+
+    
 
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
