@@ -8,8 +8,17 @@ All Users
 
 <section>
 
-All Users
+    <div class="row mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+        <div class="col-12 col-xl-8 card p-0 my-5">
+            <div class="background-color-blue text-white border-bottom-orange">
+                <h5 class="text-large text-center p-3" id="staticBackdropLabel">All Users</h5>
+            </div>
 
+            <!-- All users table -->
+            {% include 'components/all-users/all-users-table.html' %}
+            
+        </div>
+    </div>
 </section>
 
 {% endblock content %}
