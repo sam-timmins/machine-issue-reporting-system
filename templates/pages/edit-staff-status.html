@@ -1,3 +1,21 @@
-edit staff status
+<p>Username: {{ user.username }}</p>
+<p>First Name: {{ user.first_name }}</p>
+<p>Last Name: {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
 
-{{user.username}}
+
+
+<form method="POST" id="edit-profile-form" class="text-white">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <label for="{{ user.is_staff }}">Is Staff Memeber:</label>
+            <input type="checkbox" name="{{ user.is_staff }}" id="{{ user.is_staff }}" {% if user.is_staff %} checked {% endif %}>
+
+        </div>
+    </div>
+        <div class="">
+            <button type="submit" class="">Update</button>
+        </div>
+
+</form>
