@@ -30,35 +30,41 @@
 <ul class="d-none d-md-flex flex-row m-0 list-unstyled">
 
     {% if user.is_staff %}
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-active me-5 text-medium p-0" href="{% url 'dashboard' %}"
-                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="dashboard-staff-lg">
-                <i class="fas fa-home me-2"></i> Dashboard
-            </a>
-            <span id="dashboard-staff-lg" class="sr-only">A link with white text and an icon of a house on the left and a down chevron on the 
-                right that opens a dropdown menu</span>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item text-small px-5" href="{% url 'dashboard' %}" aria-labelledby="dashboard-view-lg">View Machines</a></li>
-                <span id="dashboard-view-lg" class="sr-only">A link with blue text that navigates to the dashboard page in the same tab</span>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-small px-5" href="{% url 'create-machine' %}" aria-labelledby="dashboard-create-lg">Create Machine</a></li>
-                <span id="dashboard-create-lg" class="sr-only">A link with blue text that navigates to the create a machine page in the same tab</span>
-            </ul>
-        </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle nav-active me-5 text-medium p-0" href="{% url 'dashboard' %}"
+            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+            aria-labelledby="dashboard-staff-lg">
+            <i class="fas fa-home me-2"></i> Dashboard
+        </a>
+        <span id="dashboard-staff-lg" class="sr-only">A link with white text and an icon of a house on the left and a
+            down chevron on the
+            right that opens a dropdown menu</span>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item text-small px-5" href="{% url 'dashboard' %}"
+                    aria-labelledby="dashboard-view-lg">View Machines</a></li>
+            <span id="dashboard-view-lg" class="sr-only">A link with blue text that navigates to the dashboard page in
+                the same tab</span>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-small px-5" href="{% url 'create-machine' %}"
+                    aria-labelledby="dashboard-create-lg">Create Machine</a></li>
+            <span id="dashboard-create-lg" class="sr-only">A link with blue text that navigates to the create a machine
+                page in the same tab</span>
+        </ul>
+    </li>
     {% endif %}
 
     {% if not user.is_staff %}
-        <li class="ms-3 ms-lg-5">
+    <li class="ms-3 ms-lg-5">
 
-            <a href="{% url 'dashboard' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="dashboard-sm">
-                <i class="fas fa-home me-2"></i> Dashboard
-            </a>
-            <span id="dashboard-lg" class="sr-only">A link with white text and an icon of a house that navigates to the
-                dashboard page in the same tab</span>
+        <a href="{% url 'dashboard' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="dashboard-sm">
+            <i class="fas fa-home me-2"></i> Dashboard
+        </a>
+        <span id="dashboard-lg" class="sr-only">A link with white text and an icon of a house that navigates to the
+            dashboard page in the same tab</span>
 
-        </li>
+    </li>
     {% endif %}
 
     <li class="ms-3 ms-lg-5">
@@ -69,6 +75,36 @@
         <span id="issues-lg" class="sr-only">A link with white text and an icon of a warning that navigates to the
             issues page in the same tab</span>
     </li>
+
+    {% if user.is_staff %}
+    <li class="nav-item dropdown">
+        <div class="nav-link dropdown-toggle nav-active me-5 text-medium p-0"
+            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+            aria-labelledby="dashboard-staff-lg">
+            <i class="fas fa-user me-2"></i> Profiles
+    </div>
+        <span id="dashboard-staff-lg" class="sr-only">A link with white text and an icon of a person on the left and a
+            down chevron on the
+            right that opens a dropdown menu</span>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- Edit profile -->
+            <li><a class="dropdown-item text-small px-5" href="{% url 'edit-profile' %}"
+                    aria-labelledby="dashboard-view-lg">Edit Profile</a></li>
+            <span id="dashboard-view-lg" class="sr-only">A link with blue text that navigates to the edit profile page in
+                the same tab</span>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <!-- View all users profiles -->
+            <li><a class="dropdown-item text-small px-5" href="#"
+                    aria-labelledby="dashboard-create-lg">All Users</a></li>
+            <span id="dashboard-create-lg" class="sr-only">A link with blue text that navigates to the all users
+                page in the same tab</span>
+        </ul>
+    </li>
+    {% endif %}
+    {% if not user.is_staff %}
+
     <li class="ms-3 ms-lg-5">
 
         <a href="{% url 'edit-profile' %}" class="nav-link nav-active me-5 text-medium p-0"
@@ -78,6 +114,7 @@
         <span id="profile-lg" class="sr-only">A link with white text and an icon of a person that navigates to the user
             prfoile page in the same tab</span>
     </li>
+    {% endif %}
     <li class="ms-3 ms-lg-5">
         <a href="{% url 'account_logout' %}" class="nav-link nav-active me-5 text-medium p-0"
             aria-labelledby="logout-lg">
@@ -87,15 +124,15 @@
             page in the same tab</span>
     </li>
     <li>
-        <button id="searchbar-button-machines-desktop" class="px-2 py-0 btn btn-wide btn-white text-medium text-blue align-items-center"
-            aria-label="Search">
+        <button id="searchbar-button-machines-desktop"
+            class="px-2 py-0 btn btn-wide btn-white text-medium text-blue align-items-center" aria-label="Search">
             <i class="fas fa-search"></i>
         </button>
     </li>
 </ul>
 
-    <!-- Searchbar -->
+<!-- Searchbar -->
 
-        {% include 'components/navbar/searchbar.html' %}
+{% include 'components/navbar/searchbar.html' %}
 
 {% endif %}
