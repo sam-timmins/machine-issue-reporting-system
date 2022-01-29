@@ -70,6 +70,14 @@ class Homepage(TemplateView):
         'twitter': TWITTER_LINK,
         }
 
+
+class ViewAllUsers(generic.ListView):
+    """
+    Views all users
+    """
+    queryset = User.objects.all().order_by('-is_staff', 'last_name')
+    template_name = 'pages/all-users.html'
+
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
