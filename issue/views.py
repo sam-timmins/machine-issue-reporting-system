@@ -132,7 +132,16 @@ class EditStaffStatus(View):
             },
         )
 
+
+def delete_user_profile(request, pk):
+
+    user_profile = User.objects.get(pk=pk)
+    delete_user = User.objects.filter(username=user_profile.username)
     
+    delete_user.delete()
+    user_profile.delete()
+
+    return redirect('all-users')
 
     
 class UserEditProfile(SuccessMessageMixin, UpdateView):
