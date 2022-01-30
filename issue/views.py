@@ -141,6 +141,8 @@ def delete_user_profile(request, pk):
     delete_user.delete()
     user_profile.delete()
 
+    messages.success(request, 'User was successfully deleted.')
+
     return redirect('all-users')
 
     
