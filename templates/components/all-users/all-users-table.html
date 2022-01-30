@@ -34,12 +34,15 @@
                                     </td>
 
                                     <td>
-                                        <a href="#" type="button" class="text-blue">
+                                        <a href="#deleteUser{{ user.id }}" type="button" class="text-blue" data-bs-toggle="modal">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </td>
 
                                 </tr>
+
+                                <!-- Delete user modal -->
+                                {% include 'components/all-users/delete-user-modal.html' %}
 
                                 {% endfor %}
 
