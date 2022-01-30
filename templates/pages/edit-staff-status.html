@@ -8,29 +8,52 @@ Edit Staff Status
 
 <section>
 
-    <p>Username: {{ user.username }}</p>
-    <p>First Name: {{ user.first_name }}</p>
-    <p>Last Name: {{ user.last_name }}</p>
-    <p>Email: {{ user.email }}</p>
-    
-    
-    
-    <form method="POST" id="edit-staff-status-form">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col">
-                <label for="staff-member">Is Staff Member:</label>
-                <input type="checkbox" name="staff-member" id="staff-member" {% if user.is_staff %} checked {% endif %}>
-    
-            </div>
+    <div class="row mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-6 card p-0 my-5">
+
+            <!-- Create a machine form -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="background-color-blue text-white border-bottom-orange">
+                    <h5 class="text-large text-center p-3" id="staticBackdropLabel">Update Staff Status</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="p-md-5 text-medium" id="create-issue-form-section">
+                        <p>Please select the checkbox if <span class="text-red">{{ user.username }}</span> is a staff member.</p>
+                        <p>This allows the user to have full Create, Edit and Delete abilities.</p>
+
+                        <form method="POST" id="edit-staff-status-form">
+                            {% csrf_token %}
+
+                            <div class="my-5 text-medium">
+                                <label for="staff-member" class="me-3 form-check-label">Staff Member:</label>
+                                <input type="checkbox" name="staff-member" id="staff-member" class="form-check-input" {% if user.is_staff %}
+                                    checked {% endif %}>
+                            </div>
+
+                            <div class="modal-footer d-flex justify-content-around align-items-center">
+                                <button type="submit" class="btn btn-green text-white text-medium"
+                                    aria-labelledby="update-staff-status">
+                                    <i class=" fas fa-plus me-2"></i> Update
+                                </button>
+                                <span class="sr-only" id="update-staff-status">An green button with white text
+                                    and a plus icon, saves the changes and returns to the all users page</span>
+
+                                <a href="{% url 'all-users' %}" class="btn btn-orange text-white text-medium"
+                                    aria-labelledby="cancel-update-staff-status">
+                                    <i class="fas fa-arrow-right me-2"></i>
+                                    Cancel</a>
+                                <span class="sr-only" id="cancel-update-staff-status">An orange button with white text
+                                    and a back arrow icon, closes the returns to the all users page without saving</span>
+
+                            </div>
+                        </form>
+                    </div>
+            </form>
         </div>
-            <div class="">
-                <button type="submit" class="">Update</button>
-            </div>
-    
-    </form>
+    </div>
 
 </section>
 
 {% endblock content %}
-
