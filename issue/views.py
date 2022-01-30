@@ -8,7 +8,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import Machine, Issue, User
 from .forms import IssueForm
 
+from pathlib import Path
 import os
+
+# Prevent error when hidden env.py is not found
+if os.path.isfile('env.py'):
+    import env
+
 
 UNIVERSITY_NAME = os.environ.get('UNIVERSITY_NAME')
 FACEBOOK_LINK = os.environ.get('FACEBOOK_LINK')
