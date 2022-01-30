@@ -133,6 +133,24 @@ class EditStaffStatus(View):
         )
 
 
+class SearchUsers(ListView):
+    """
+    Searches the machine model
+    """
+    model = User
+    template_name = 'pages/all-users.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('searchbar-users')
+
+        results = User.objects.filter(username__icontains=query)
+
+        if not results:
+            return User.objects.order_by('-username')
+        else:
+            return results
+
+
 def delete_user_profile(request, pk):
 
     user_profile = User.objects.get(pk=pk)
