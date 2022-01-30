@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'widget_tweaks',
     'issue',
+    'accounts',
 ]
 
 
