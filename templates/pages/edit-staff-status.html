@@ -33,19 +33,19 @@ Edit Staff Status
                             </div>
 
                             <div class="modal-footer d-flex justify-content-around align-items-center">
-                                <button type="submit" class="btn btn-green text-white text-medium">
+                                <button type="submit" class="btn btn-green text-white text-medium"
+                                    aria-labelledby="update-staff-status">
                                     <i class=" fas fa-plus me-2"></i> Update
                                 </button>
+                                <span class="sr-only" id="update-staff-status">An green button with white text
+                                    and a plus icon, saves the changes and returns to the all users page</span>
 
                                 <a href="{% url 'all-users' %}" class="btn btn-orange text-white text-medium"
-                                    aria-labelledby="cancel-create-machine-form">
+                                    aria-labelledby="cancel-update-staff-status">
                                     <i class="fas fa-arrow-right me-2"></i>
                                     Cancel</a>
-                                <span class="sr-only" id="cancel-create-machine-form">An orange button with white text
-                                    and a
-                                    back
-                                    arrow
-                                    icon, closes the returns to the all users page without saving</span>
+                                <span class="sr-only" id="cancel-update-staff-status">An orange button with white text
+                                    and a back arrow icon, closes the returns to the all users page without saving</span>
 
                             </div>
                         </form>
