@@ -10,14 +10,3 @@ class IssueForm(forms.ModelForm):
         fields = (
             'description',
         )
-
-       
-class EditStaffStatusForm(UserChangeForm):
-
-    is_staff = forms.BooleanField(required=False)
-
-    class Meta:
-        model = User
-        fields = (
-            'is_staff',
-        )
