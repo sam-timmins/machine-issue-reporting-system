@@ -30,15 +30,19 @@
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
           {% endif %}
 
-          <div class="container-fluid d-flex flex-row justify-content-around align-items-center p-0 mt-5">
-            <button class="btn btn-green text-medium text-white" type="submit" aria-labelledby="sign-out-yes">{% trans "Yes" %}</button>
-            <span class="sr-only" id="sign-out-yes">A green button with white writing, logs the user out.</span>
-
-            <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
-            aria-labelledby="sign-out-no">
-            No</a>
-            <span class="sr-only" id="sign-out-no">Aa orange button with white writing, navigates bachk to the dashboard page and the user remains logged in</span>
+          <div class="row d-flex flex-row justify-content-around align-items-center">
+            <div class="col-12 col-md-8 col-lg-">
+              <div class="container-fluid d-flex flex-row justify-content-around align-items-center p-0 mt-5">
+                <button class="btn btn-green text-medium text-white" type="submit" aria-labelledby="sign-out-yes">{% trans "Yes" %}</button>
+                <span class="sr-only" id="sign-out-yes">A green button with white writing, logs the user out.</span>
+                <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
+                aria-labelledby="sign-out-no">
+                No</a>
+                <span class="sr-only" id="sign-out-no">Aa orange button with white writing, navigates bachk to the dashboard page and the user remains logged in</span>
+              </div>
+            </div>
           </div>
+          
         </form>
       </div>
     </div>
