@@ -7,10 +7,15 @@
             <div class="modal-body">
                 <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
 
-                    <p class="text-medium text-blue text-center">Currently no machines created.
+                    <p class="text-medium text-blue text-center mb-5">Currently no machines created.</p>
                         
                         {% if user.is_staff %}
-                        <br> Click the dropdown menu in the dashboard navigation link to create a machine.</p>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <p class="text-blue text-medium">Click the button and create a machine.</p>
+                            <a class="btn btn-green btn-wide text-white text-medium mt-5" href="{% url 'create-machine' %}"
+                                aria-labelledby="dashboard-empty-page-create-machine">Create Machine</a>
+                            <span class="sr-only" id="dashboard-empty-page-create-machine">Green button with white writing that navigates to the create a machine page in the same tab</span>
+                        </div>
                         {% endif %}
 
                 </div>
