@@ -1,7 +1,7 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
-  Sign In
+Sign In
 {% endblock title %}
 
 {% load i18n %}
@@ -10,7 +10,8 @@
 
 {% block content %}
 
-<div class="container-fluid image-container vh-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center">
+<div
+  class="container-fluid image-container vh-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center">
   <div class="row container d-flex justify-content-center align-items-center">
     <div class="col col-md-8 col-lg-6 card p-0">
       <div class="card-header p-0">
@@ -25,12 +26,21 @@
 
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
-          {{ form.as_p }}
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-          <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-          <button class="btn btn-green text-white text-medium" type="submit">{% trans "Sign In" %}</button>
+
+                <label for="id_login" aria-label="Enter your username"><i class="fas fa-user-circle text-blue text-medium"></i></label>
+                <input type="text" name="login" placeholder="Username" autocomplete="username" maxlength="150"
+                  required="" id="id_login" pb-role="username">
+                
+                <label for="id_login" aria-label="Enter your password"><i class="fas fa-lock text-blue text-medium"></i></label>
+                <input type="password" name="password" placeholder="Password" autocomplete="current-password"
+                  required="" id="id_password" pb-role="password">
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <button class="btn btn-green text-white text-medium" type="submit">{% trans "Sign In" %}</button>
+
+
         </form>
       </div>
     </div>
