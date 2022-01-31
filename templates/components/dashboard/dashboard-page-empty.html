@@ -1,0 +1,20 @@
+<div class="row my-5 mx-0 p-3 container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6 card p-0">
+
+            <div class="background-color-blue text-white border-bottom-orange">
+                <h5 class="text-large text-center p-3" id="staticBackdropLabel">No machines</h5>
+            </div>
+            <div class="modal-body">
+                <div class="issue-form-comtainer p-md-5" id="create-issue-form-section">
+
+                    <p class="text-medium text-blue text-center">Currently no machines created.
+                        
+                        {% if user.is_staff %}
+                        <br> Click the dropdown menu in the dashboard navigation link to create a machine.</p>
+                        {% endif %}
+
+                </div>
+            </div>
+
+    </div>
+</div>

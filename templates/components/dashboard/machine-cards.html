@@ -60,4 +60,10 @@
 <!-- Delete machine modal -->
 {% include 'components/dashboard/delete-machine-modal.html' %}
 
+<!-- Text if there are no machines -->
+{% empty %}
+
+    <!-- No machines content -->
+    {% include 'components/dashboard/dashboard-page-empty.html' %}
+
 {% endfor %}
