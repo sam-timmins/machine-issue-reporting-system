@@ -22,28 +22,46 @@ Sign Up
 
 
 
-        <p class="mt-3 text-center text-blue">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
+        <p class="mt-3 text-center text-blue">{% blocktrans %}Already have an account? Then please <a
+            href="{{ login_url }}">sign
             in</a>.{% endblocktrans %}</p>
 
         <form class="signup d-flex flex-column justify-content-center align-items-center" id="signup_form" method="post"
           action="{% url 'account_signup' %}">
           {% csrf_token %}
 
+          <!-- Error messages -->
+          {% if form.errors %}
+            {% for field in form %}
+              {% for error in field.errors %}
+                <div class="alert alert-danger">
+                  <strong>{{ error|escape }}</strong>
+                </div>
+              {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+              <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          <!-- Form fields -->
           <div class="my-3 mt-md-5">
             <label for="id_username" aria-label="Enter your username"><i
-              class="fas fa-user-circle text-blue text-medium me-3"></i></label>
+                class="fas fa-user-circle text-blue text-medium me-3"></i></label>
             <input type="text" name="username" placeholder="Username" autocomplete="username" minlength="1"
               maxlength="150" required="" id="id_username">
           </div>
           <div class="my-3 mt-md-5">
             <label for="id_password1" aria-label="Enter your password"><i
-              class="fas fa-lock text-blue text-medium me-3"></i></label>
+                class="fas fa-lock text-blue text-medium me-3"></i></label>
             <input type="password" name="password1" placeholder="Password" autocomplete="new-password" required=""
               id="id_password1">
           </div>
           <div class="my-3 mt-md-5">
             <label for="id_password2" aria-label="Enter your password again for confirmation"><i
-              class="fas fa-lock text-blue text-medium me-3"></i></label>
+                class="fas fa-lock text-blue text-medium me-3"></i></label>
             <input type="password" name="password2" placeholder="Password (again)" required="" id="id_password2">
           </div>
           {% if redirect_field_value %}

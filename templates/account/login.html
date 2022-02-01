@@ -28,6 +28,23 @@ Sign In
           action="{% url 'account_login' %}">
           {% csrf_token %}
 
+          <!-- Error messages -->
+          {% if form.errors %}
+            {% for field in form %}
+              {% for error in field.errors %}
+                <div class="alert alert-danger">
+                  <strong>{{ error|escape }}</strong>
+                </div>
+              {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+              <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          <!-- Form fields -->
           <div class="my-3 mt-md-5">
             <label for="id_login" aria-label="Enter your username"><i
                 class="fas fa-user-circle text-blue text-medium me-3"></i></label>
