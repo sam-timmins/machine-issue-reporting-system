@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import UpdateView, ListView
+from django.views.generic import UpdateView, ListView, TemplateView
 from django.views import generic, View
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -30,6 +30,17 @@ NO_ISSUES_TEXT = os.environ.get('NO_ISSUES_TEXT')
 
 class LoginViewCustom(LoginView):
     template_name = 'account/login.html'
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
+
+class SignUpViewCustom(TemplateView):
+    template_name = 'account/signup.html'
 
     extra_context = {
         'university_name': UNIVERSITY_NAME,
