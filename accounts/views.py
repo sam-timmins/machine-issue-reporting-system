@@ -50,6 +50,17 @@ class SignUpViewCustom(TemplateView):
         }
 
 
+class LogoutViewCustom(TemplateView):
+    template_name = 'account/logout.html'
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
+
+
 class ViewAllUsers(generic.ListView):
     """
     Views all users
