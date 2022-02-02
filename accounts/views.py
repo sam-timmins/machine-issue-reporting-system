@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 
+from django.contrib.auth.views import LoginView
+
 from .models import User
 from .forms import EditStaffStatusForm
 
@@ -24,6 +26,17 @@ TWITTER_LINK = os.environ.get('TWITTER_LINK')
 MACHINE_CARDS_CURRENT_ISSUE_TEXT = os.environ.get('MACHINE_CARDS_CURRENT_ISSUE_TEXT')
 NO_ISSUES_MODAL_TITLE = os.environ.get('NO_ISSUES_MODAL_TITLE')
 NO_ISSUES_TEXT = os.environ.get('NO_ISSUES_TEXT')
+
+
+class LoginViewCustom(LoginView):
+    template_name = 'account/login.html'
+
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        }
 
 
 class ViewAllUsers(generic.ListView):
