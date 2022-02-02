@@ -64,20 +64,6 @@ def delete_machine(request, pk):
     return redirect('dashboard')
 
 
-class Homepage(TemplateView):
-    """
-    Views the homepage
-    """
-    template_name = 'index.html'
-
-    extra_context = {
-        'university_name': UNIVERSITY_NAME,
-        'facebook': FACEBOOK_LINK,
-        'instagram': INSTAGRAM_LINK,
-        'twitter': TWITTER_LINK,
-        }
-
-
 class Dashboard(generic.ListView):
     """
     View for the machines model ordered by the status, then
