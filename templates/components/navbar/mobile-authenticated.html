@@ -68,26 +68,28 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-medium" id="navbarDropdownProfileDesktop" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="profile-staff-sm">
-                        <i class="fas fa-user me-3"></i> Profile
+                        <i class="fas fa-user me-3"></i>Profile
                     </a>
-                    <span id="profile-staff-sm" class="sr-only">A link with white text and an icon of a house on the left
-                        and a down chevron on the
-                        right that opens a dropdown menu</span>
+
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownProfileDesktop" data-bs-dismiss="offcanvas">
+
                         <li><a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'edit-profile' %}"
-                                aria-labelledby="profile-edit-sm">Edit Profile</a></li>
-                        <span id="profile-edit-sm" class="sr-only">A link with blue text that navigates to the edit
-                            profile
-                            page in the same tab</span>
+                                aria-labelledby="profile-edit-sm">
+                                Edit Profile
+                            </a>
+                        </li>
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'all-users' %}"
-                                aria-labelledby="profile-all-users-sm">All Users</a>
-                        </li>
-                        <span id="profile-all-users-sm" class="sr-only">A link with blue text that navigates to the all users
-                            page in the same tab</span>
 
+                        <li>
+                            <a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'all-users' %}"
+                                aria-labelledby="profile-all-users-sm">
+                                All Users
+                            </a>
+                        </li>
+                        
                     </ul>
                 </li>
             </ul>
