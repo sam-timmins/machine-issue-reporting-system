@@ -1,64 +1,54 @@
 <!-- Navigation links if the user is authenticated -->
 
 {% if user.is_authenticated %}
-{% if user.is_staff %}
-<div class="p-1 my-2 nav-link-mobile-border">
-    <div class="p-5">
-        <ul class="list-unstyled">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-medium" id="navbarDropdownDashboardMobile" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="dashboard-staff-sm">
-                    <i class="fas fa-home me-3"></i> Dashboard
-                </a>
+    <!-- Navigation dashboard dropdown options if user is staff -->
+    {% if user.is_staff %}
+    <div class="p-1 my-2 nav-link-mobile-border">
+        <div class="p-5">
+            <ul class="list-unstyled">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-medium" id="navbarDropdownDashboardMobile" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="dashboard-staff-sm">
+                        <i class="fas fa-home me-3"></i> Dashboard
+                    </a>
 
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownDashboardMobile" data-bs-dismiss="offcanvas">
-                    <li><a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'dashboard' %}"
-                            aria-labelledby="dashboard-view-sm">
-                            View Machines
-                        </a>
-                    </li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownDashboardMobile" data-bs-dismiss="offcanvas">
+                        <li><a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'dashboard' %}"
+                                aria-labelledby="dashboard-view-sm">
+                                View Machines
+                            </a>
+                        </li>
 
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
-                    <li>
-                        <a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'create-machine' %}"
-                            aria-labelledby="dashboard-create-sm">
-                            Create Machine
-                        </a>
-                    </li>
+                        <li>
+                            <a class="dropdown-item text-small px-3 mx-5 text-blue" href="{% url 'create-machine' %}"
+                                aria-labelledby="dashboard-create-sm">
+                                Create Machine
+                            </a>
+                        </li>
 
-                </ul>
-            </li>
-        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+    {% endif %}
 
-<span id="dashboard-staff-sm" class="sr-only">
-    A link with white text and an icon of a house on the left and a down chevron on the
-    right that opens a dropdown menu
-</span>
-<span id="dashboard-view-sm" class="sr-only">
-    A link with blue text that navigates to the dashboard page in the same tab
-</span>
-<span id="dashboard-create-sm" class="sr-only">
-        A link with blue text that navigates to the create a machine page in the same tab
-</span>
-{% endif %}
+    <!-- Navigation dashboard link for basic user -->
+    {% if not user.is_staff %}
+    <div class="p-1 my-2 nav-link-mobile-border">
+        <div class="p-5" data-bs-dismiss="offcanvas">
 
-{% if not user.is_staff %}
-<div class="p-1 my-2 nav-link-mobile-border">
-    <div class="p-5" data-bs-dismiss="offcanvas">
-
-        <a href="{% url 'dashboard' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="dashboard-sm">
-            <i class="fas fa-home me-3"></i> Dashboard
-        </a>
-        <span id="dashboard-sm" class="sr-only">A link with a blue background, white text and an
-            icon of a house that navigates to the dashboard page in the same tab</span>
+            <a href="{% url 'dashboard' %}" class="nav-link nav-active ms-1 text-medium" aria-labelledby="dashboard-not-staff">
+                <i class="fas fa-home me-3"></i> Dashboard
+            </a>
+            
+        </div>
     </div>
-</div>
-{% endif %}
+    {% endif %}
 
 <div class="p-1 my-2 nav-link-mobile-border">
     <div class="p-5" data-bs-dismiss="offcanvas">
