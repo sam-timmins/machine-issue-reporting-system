@@ -1,28 +1,7 @@
 <!-- Large screen navigation > 992px -->
 
-<!-- Displays if the user is not logged in -->
-{% if user.is_anonymous %}
-<ul class="d-none d-md-flex flex-row m-0 list-unstyled">
-    <li class="ms-3 ms-lg-5">
-
-        <a href="{% url 'login' %}" class="nav-link nav-active me-5 text-medium  p-0"
-            aria-labelledby="dashboard-sm">
-            <i class="fas fa-lock me-2"></i> Login
-        </a>
-        <span id="dashboard-lg" class="sr-only">A link with white text and an icon of a lock that navigates to the login
-            page in the same tab</span>
-    </li>
-    <li class="ms-3 ms-lg-5">
-
-        <a href="{% url 'signup' %}" class="nav-link nav-active me-5 text-medium p-0"
-            aria-labelledby="issues-lg">
-            <i class="fas fa-user-circle me-2"></i> Signup
-        </a>
-        <span id="issues-lg" class="sr-only">A link with white text and an icon of a person in a circle that navigates
-            to the sign up page in the same tab</span>
-    </li>
-</ul>
-{% endif %}
+<!-- Unauthenticated navigation links -->
+{% include 'components/navbar/desktop-anonymous.html' %}
 
 
 <!-- Displays when the user is logged in -->
