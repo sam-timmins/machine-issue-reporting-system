@@ -1,19 +1,18 @@
 
 <!-- Change the href from homepage to dashboard depending on authentication status -->
-{% if user.is_authenticated %}
-
-    <a href="{% url 'dashboard' %}" class="text-decoration-none nav-link" aria-labelledby="site-logo-auth-mobile">
-        <p id="offcanvasRightLabel" class="m-0 text-medium">{{ university_name }}</p>
+    <a href="
+        {% if user.is_authenticated %}
+            {% url 'dashboard' %}
+        {% else %}
+            /
+        {% endif %}" 
+        class="text-decoration-none nav-link" aria-labelledby="site-logo-auth">
+        <p id="offcanvasNavbarLabel" class="m-0 text-medium">{{ university_name }}</p>
     </a>
-    <span id="site-logo-auth-mobile" class="sr-only">A link with a blue background, white text that navigates to the
-        dashboard page in the same tab</span>
-
-{% else %}
-
-    <a href="/" class="text-decoration-none nav-link" aria-labelledby="site-logo-mobile">
-        <p id="offcanvasRightLabel" class="m-0 text-medium">{{ university_name }}</p>
-    </a>
-    <span id="site-logo-mobile" class="sr-only">A link with a blue background, white text that navigates to the homepage in
-        the same tab</span>
-
-{% endif %}
+    <span id="site-logo-auth" class="sr-only">A link with a blue background, white text that navigates to 
+        {% if user.is_authenticated %} 
+            the dashboard page in the same tab 
+        {% else %}
+            the home page in the same tab
+        {% endif %}
+    </span>
