@@ -29,14 +29,14 @@
 
                         <td>
                             <a href="{% url 'edit-staff-status' user.pk %}"
-                                class="text-white btn-green btn btn-wide text-small">
+                                class="text-white btn-green btn btn-wide text-small" aria-label="Opens edit staff status page">
                                 <i class="fas fa-pen"></i>
                             </a>
                         </td>
 
                         <td>
                             <a href="#deleteUser{{ user.id }}" class="text-white btn-red btn btn-wide text-small"
-                                data-bs-toggle="modal">
+                                data-bs-toggle="modal" aria-label="Opens delete user modal">
                                 <i class="far fa-trash-alt"></i>
                             </a>
                         </td>
