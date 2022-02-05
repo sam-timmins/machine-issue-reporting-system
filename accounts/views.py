@@ -173,7 +173,10 @@ class SearchUsers(ListView):
 
 
 def delete_user_profile(request, pk):
-
+    """
+    Deletes the user profile using the User model and the user's
+    primary key. Provides a success message on deletion
+    """
     user_profile = User.objects.get(pk=pk)
     delete_user = User.objects.filter(username=user_profile.username)
 
