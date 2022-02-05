@@ -31,12 +31,12 @@
 
                         <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
                             <a data-bs-toggle="modal" data-bs-target="#deleteIssue{{ issue.id }}"
-                                aria-labelledby="delete-issue-button"
+                                aria-labelledby="delete-{{ issue.id }}-button"
                                 class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
                                 <i class="fas fa-trash-alt me-4"></i>
                                 Delete
                             </a>
-                            <span class="sr-only" id="delete-issue-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the issue</span>
+                            <span class="sr-only" id="delete-{{ issue.id }}-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the issue</span>
                         </div>
                         {% endif %}
 
