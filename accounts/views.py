@@ -61,6 +61,10 @@ class SignUpViewCustom(TemplateView):
 
 
 class LogoutViewCustom(TemplateView):
+    """
+    Inheriting the TemplateView and adding the extra content
+    to the allauth slogout view
+    """
     template_name = 'account/logout.html'
 
     extra_context = {
