@@ -77,7 +77,8 @@ class LogoutViewCustom(TemplateView):
 
 class ViewAllUsers(generic.ListView):
     """
-    Views all users
+    Views all users, ordering them firstly by if they are staff
+    members and then by alphabetical order of the last name
     """
     queryset = User.objects.all().order_by('-is_staff', 'last_name')
     template_name = 'pages/all-users.html'
