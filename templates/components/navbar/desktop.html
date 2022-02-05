@@ -40,21 +40,16 @@
 
     {% if not user.is_staff %}
         <li class="ms-3 ms-lg-5">
-
             <a href="{% url 'dashboard' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="dashboard-basic-lg">
                 <i class="fas fa-home me-2"></i> Dashboard
             </a>
-
         </li>
     {% endif %}
 
     <li class="ms-3 ms-lg-5">
-
         <a href="{% url 'open-issues' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="issues-lg">
             <i class="fas fa-exclamation-triangle me-2"></i> Issues
         </a>
-        <span id="issues-lg" class="sr-only">A link with white text and an icon of a warning that navigates to the
-            issues page in the same tab</span>
     </li>
 
     {% if user.is_staff %}
