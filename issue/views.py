@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView, CreateView, UpdateView, ListView
+from django.views.generic import CreateView, UpdateView, ListView
 from django.views import generic, View
 from django.urls import reverse_lazy
 from django.contrib import messages
