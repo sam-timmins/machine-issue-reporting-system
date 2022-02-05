@@ -38,19 +38,19 @@
         {% if request.user.is_staff %}
         <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
 
-            <a data-bs-toggle="modal" data-bs-target="#deleteMachine{{ machine.id }}" aria-labelledby="dashboard-delete-machine-button"
+            <a data-bs-toggle="modal" data-bs-target="#deleteMachine{{ machine.id }}" aria-labelledby="dashboard-delete-{{ machine.slug }}-button"
                 class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
                 <i class="fas fa-trash-alt me-4"></i>
                 Delete
             </a>
-            <span class="sr-only" id="dashboard-delete-machine-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the machine</span>
+            <span class="sr-only" id="dashboard-delete-{{ machine.slug }}-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the machine</span>
             <!-- Add link to edit -->
-            <a href="{% url 'edit-machine' machine.id %}" aria-labelledby="dashboard-edit-machine-button"
+            <a href="{% url 'edit-machine' machine.id %}" aria-labelledby="dashboard-edit-{{ machine.slug }}-button"
                 class="btn btn-orange text-white text-medium d-flex flex-row justify-content-center align-items-center">
                 <i class="fas fa-pen me-4"></i>
                 Edit
             </a>
-            <span class="sr-only" id="dashboard-edit-machine-button">An orange button with white text and the icon of a pencil, navigates to the edit machine page in the same tab</span>
+            <span class="sr-only" id="dashboard-edit-{{ machine.slug }}-button">An orange button with white text and the icon of a pencil, navigates to the edit machine page in the same tab</span>
 
         </div>
         {% endif %}
