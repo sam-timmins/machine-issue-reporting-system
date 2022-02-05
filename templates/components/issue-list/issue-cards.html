@@ -1,61 +1,67 @@
-<!-- Individual issue cards  -->
+
 <div class="pb-5 my-2">
     <div class="container mx-auto">
         <div class="row">
 
             {% for issue in issue_list %}
-            {% if not issue.rectified %}
+                {% if not issue.rectified %}
+                    <div class="col-md-6 col-lg-4 my-5 m-auto">
+                        <div class="card shadow">
 
-            <div class="col-md-6 col-lg-4 my-5 m-auto">
-                <div class="card shadow">
-                    <div class="card-body p-0">
-                        <div
-                            class="background-color-blue border-bottom-orange text-center text-white text-large p-md-3">
-                            {{ issue.machine }}
+                            <!-- Issue card -->
+                            <div class="card-body p-0">
+
+                                <div class="background-color-blue border-bottom-orange text-center text-white text-large p-md-3">
+                                    {{ issue.machine }}
+                                </div>
+
+                                {% if issue.user %}
+                                    <p class="mx-3 my-4">
+                                        Reported By: <span class="text-blue">{{ issue.user }}</span>
+                                    </p>
+                                {% else %}
+                                    <p class="mx-3 my-4">
+                                        Reported By: <span class="text-blue">USER DELETED</span>
+                                    </p>
+                                {% endif %}
+                                <p class="mx-3 my-4">
+                                    Reported On: <span class="text-blue">{{ issue.created_at }}</span>
+                                </p>
+                                <p class="mx-3 my-4">
+                                    Description: <span class="text-blue">{{ issue.description }}</span>
+                                </p>
+
+                                <hr class="m-0">
+
+                                <!-- Delete issue button -->
+                                {% if request.user.is_staff %}
+                                    <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
+                                        <a data-bs-toggle="modal" data-bs-target="#deleteIssue{{ issue.id }}"
+                                            aria-labelledby="delete-{{ issue.id }}-button"
+                                            class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
+                                            <i class="fas fa-trash-alt me-4"></i>
+                                            Delete
+                                        </a>
+                                        <span class="sr-only" id="delete-{{ issue.id }}-button">
+                                            A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the issue
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
-
-                        {% if issue.user %}
-                        <p class="mx-3 my-4">Reported By: <span class="text-blue">{{ issue.user }}</span></p>
-                        {% else %}
-                        <p class="mx-3 my-4">Reported By: <span class="text-blue">USER DELETED</span>
-                        </p>
-                        {% endif %}
-                        <p class="mx-3 my-4">Reported On: <span class="text-blue">{{ issue.created_at }}</span></p>
-                        <p class="mx-3 my-4">Description: <span class="text-blue">{{ issue.description }}</span></p>
-
-
-                        <hr class="m-0">
-
-                        <!-- Delete issue button -->
-                        {% if request.user.is_staff %}
-
-                        <div class="p-3 my-3 d-flex flex-row justify-content-around align-items-center">
-                            <a data-bs-toggle="modal" data-bs-target="#deleteIssue{{ issue.id }}"
-                                aria-labelledby="delete-issue-button"
-                                class="btn btn-red text-white text-medium d-flex flex-row justify-content-center align-items-center">
-                                <i class="fas fa-trash-alt me-4"></i>
-                                Delete
-                            </a>
-                            <span class="sr-only" id="delete-issue-button">A red button with white text and the icon of a dustbin, opens a modal for conformation to delete the issue</span>
-                        </div>
-                        {% endif %}
-
                     </div>
-                </div>
-            </div>
 
-            {% endif %}
+                {% endif %}
 
-            <!-- Delete issue modal  -->
-            {% include 'components/issue-list/delete-issue-modal.html' %}
+                <!-- Delete issue modal  -->
+                {% include 'components/issue-list/delete-issue-modal.html' %}
 
 
-            <!-- Text if there are no issues -->
-            {% empty %}
+                <!-- Text if there are no issues -->
+                {% empty %}
 
                 <!-- No issue content -->
                 {% include 'components/issue-list/issue-page-empty.html' %}
-
 
             {% endfor %}
 

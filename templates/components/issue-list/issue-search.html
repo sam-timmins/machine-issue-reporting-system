@@ -3,17 +3,22 @@
 <div class="background-color-opaque py-3 px-0 mb-4 border-bottom-orange text-center container-fluid" id="searchbar-issues">
     <form action="{% url 'search-issues' %}" method="get" class="align-items-center container-fluid p-0 p-md-2">
         {% csrf_token %}
-        <div class="row d-flex flex-row justify-content-center align-items-center">
-            <div class="col-12 col-md-8 col-lg-6">
-                <input type="text" class="my-0 me-3 w-50" name="searchbar-issues" placeholder="Search Description">
-                <button type="submit" class="btn btn-wide btn-white text-small text-blue align-items-center me-2">
-                    <i class="fas fa-search"></i>
-                </button>
-                <a href="{% url 'open-issues' %}" class="btn btn-wide btn-white text-small text-blue align-items-center">
-                    <i class="fas fa-times m-1"></i>
-                </a>
-            </div>
-        </div>
-    </form>
+            <div class="row d-flex flex-row justify-content-center align-items-center">
+                <!-- Search by description -->
+                <div class="col-12 col-md-8 col-lg-6">
+                    <input type="text" class="my-0 me-3 w-50" name="searchbar-issues" placeholder="Search Description" aria-labelledby="searchbar-issues-input">
+                    <span id="searchbar-issues-input" class="sr-only">
+                        Text input for searching the issue's descriptions
+                    </span>
 
+                    <button type="submit" class="btn btn-wide btn-white text-small text-blue align-items-center me-2" aria-label="Searchbar">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <a href="{% url 'open-issues' %}" class="btn btn-wide btn-white text-small text-blue align-items-center" aria-label="Reset searchbar filters">
+                        <i class="fas fa-times m-1"></i>
+                    </a>
+                </div>
+            </div>
+    </form>
 </div>
