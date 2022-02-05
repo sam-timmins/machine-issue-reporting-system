@@ -7,7 +7,7 @@
     <div class="card shadow">
 
         <!-- Add link to individual machine -->
-        <a href="{% url 'machine-details' machine.slug %}" class="text-decoration-none card-content" aria-labelledby="dashboard-card-machine">
+        <a href="{% url 'machine-details' machine.slug %}" class="text-decoration-none card-content" aria-labelledby="dashboard-card-{{ machine.slug }}">
 
             <!-- Add default image -->
             {% if "placeholder" in machine.image.url %}
@@ -30,7 +30,7 @@
 
         </a>
         <hr class="m-0">
-        <span id="dashboard-card-machine" class="sr-only">A card with the name and image of {{ machine.name }}. Link
+        <span id="dashboard-card-{{ machine.slug }}" class="sr-only">A card with the name and image of {{ machine.name }}. Link
             opens a detailed view of the machine in the same tab</span>
 
 
