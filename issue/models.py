@@ -16,11 +16,23 @@ class Machine(models.Model):
     Recording machine information
     """
 
-    name = models.CharField(max_length=50, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    name = models.CharField(
+        max_length=50,
+        unique=True
+        )
+    slug = models.SlugField(
+        max_length=200,
+        unique=True
+        )
     description = models.TextField()
-    image = CloudinaryField('image', default='placeholder')
-    status = models.IntegerField(choices=STATUS, default=1)
+    image = CloudinaryField(
+        'image',
+        default='placeholder'
+        )
+    status = models.IntegerField(
+        choices=STATUS,
+        default=1
+        )
 
     class Meta:
         ordering = ["name"]
@@ -33,12 +45,26 @@ class Issue(models.Model):
     """
     Recording issue information
     """
-    
+
     description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    machine = models.ForeignKey(Machine, on_delete=models.CASCADE, related_name='issues')
-    user = models.ForeignKey(User, on_delete=models.SET(DELETED_USER), null=True, related_name="issue_username")
-    rectified = models.IntegerField(choices=ISSUE_RECTIFIED, default=0)
+    created_at = models.DateTimeField(
+        auto_now_add=True
+        )
+    machine = models.ForeignKey(
+        Machine,
+        on_delete=models.CASCADE,
+        related_name='issues'
+        )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.SET(DELETED_USER),
+        null=True,
+        related_name="issue_username"
+        )
+    rectified = models.IntegerField(
+        choices=ISSUE_RECTIFIED,
+        default=0
+        )
 
     class Meta:
         ordering = ["-created_at"]
