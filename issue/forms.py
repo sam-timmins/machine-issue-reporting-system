@@ -1,7 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserChangeForm
 
-from .models import Issue, User
+from .models import Issue
 
 
 class IssueForm(forms.ModelForm):
