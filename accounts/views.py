@@ -91,7 +91,14 @@ class ViewAllUsers(generic.ListView):
 
 
 class EditStaffStatus(View):
+    """
+    View for staff members to change the is_staff status of other users
+    """
     def get(self, request, pk, *args, **kwargs):
+        """
+        Using the User model, gets the user based on their primary key and
+        renders it along with the extra context variables
+        """
         queryset = User.objects
         user = get_object_or_404(queryset, pk=pk)
         profile = user.pk
@@ -110,6 +117,11 @@ class EditStaffStatus(View):
         )
 
     def post(self, request, pk, *args, **kwargs):
+        """
+        Checks to see if the EditStaffStatusForm is valid and then
+        posts any changes to the User model to the database. Renders
+        it along with the extra context variables
+        """
         queryset = User.objects
         user = get_object_or_404(queryset, pk=pk)
         edit_staff_status_form = EditStaffStatusForm(data=request.POST)
