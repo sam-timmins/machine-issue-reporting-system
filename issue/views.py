@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
-from .models import Machine, Issue, User
+from .models import Machine, Issue
 from .forms import IssueForm
 
 from pathlib import Path
