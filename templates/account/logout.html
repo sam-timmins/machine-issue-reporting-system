@@ -10,9 +10,11 @@
 
 {% block content %}
 
-
+<!-- Logout form outer container -->
 <div class="container-fluid image-container position-absolute top-0 start-0 d-flex justify-content-center align-items-center">
   <div class="row container d-flex justify-content-center align-items-center">
+
+    <!-- Form container -->
     <div class="col col-md-8 col-lg-6 card p-0">
       <div class="card-header p-0">
         <div class="background-color-blue text-white border-bottom-orange">
@@ -23,29 +25,38 @@
 
         <p class="text-medium text-center mb-5">{% trans 'Are you sure you want to sign out?' %}</p>
 
+        <!-- Logout form -->
         <form class="login" method="POST" action="{% url 'account_logout' %}">
           {% csrf_token %}
-          {{ form.as_p }}
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-          {% endif %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            {% endif %}
 
+          <!-- Buttons container -->
           <div class="row d-flex flex-row justify-content-around align-items-center">
             <div class="col-12 col-md-8 col-lg-">
               <div class="container-fluid d-flex flex-row justify-content-around align-items-center p-0 mt-5">
-                <button class="btn btn-green text-medium text-white" type="submit" aria-labelledby="sign-out-yes">{% trans "Yes" %}</button>
+                
+                <button class="btn btn-green text-medium text-white" type="submit" aria-labelledby="sign-out-yes">
+                  {% trans "Yes" %}
+                </button>
                 <span class="sr-only" id="sign-out-yes">A green button with white writing, logs the user out.</span>
-                <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium"
-                aria-labelledby="sign-out-no">
-                No</a>
+                
+                <a href="{% url 'dashboard' %}" class="btn btn-orange text-white text-medium" aria-labelledby="sign-out-no">
+                  No
+                </a>
                 <span class="sr-only" id="sign-out-no">Aa orange button with white writing, navigates bachk to the dashboard page and the user remains logged in</span>
+
               </div>
             </div>
           </div>
-          
+
         </form>
+
       </div>
     </div>
+    
   </div>
 </div>
 
