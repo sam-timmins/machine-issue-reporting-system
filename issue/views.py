@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView, CreateView, UpdateView, ListView
+from django.views.generic import CreateView, UpdateView, ListView
 from django.views import generic, View
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
-from .models import Machine, Issue, User
+from .models import Machine, Issue
 from .forms import IssueForm
 
 from pathlib import Path
@@ -21,7 +21,9 @@ FACEBOOK_LINK = os.environ.get('FACEBOOK_LINK')
 INSTAGRAM_LINK = os.environ.get('INSTAGRAM_LINK')
 FACEBOOK_LINK = os.environ.get('FACEBOOK_LINK')
 TWITTER_LINK = os.environ.get('TWITTER_LINK')
-MACHINE_CARDS_CURRENT_ISSUE_TEXT = os.environ.get('MACHINE_CARDS_CURRENT_ISSUE_TEXT')
+MACHINE_CARDS_CURRENT_ISSUE_TEXT = os.environ.get(
+    'MACHINE_CARDS_CURRENT_ISSUE_TEXT'
+    )
 NO_ISSUES_MODAL_TITLE = os.environ.get('NO_ISSUES_MODAL_TITLE')
 NO_ISSUES_TEXT = os.environ.get('NO_ISSUES_TEXT')
 
@@ -33,7 +35,6 @@ def delete_issue(request, pk):
     longer any open issues related to it.
     """
     issue = Issue.objects.get(pk=pk)
-    machine = issue.machine
 
     issue.delete()
 
