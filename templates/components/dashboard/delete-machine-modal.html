@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header background-color-blue text-white border-bottom-orange">
-                <h5 class="text-medium" id="staticBackdropLabel">Delete Machine</h5>
+                <h5 class="text-medium">Delete Machine</h5>
                 <button type="button" class="text-white text-medium close-btn round-corners" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body text-center">
@@ -14,16 +14,16 @@
             </div>
             <div class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
 
-                <a href="{% url 'delete-machine' machine.pk %}" type="button" class="btn btn-red text-white text-medium" aria-labelledby="confirm-delete-machine">
+                <a href="{% url 'delete-machine' machine.pk %}" class="btn btn-red text-white text-medium" aria-labelledby="confirm-delete-{{machine.slug}}">
                     <i class="fas fa-trash-alt me-2"></i>
                     Delete
                 </a>
-                <span class="sr-only" id="confirm-delete-machine">A red button with white text and the icon of a dustbin, permanently deletes the machine</span>
+                <span class="sr-only" id="confirm-delete-{{machine.slug}}">A red button with white text and the icon of a dustbin, permanently deletes the machine</span>
 
-                <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal" aria-labelledby="cancel-delete-machine">
+                <button type="button" class="btn btn-orange text-white text-medium" data-bs-dismiss="modal" aria-labelledby="cancel-delete-{{machine.slug}}">
                     <i class="fas fa-arrow-right me-2"></i>
                     Cancel</button>
-                <span class="sr-only" id="cancel-delete-machine">An orange button with white text and a back arrow icon, closes the modal and returns to the dashboard</span>
+                <span class="sr-only" id="cancel-delete-{{machine.slug}}">An orange button with white text and a back arrow icon, closes the modal and returns to the dashboard</span>
             </div>
         </div>
     </div>
