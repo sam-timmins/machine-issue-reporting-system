@@ -35,7 +35,6 @@ def delete_issue(request, pk):
     longer any open issues related to it.
     """
     issue = Issue.objects.get(pk=pk)
-    machine = issue.machine
 
     issue.delete()
 
