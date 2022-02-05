@@ -9,9 +9,11 @@ Sign Up
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div
-  class="container-fluid image-container vh-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center">
+<!-- Signup form outer container -->
+<div class="container-fluid image-container vh-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center">
   <div class="row container d-flex justify-content-center align-items-center">
+
+    <!-- Form container -->
     <div class="col col-md-8 col-lg-6 card p-0">
       <div class="card-header p-0">
         <div class="background-color-blue text-white border-bottom-orange">
@@ -20,12 +22,14 @@ Sign Up
       </div>
       <div class="card-body d-flex flex-column justify-content-center align-items-center">
 
+        <p class="mt-3 text-center text-blue">{% blocktrans %}Already have an account? Then please 
+          <a href="{{ login_url }}">
+            sign in
+          </a>
+          .{% endblocktrans %}
+        </p>
 
-
-        <p class="mt-3 text-center text-blue">{% blocktrans %}Already have an account? Then please <a
-            href="{{ login_url }}">sign
-            in</a>.{% endblocktrans %}</p>
-
+        <!-- Singup form -->
         <form class="signup d-flex flex-column justify-content-center align-items-center" id="signup_form" method="post"
           action="{% url 'account_signup' %}">
           {% csrf_token %}
@@ -53,31 +57,31 @@ Sign Up
             <input type="text" name="username" placeholder="Username" autocomplete="username" minlength="1"
               maxlength="150" required="" id="id_username">
           </div>
+
           <div class="my-3 mt-md-5">
             <label for="id_password1" aria-label="Enter your password"><i
                 class="fas fa-lock text-blue text-medium me-3"></i></label>
             <input type="password" name="password1" placeholder="Password" autocomplete="new-password" required=""
               id="id_password1">
           </div>
+
           <div class="my-3 mt-md-5">
             <label for="id_password2" aria-label="Enter your password again for confirmation"><i
                 class="fas fa-lock text-blue text-medium me-3"></i></label>
             <input type="password" name="password2" placeholder="Password (again)" required="" id="id_password2">
           </div>
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-          <button type="submit" class="btn btn-green text-white text-medium my-3 my-md-5">{% trans "Sign Up" %}
-            &raquo;</button>
 
+          {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+
+          <button type="submit" class="btn btn-green text-white text-medium my-3 my-md-5">
+            {% trans "Sign Up" %} &raquo;
+          </button>
+
+        </form>
       </div>
     </div>
-
-
-
-
-
-    </form>
   </div>
-
+</div>
   {% endblock %}
