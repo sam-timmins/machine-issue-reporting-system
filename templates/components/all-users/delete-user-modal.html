@@ -2,25 +2,40 @@
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
+
             <div class="modal-header background-color-blue text-white border-bottom-orange">
-                <h5 class="text-medium" id="staticBackdropLabel">Delete User</h5>
+                <h5 class="text-medium">
+                    Delete User
+                </h5>
+
                 <button type="button" class="text-medium text-white close-btn round-corners" data-bs-dismiss="modal"
                     aria-label="Close">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
+
             <div class="modal-body text-center">
                 <p>Are you sure you would like to delete</p>
                 <p class="text-medium">{{user.username}}</p>
 
             </div>
-            <div
-                class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
+
+            <div class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
                 <button type="button" class="btn btn-orange text-white text-medium"
-                    data-bs-dismiss="modal">Cancel</button>
-                <a href="{% url 'delete_user_profile' user.pk %}" type="button" class="btn btn-red text-white text-medium">
+                    data-bs-dismiss="modal" aria-labelledby="cancel-delete-user-modal">
+                    Cancel
+                </button>
+                <span class="sr-only" id="cancel-delete-user-modal">
+                    Orange button with white text that closes the modal and returns to the all users page
+                </span>
+
+                <a href="{% url 'delete_user_profile' user.pk %}" class="btn btn-red text-white text-medium" 
+                    aria-labelledby="confirm-delete-user-modal">
                     Delete
                 </a>
+                <span class="sr-only" id="confirm-delete-user-modal">
+                    Red button with white text that deletes the user and returns to the all users page
+                </span>
             </div>
         </div>
     </div>
