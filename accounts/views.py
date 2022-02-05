@@ -46,6 +46,10 @@ class LoginViewCustom(LoginView):
 
 
 class SignUpViewCustom(TemplateView):
+    """
+    Inheriting the TemplateView and adding the extra content
+    to the allauth signup view
+    """
     template_name = 'account/signup.html'
 
     extra_context = {
