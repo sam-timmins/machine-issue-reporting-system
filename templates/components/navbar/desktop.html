@@ -39,15 +39,13 @@
     {% endif %}
 
     {% if not user.is_staff %}
-    <li class="ms-3 ms-lg-5">
+        <li class="ms-3 ms-lg-5">
 
-        <a href="{% url 'dashboard' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="dashboard-sm">
-            <i class="fas fa-home me-2"></i> Dashboard
-        </a>
-        <span id="dashboard-lg" class="sr-only">A link with white text and an icon of a house that navigates to the
-            dashboard page in the same tab</span>
+            <a href="{% url 'dashboard' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="dashboard-basic-lg">
+                <i class="fas fa-home me-2"></i> Dashboard
+            </a>
 
-    </li>
+        </li>
     {% endif %}
 
     <li class="ms-3 ms-lg-5">
