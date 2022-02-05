@@ -20,16 +20,22 @@
 
             </div>
 
-            <div
-                class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
+            <div class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
                 <button type="button" class="btn btn-orange text-white text-medium"
-                    data-bs-dismiss="modal">
+                    data-bs-dismiss="modal" aria-labelledby="cancel-delete-user-modal">
                     Cancel
                 </button>
-                
-                <a href="{% url 'delete_user_profile' user.pk %}" class="btn btn-red text-white text-medium">
+                <span class="sr-only" id="cancel-delete-user-modal">
+                    Orange button with white text that closes the modal and returns to the all users page
+                </span>
+
+                <a href="{% url 'delete_user_profile' user.pk %}" class="btn btn-red text-white text-medium" 
+                    aria-labelledby="confirm-delete-user-modal">
                     Delete
                 </a>
+                <span class="sr-only" id="confirm-delete-user-modal">
+                    Red button with white text that deletes the user and returns to the all users page
+                </span>
             </div>
         </div>
     </div>
