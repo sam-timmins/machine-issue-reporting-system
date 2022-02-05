@@ -79,23 +79,19 @@
                         All Users
                     </a>
                 </li>
-
             </ul>
         </li>
     {% endif %}
-    
+
     {% if not user.is_staff %}
-
-    <li class="ms-3 ms-lg-5">
-
-        <a href="{% url 'edit-profile' %}" class="nav-link nav-active me-5 text-medium p-0"
-            aria-labelledby="profile-lg">
-            <i class="fas fa-user me-2"></i> Profile
-        </a>
-        <span id="profile-lg" class="sr-only">A link with white text and an icon of a person that navigates to the user
-            prfoile page in the same tab</span>
-    </li>
+        <li class="ms-3 ms-lg-5">
+            <a href="{% url 'edit-profile' %}" class="nav-link nav-active me-5 text-medium p-0"
+                aria-labelledby="profile-basic-lg">
+                <i class="fas fa-user me-2"></i> Profile
+            </a>
+        </li>
     {% endif %}
+
     <li class="ms-3 ms-lg-5">
         <a href="{% url 'logout' %}" class="nav-link nav-active me-5 text-medium p-0"
             aria-labelledby="logout-lg">
