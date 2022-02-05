@@ -23,7 +23,9 @@ FACEBOOK_LINK = os.environ.get('FACEBOOK_LINK')
 INSTAGRAM_LINK = os.environ.get('INSTAGRAM_LINK')
 FACEBOOK_LINK = os.environ.get('FACEBOOK_LINK')
 TWITTER_LINK = os.environ.get('TWITTER_LINK')
-MACHINE_CARDS_CURRENT_ISSUE_TEXT = os.environ.get('MACHINE_CARDS_CURRENT_ISSUE_TEXT')
+MACHINE_CARDS_CURRENT_ISSUE_TEXT = os.environ.get(
+    'MACHINE_CARDS_CURRENT_ISSUE_TEXT'
+    )
 NO_ISSUES_MODAL_TITLE = os.environ.get('NO_ISSUES_MODAL_TITLE')
 NO_ISSUES_TEXT = os.environ.get('NO_ISSUES_TEXT')
 
@@ -101,7 +103,10 @@ class EditStaffStatus(View):
         edit_staff_status_form = EditStaffStatusForm(data=request.POST)
         all_users = User.objects.all().order_by('-is_staff', 'last_name')
 
-        messages.success(request, f"{user.username}'s staff status was successfully changed.")
+        messages.success(
+            request,
+            f"{user.username}'s staff status was successfully changed."
+            )
 
         if edit_staff_status_form.is_valid():
 
@@ -147,7 +152,7 @@ def delete_user_profile(request, pk):
 
     user_profile = User.objects.get(pk=pk)
     delete_user = User.objects.filter(username=user_profile.username)
-    
+
     delete_user.delete()
     user_profile.delete()
 
@@ -155,7 +160,7 @@ def delete_user_profile(request, pk):
 
     return redirect('all-users')
 
-    
+
 class UserEditProfile(SuccessMessageMixin, UpdateView):
     """
     Views the Edit User Profile page
