@@ -31,6 +31,10 @@ NO_ISSUES_TEXT = os.environ.get('NO_ISSUES_TEXT')
 
 
 class LoginViewCustom(LoginView):
+    """
+    Inheriting the allauth LoginView and adding the extra content
+    to the view
+    """
     template_name = 'account/login.html'
 
     extra_context = {
