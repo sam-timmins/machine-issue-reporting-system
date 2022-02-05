@@ -141,18 +141,7 @@ class EditStaffStatus(View):
         else:
             edit_staff_status_form = EditStaffStatusForm()
 
-        return render(
-            request,
-            'pages/all-users.html',
-            {
-                'all_users': all_users,
-                'edit_status-form': EditStaffStatusForm(),
-                'university_name': UNIVERSITY_NAME,
-                'facebook': FACEBOOK_LINK,
-                'instagram': INSTAGRAM_LINK,
-                'twitter': TWITTER_LINK,
-            },
-        )
+        return redirect('all-users')
 
 
 class SearchUsers(ListView):
