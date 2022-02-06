@@ -94,6 +94,13 @@ class SearchMachines(ListView):
         query = self.request.GET.get('searchbar')
         return Machine.objects.filter(name__icontains=query)
 
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        'current_issue_text': MACHINE_CARDS_CURRENT_ISSUE_TEXT,
+        }
 
 class IssueList(generic.ListView):
     """
