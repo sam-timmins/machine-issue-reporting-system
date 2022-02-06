@@ -1,10 +1,8 @@
 from django import forms
-from django.contrib.auth.forms import UserChangeForm
-
 from .models import User
 
 
-class EditStaffStatusForm(UserChangeForm):
+class EditStaffStatusForm(forms.ModelForm):
     """
     Form that can edit the user's is_staff boolean status using the User model
     """
