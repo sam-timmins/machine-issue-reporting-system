@@ -1,7 +1,7 @@
 from django.test import TestCase
 
-from .forms import EditStaffStatusForm
-from .models import User
+from accounts.forms import EditStaffStatusForm
+from accounts.models import User
 
 
 class TestEditStaffStatusForm(TestCase):
