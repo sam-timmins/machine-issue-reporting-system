@@ -102,6 +102,7 @@ class SearchMachines(ListView):
         'current_issue_text': MACHINE_CARDS_CURRENT_ISSUE_TEXT,
         }
 
+
 class IssueList(generic.ListView):
     """
     View for display of the issue model ordered by newest
@@ -137,6 +138,15 @@ class SearchIssues(ListView):
             return Issue.objects.order_by('-created_at')
         else:
             return results
+    
+    extra_context = {
+        'university_name': UNIVERSITY_NAME,
+        'facebook': FACEBOOK_LINK,
+        'instagram': INSTAGRAM_LINK,
+        'twitter': TWITTER_LINK,
+        'no_issues_modal_title': NO_ISSUES_MODAL_TITLE,
+        'no_issue_text': NO_ISSUES_TEXT,
+        }
 
 
 class CreateMachine(SuccessMessageMixin, CreateView):
