@@ -11,7 +11,8 @@ class TestViews(TestCase):
             description='Test description',
         )
 
-        self.machine_list = machine_list
+        machine_a.save()
+        self.machine_a = machine_a
 
         issue_a = Issue(
             machine=machine_a,
