@@ -35,3 +35,27 @@ class TestViews(TestCase):
         """
         issue_count = Issue.objects.all().count()
         self.assertEqual(issue_count, 1)
+    
+    def test_issue_search(self):
+        """
+        Test issue search
+        """
+        issue = self.issue_a.machine.name
+        issue_formatted = issue.replace(' ', '').strip()
+
+        test_search = '  t  '
+        test_search_formatted = test_search.replace(' ', '').strip()
+
+        self.assertIn(test_search_formatted, issue_formatted)
+
+        for item in issue_formatted:
+            test_search = '  t  x '
+            test_search_formatted = test_search.replace(' ', '').strip()
+
+            if item == test_search_formatted:
+
+                self.assertEqual(item, test_search_formatted)
+
+            else:
+                self.assertNotEqual(item, test_search_formatted)
+
