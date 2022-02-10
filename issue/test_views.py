@@ -20,3 +20,10 @@ class TestViews(TestCase):
 
         issue_a.save()
         self.issue_a = issue_a
+
+    def test_machine_exists(self):
+        """
+        Checks the machine exists
+        """
+        machine_count = Machine.objects.all().count()
+        self.assertEqual(machine_count, 1)
