@@ -114,3 +114,24 @@ class TestViews(TestCase):
 
         machine_count = Machine.objects.all().count()
         self.assertEqual(machine_count, 1)
+
+    def test_create_machine(self):
+        """
+        Test create a new machine
+        """
+        machine_c = Machine(
+            name='test machine c',
+            slug='test-machine-c',
+            description='Test description c',
+        )
+
+        machine_c.save()
+
+        response = self.client.get(
+            '/dashboard/create/machine/',
+            pk=machine_c.pk
+            )
+
+        self.assertContains(response, machine_c.pk)
+
+        self.assertEqual(Machine.objects.last().name, 'test machine c')
