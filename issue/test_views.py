@@ -59,3 +59,13 @@ class TestViews(TestCase):
             else:
                 self.assertNotEqual(item, test_search_formatted)
 
+    def test_delete_issue(self):
+        """
+        Test delete an issue
+        """
+        issue = self.issue_a
+
+        issue.delete()
+
+        issue_count = Issue.objects.all().count()
+        self.assertEqual(issue_count, 0)
