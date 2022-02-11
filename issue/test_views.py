@@ -37,7 +37,7 @@ class TestViews(TestCase):
         Checks the machine exists
         """
         machine_count = Machine.objects.all().count()
-        self.assertEqual(machine_count, 1)
+        self.assertEqual(machine_count, 2)
 
     def test_issue_exists(self):
         """
@@ -68,6 +68,30 @@ class TestViews(TestCase):
 
             else:
                 self.assertNotEqual(item, test_search_formatted)
+
+    def test_change_status_of_machine(self):
+        """
+        Test changing the status of a machine
+        """
+        self.assertTrue(self.machine_a.status)
+        
+        all_machines = Machine.objects.all()
+
+        for machine in all_machines:
+            if machine.name == self.issue_a.machine.name:
+                self.assertEqual(str(machine.name), self.issue_a.machine.name)
+                machine.status = False
+                machine.save()
+                self.assertFalse(machine.status)
+
+            else:
+                self.assertNotEqual(
+                    str(machine.name),
+                    self.issue_a.machine.name
+                    )
+                machine.status = True
+                machine.save()
+                self.assertTrue(machine.status)
 
     def test_delete_issue(self):
         """
