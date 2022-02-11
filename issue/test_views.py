@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Machine, Issue
 
+
 class TestViews(TestCase):
     """
     Test issue application views
@@ -45,7 +46,7 @@ class TestViews(TestCase):
         """
         issue_count = Issue.objects.all().count()
         self.assertEqual(issue_count, 1)
-    
+
     def test_issue_search(self):
         """
         Test issue search
@@ -74,7 +75,7 @@ class TestViews(TestCase):
         Test changing the status of a machine
         """
         self.assertTrue(self.machine_a.status)
-        
+
         all_machines = Machine.objects.all()
 
         for machine in all_machines:
