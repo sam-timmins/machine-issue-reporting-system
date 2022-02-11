@@ -103,3 +103,14 @@ class TestViews(TestCase):
 
         issue_count = Issue.objects.all().count()
         self.assertEqual(issue_count, 0)
+
+    def test_delete_machine(self):
+        """
+        Test delete a machine
+        """
+        machine = self.machine_b
+
+        machine.delete()
+
+        machine_count = Machine.objects.all().count()
+        self.assertEqual(machine_count, 1)
