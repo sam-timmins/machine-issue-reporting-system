@@ -8,11 +8,21 @@ class TestViews(TestCase):
     def setUp(self):
         machine_a = Machine(
             name='test machine',
+            slug='test-machine',
             description='Test description',
         )
 
         machine_a.save()
         self.machine_a = machine_a
+
+        machine_b = Machine(
+            name='test machine b',
+            slug='test-machine-b',
+            description='Test description b',
+        )
+
+        machine_b.save()
+        self.machine_b = machine_b
 
         issue_a = Issue(
             machine=machine_a,
