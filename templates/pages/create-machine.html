@@ -2,6 +2,8 @@
 
 {% load widget_tweaks %}
 
+{% load cloudinary %}
+
 {% block title %}
     Create Machine
 {% endblock title %}
@@ -13,7 +15,7 @@
     <div class="col-12 col-md-8 col-lg-6 card p-0 my-5">
 
         <!-- Create a machine form -->
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             <div class="background-color-blue text-white border-bottom-orange">
