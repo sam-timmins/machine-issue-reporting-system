@@ -10,12 +10,12 @@
 
                 <!-- Add default image if none is uploaded -->
                 {% if "placeholder" in machine.image.url %}
-                    <img class="card-img-top" src="{% static 'images/tu-dublin-logo.jpeg' %}" alt="TU Dublin Logo">
+                    <img class="card-img-top machine-card-image" src="{% static 'images/tu-dublin-logo.jpeg' %}" alt="TU Dublin Logo">
                 {% else %}
-                    <img class="card-img-top" src=" {{ machine.image.url }}" alt="Image of {{ machine.name }}">
+                    <img class="card-img-top machine-card-image" src=" {{ machine.image.url }}" alt="Image of {{ machine.name }}">
                 {% endif %}
 
-                <div class="card-body dashboard-card-body">
+                <div class="card-body dashboard-card-body d-flex align-items-center justify-content-center" style="height: 15rem;">
                     <h5 class="p-3 text-center m-0 text-blue text-large">{{ machine.name }}
 
                         <!-- Shows alert message if the machine is faulty -->

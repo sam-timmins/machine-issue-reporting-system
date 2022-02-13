@@ -283,6 +283,15 @@ body {
     width: 100%;
 }
 
+.machine-card-image {
+    object-fit: cover;
+    height: 30rem;
+}
+
+.dashboard-card-body {
+    height: 15rem;
+}
+
 /* Forms */
 
 .image-input input {
