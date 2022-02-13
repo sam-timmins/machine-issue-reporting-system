@@ -467,6 +467,28 @@ The information cards give a brief outline of the reasoning behind the developme
 
 ![Mobile Information Cards](readme/docs/features/homepage/mobile-home-info-cards.png)
 
+### Dashboard
+
+The dashboard includes a personal welcome to the user and introduces them to the dashboard. The machines that are created by the staff members are displayed here with the view changing depending on authentication level. 
+
+If the user is logged in as a staff member, the delete and edit buttons will be displayed if the user is a basic user, the card with the image and title are displayed. The image and the title also act as a link that navigates to the detailed view of the machine. 
+
+If an issue has been raised on one of the machines, then a warning note also shows on the card. The cards are ordered firstly by if there are any issues reported, then in alphabetical order.
+
+* Staff view
+
+![Desktop Dashboard Staff](readme/docs/features/dashboard/desktop-dashboard.png)
+
+* Basic User view
+
+![Desktop Dashboard Basic](readme/docs/features/dashboard/desktop-dashboard-basic.png)
+
+To keep the display of the machine cards compact, there is pagination built into the application. Only six items will be displayed on the screen at one time, if there is more the next and previous buttons will navigate to these items.
+
+![Desktop Dashboard Pagination](readme/docs/features/dashboard/desktop-dashboard-pagination-next.png)
+
+![Desktop Dashboard Pagination](readme/docs/features/dashboard/desktop-dashboard-pagination-prev.png)
+
 
 ## Features to be Implemented
 
