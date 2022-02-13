@@ -402,12 +402,10 @@ The search feature in the navbar is available to both staff and basic users. It 
 \
 &nbsp;
 ![Mobile Machine Search Navbar](readme/docs/features/navbar/mobile-auth-nav-search.png)
-
 \
 &nbsp;
 
 ### Footer
-
 The footer comprises two elements, the university name with auto increment copyright year and links to their social accounts. The layout changes slightly depending on screen size, the social links are moved to a fade in and out container on the smaller screen sizes. This container can fade out when either the user scrolls back up the screen, or if they click elsewhere in the body of the application.
 
 \
@@ -421,10 +419,76 @@ The footer comprises two elements, the university name with auto increment copyr
 \
 &nbsp;
 ![Mobile Footer Social Links](readme/docs/features/footer/mobile-social-links.gif)
+\
+&nbsp;
+
+### Messages
+Messages are displayed for continual feedback to the user on their interactions and follow the same layout for both mobile and desktop designs. These interactions include:
+
+* Sign in
+* Logout
+* Create a machine
+* Update a machine
+* Delete a machine
+* Create an issue
+* Delete an issue
+* Edit profile
+* Edit staff status of a user
+
+\
+&nbsp;
+![Desktop Authentication Messages](readme/docs/features/messages/desktop-auth-messages-signin.png)
+
+\
+&nbsp;
+![Mobile Authentication Messages](readme/docs/features/messages/mobile-auth-messages-signout.png)
 
 
 \
 &nbsp;
+![Desktop Messages](readme/docs/features/messages/desktop-messages-create-machine.png)
+\
+&nbsp;
+
+### Homepage
+The home page is a simple set-up with two elements, the hero image and the information cards.
+
+The hero image of a machine is fitting with the context of the project and the colour scheme also suits perfectly with the universities pallet. The text container is consistent with TU Dublin's site so it helps with the staff user story of needing to know that it is associated with the university.
+
+![Hero Image](readme/docs/features/homepage/desktop-home-hero-image.png)
+
+The information cards give a brief outline of the reasoning behind the development of the application. The information is helped by the use of icons and is also responsive by stacking on top of each other for smaller devices.
+
+* Desktop
+
+![Desktop Information Cards](readme/docs/features/homepage/desktop-home-info-cards.png)
+
+* Mobile
+
+![Mobile Information Cards](readme/docs/features/homepage/mobile-home-info-cards.png)
+
+### Dashboard
+
+The dashboard includes a personal welcome to the user and introduces them to the dashboard. The machines that are created by the staff members are displayed here with the view changing depending on authentication level. 
+
+If the user is logged in as a staff member, the delete and edit buttons will be displayed if the user is a basic user, the card with the image and title are displayed. The image and the title also act as a link that navigates to the detailed view of the machine. 
+
+If an issue has been raised on one of the machines, then a warning note also shows on the card. The cards are ordered firstly by if there are any issues reported, then in alphabetical order.
+
+* Staff view
+
+![Desktop Dashboard Staff](readme/docs/features/dashboard/desktop-dashboard.png)
+
+* Basic User view
+
+![Desktop Dashboard Basic](readme/docs/features/dashboard/desktop-dashboard-basic.png)
+
+To keep the display of the machine cards compact, there is pagination built into the application. Only six items will be displayed on the screen at one time, if there is more the next and previous buttons will navigate to these items.
+
+![Desktop Dashboard Pagination](readme/docs/features/dashboard/desktop-dashboard-pagination-next.png)
+
+![Desktop Dashboard Pagination](readme/docs/features/dashboard/desktop-dashboard-pagination-prev.png)
+
 
 ## Features to be Implemented
 
