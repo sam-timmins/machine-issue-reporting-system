@@ -339,13 +339,13 @@ While the user has not been authenticated or signed in to the application, on di
 \
 &nbsp;
 
-![Desktop Unauthenticated Navbar](readme/docs/features/desktop-unauth-nav.png)
+![Desktop Unauthenticated Navbar](readme/docs/features/navbar/desktop-unauth-nav.png)
 
 The same applies to the links for the mobile view, however, the styling is adjusted to be responsive. A hamburger menu is used to slide from the right side of the screen. The location of the hamburger in the top right corner of the screen is to suit the 90% majority of right-handed people.
 \
 &nbsp;
 
-![Mobile Unauthenticated Navbar](readme/docs/features/mobile-unauth-nav.gif)
+![Mobile Unauthenticated Navbar](readme/docs/features/navbar/mobile-unauth-nav.gif)
 
 \
 &nbsp;
@@ -362,15 +362,15 @@ For a basic user, once signed in the options on the navbar change to show:
 The orange underline of the link shows the active page to the user, also a hover effect of changing colour on the text adds to the user experience. The search feature on the mobile layout moves in and leaves the hamburger on the edge, to improve user experience as the hamburger is more likely to be used more often.
 \
 &nbsp;
-![Desktop Authenticated Basic Navbar](readme/docs/features/desktop-auth-nav-basic.png)
+![Desktop Authenticated Basic Navbar](readme/docs/features/navbar/desktop-auth-nav-basic.png)
 
 \
 &nbsp;
-![Mobile Authenticated Basic Navbar](readme/docs/features/mobile-auth-nav.png)
+![Mobile Authenticated Basic Navbar](readme/docs/features/navbar/mobile-auth-nav.png)
 
 \
 &nbsp;
-![Mobile Authenticated Basic Navbar](readme/docs/features/mobile-auth-nav-links-basic.png)
+![Mobile Authenticated Basic Navbar](readme/docs/features/navbar/mobile-auth-nav-links-basic.png)
 
 For a staff member, once signed in the options on the navbar change to add extra dropdowns:
 
@@ -387,21 +387,21 @@ For a staff member, once signed in the options on the navbar change to add extra
 
 \
 &nbsp;
-![Desktop Authenticated Staff Navbar](readme/docs/features/desktop-auth-nav.png)
+![Desktop Authenticated Staff Navbar](readme/docs/features/navbar/desktop-auth-nav.png)
 
 \
 &nbsp;
-![Mobile Authenticated Staff Navbar](readme/docs/features/mobile-auth-nav-links.png)
+![Mobile Authenticated Staff Navbar](readme/docs/features/navbar/mobile-auth-nav-links.png)
 
 The search feature in the navbar is available to both staff and basic users. It searches the machine database based on the machine name and this is prompted through the placeholder text. There is also a fade in and out on this element to improve the experience.
 
 \
 &nbsp;
-![Desktop Machine Search Navbar](readme/docs/features/desktop-auth-nav-search.png)
+![Desktop Machine Search Navbar](readme/docs/features/navbar/desktop-auth-nav-search.png)
 
 \
 &nbsp;
-![Mobile Machine Search Navbar](readme/docs/features/mobile-auth-nav-search.png)
+![Mobile Machine Search Navbar](readme/docs/features/navbar/mobile-auth-nav-search.png)
 
 \
 &nbsp;
