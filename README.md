@@ -403,8 +403,28 @@ The search feature in the navbar is available to both staff and basic users. It 
 &nbsp;
 ![Mobile Machine Search Navbar](readme/docs/features/mobile-auth-nav-search.png)
 
+\
+&nbsp;
+
+### Footer
+
+The footer comprises two elements, the university name with auto increment copyright year and links to their social accounts. The layout changes slightly depending on screen size, the social links are moved to a fade in and out container on the smaller screen sizes. This container can fade out when either the user scrolls back up the screen, or if they click elsewhere in the body of the application.
+
+\
+&nbsp;
+![Desktop Footer](readme/docs/features/footer/desktop-footer.png)
+
+\
+&nbsp;
+![Mobile Footer](readme/docs/features/footer/mobile-footer.png)
+
+\
+&nbsp;
+![Mobile Footer Social Links](readme/docs/features/footer/mobile-social-links.gif)
 
 
+\
+&nbsp;
 
 ## Features to be Implemented
 
