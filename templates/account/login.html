@@ -23,8 +23,8 @@ Sign In
       </div>
       <div class="card-body d-flex flex-column justify-content-center align-items-center">
 
-        <p class="mt-3 text-center text-blue">{% blocktrans %}If you have not created an account yet, then please
-          <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+        <p class="mt-3 text-center text-blue">If you have not created an account yet, then please
+          <a href="{% url 'signup' %}">sign up</a> first.</p>
         
           <!-- Login form -->
         <form class="login d-flex flex-column justify-content-center align-items-center" method="POST"
