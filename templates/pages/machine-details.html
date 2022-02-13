@@ -7,16 +7,19 @@
 
 {% block content %}
 
-<!-- Reporting an issue alert -->
-{% include 'components/individual-machine/create-issue-alert.html' %}
+    <!-- Spacer for messages -->
+    {% include 'components/messages/messages-spacer.html' %}
+
+    <!-- Reporting an issue alert -->
+    {% include 'components/individual-machine/create-issue-alert.html' %}
 
 
-<!-- Individual machine details -->
-{% include 'components/individual-machine/machine-details.html' %}
+    <!-- Individual machine details -->
+    {% include 'components/individual-machine/machine-details.html' %}
 
 
-<!-- Create an issue modal -->
-{% include 'components/individual-machine/create-issue-modal.html' %}
+    <!-- Create an issue modal -->
+    {% include 'components/individual-machine/create-issue-modal.html' %}
 
 
 
