@@ -332,9 +332,101 @@ This will be initally built at the start of the app as an empty model, giving me
 
 ## Existing Features
 
+### Navbar
+The navbar is fully responsive and has been created to have different links available, depending on if the user is signed in or not.
+
+While the user has not been authenticated or signed in to the application, on display are the Login and Signup links only. The university logo at this point acts as a link back to the landing page.
+\
+&nbsp;
+
+![Desktop Unauthenticated Navbar](readme/docs/features/navbar/desktop-unauth-nav.png)
+
+The same applies to the links for the mobile view, however, the styling is adjusted to be responsive. A hamburger menu is used to slide from the right side of the screen. The location of the hamburger in the top right corner of the screen is to suit the 90% majority of right-handed people.
+\
+&nbsp;
+
+![Mobile Unauthenticated Navbar](readme/docs/features/navbar/mobile-unauth-nav.gif)
+
+\
+&nbsp;
+
+For a basic user, once signed in the options on the navbar change to show:
+
+* University name - *links to the dashboard*
+* Dashboard - *links to the dashboard*
+* Issues - *links to the issues page*
+* Profile - *links to the edit profile page*
+* Logout - *links to the logout page*
+* Machine search - *opens machine name search bar*
+
+The orange underline of the link shows the active page to the user, also a hover effect of changing colour on the text adds to the user experience. The search feature on the mobile layout moves in and leaves the hamburger on the edge, to improve user experience as the hamburger is more likely to be used more often.
+\
+&nbsp;
+![Desktop Authenticated Basic Navbar](readme/docs/features/navbar/desktop-auth-nav-basic.png)
+
+\
+&nbsp;
+![Mobile Authenticated Basic Navbar](readme/docs/features/navbar/mobile-auth-nav.png)
+
+\
+&nbsp;
+![Mobile Authenticated Basic Navbar](readme/docs/features/navbar/mobile-auth-nav-links-basic.png)
+
+For a staff member, once signed in the options on the navbar change to add extra dropdowns:
+
+* University name - *links to the dashboard*
+* Dashboard
+    * View Machines - *links to the dashboard*
+    * Create Machine - *links to the create a machine page*
+* Issues - *links to the issues page*
+* Profile
+    * Edit Profile - *links to the edit profile page*
+    * All Users - *links to the all users page*
+* Logout - *links to the logout page*
+* Machine search - *opens machine name search bar*
+
+\
+&nbsp;
+![Desktop Authenticated Staff Navbar](readme/docs/features/navbar/desktop-auth-nav.png)
+
+\
+&nbsp;
+![Mobile Authenticated Staff Navbar](readme/docs/features/navbar/mobile-auth-nav-links.png)
+
+The search feature in the navbar is available to both staff and basic users. It searches the machine database based on the machine name and this is prompted through the placeholder text. There is also a fade in and out on this element to improve the experience.
+
+\
+&nbsp;
+![Desktop Machine Search Navbar](readme/docs/features/navbar/desktop-auth-nav-search.png)
+
+\
+&nbsp;
+![Mobile Machine Search Navbar](readme/docs/features/navbar/mobile-auth-nav-search.png)
+
+\
+&nbsp;
+
+### Footer
+
+The footer comprises two elements, the university name with auto increment copyright year and links to their social accounts. The layout changes slightly depending on screen size, the social links are moved to a fade in and out container on the smaller screen sizes. This container can fade out when either the user scrolls back up the screen, or if they click elsewhere in the body of the application.
+
+\
+&nbsp;
+![Desktop Footer](readme/docs/features/footer/desktop-footer.png)
+
+\
+&nbsp;
+![Mobile Footer](readme/docs/features/footer/mobile-footer.png)
+
+\
+&nbsp;
+![Mobile Footer Social Links](readme/docs/features/footer/mobile-social-links.gif)
+
+
+\
+&nbsp;
 
 ## Features to be Implemented
-
 
 
 \
