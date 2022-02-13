@@ -493,6 +493,38 @@ There is also notification to the users if there are no machines currently creat
 
 ![Desktop Dashboard No Machines](readme/docs/features/dashboard/desktop-dashboard-no-machines.png)
 
+### Issues
+
+At the very top of the issues page, there is a search bar, that works in the very same way as the machines name search, only it searches through the descriptions in the issues.
+
+![Desktop Issues Search](readme/docs/features/issues/desktop-issues-search.png)
+
+The issues page, like the dashboard, is made up of a series of issue cards order by the date that they were created on. These contain:
+
+* The machine name
+* The username of the user that created it
+* Timestamp of when it was created
+* Description left by the user
+* For staff members only, the Delete button.
+\
+&nbsp;
+* Staff view
+
+![Desktop Issues Card](readme/docs/features/issues/desktop-issues-card-staff.png)
+
+* Basic view
+
+![Desktop Issues Card](readme/docs/features/issues/desktop-issues-card-basic.png)
+
+Only visible to staff members is the delete button when it is clicked, a defensive model pops up to ensure that the user is sure that they would like to delete the issue, on the confirmation, the issue is deleted from the database and a message is relayed to the user.
+
+![Desktop Issues Delete Model](readme/docs/features/issues/desktop-issues-delete-model.png)
+
+On deletion of the last issue or, if there have been none created yet, there is a prompt to the user so they are aware of this.
+
+![Desktop No Issues](readme/docs/features/issues/desktop-issues-no-issues.png)
+
+
 ## Features to be Implemented
 
 
