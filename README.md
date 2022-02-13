@@ -489,6 +489,9 @@ To keep the display of the machine cards compact, there is pagination built into
 
 ![Desktop Dashboard Pagination](readme/docs/features/dashboard/desktop-dashboard-pagination-prev.png)
 
+There is also notification to the users if there are no machines currently created. This provides a short explination and a shortcut link to create a new machine.
+
+![Desktop Dashboard No Machines](readme/docs/features/dashboard/desktop-dashboard-no-machines.png)
 
 ## Features to be Implemented
 
