@@ -426,6 +426,37 @@ The footer comprises two elements, the university name with auto increment copyr
 \
 &nbsp;
 
+### Messages
+
+Messages are displayed for continual feedback to the user on their interactions and follow the same layout for both mobile and desktop designs. These interactions include:
+
+* Sign in
+* Logout
+* Create a machine
+* Update a machine
+* Delete a machine
+* Create an issue
+* Delete an issue
+* Edit profile
+* Edit staff status of a user
+
+\
+&nbsp;
+![Desktop Authentication Messages](readme/docs/features/messages/desktop-auth-messages-signin.png)
+
+\
+&nbsp;
+![Mobile Authentication Messages](readme/docs/features/messages/mobile-auth-messages-signout.png)
+
+
+\
+&nbsp;
+![Desktop Messages](readme/docs/features/messages/desktop-messages-create-machine.png)
+
+
+
+
+
 ## Features to be Implemented
 
 
