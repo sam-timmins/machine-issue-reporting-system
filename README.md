@@ -524,6 +524,78 @@ On deletion of the last issue or, if there have been none created yet, there is 
 
 ![Desktop No Issues](readme/docs/features/issues/desktop-issues-no-issues.png)
 
+### All Users
+This page is only available to the staff users of the application. At the top of the page, there is a search bar that can be used to search for the user's usernames, working in the same way as the previously detailed searches in the application. The main content consists of a table populated with a full list of all registered users and displays some of their details:
+
+* Username
+* First name
+* Last name
+* Staff status
+
+![Desktop All Users](readme/docs/features/profile/desktop-all-users.png)
+
+
+Each user also has an edit button associated with it and a delete button. The edit button allows a staff member to give another user full accessibility to the application. On clicking update, a message is displayed showing that the staff status has been changed for that particular user.
+
+![Desktop Edit Staff Status](readme/docs/features/profile/desktop-all-users-edit-staff-status.png)
+
+The delete button opens up a model for a defensive confirmation that this is the action wanted to be carried out. On deletion, the user is removed from the database.
+
+![Desktop Edit Staff Status](readme/docs/features/profile/desktop-all-users-delete-model.png)
+
+### Edit Profile
+The edit profile page is available to all user levels. This page gives the user the ability to adjust their details:
+
+* Username
+* Email
+* First name
+* Last name
+
+The update button updates the database and gives the user a message to confirm the profile was updated, and the cancel button returns to the dashboard.
+
+![Desktop Edit Profile](readme/docs/features/profile/desktop-edit-profile.png)
+
+### Authentication
+
+The authentication process for the application has three parts.
+
+* Sign Up
+* Sign In
+* Log out
+
+#### Sign Up
+The signup process requests three required fields from the user:
+
+* Username
+* Password
+* Password confirmation
+
+![Desktop Sign Up Form](readme/docs/features/authentication/desktop-sign-up.png)
+
+If the user enters a username that already exists, or the two password fields do not match, then error messages are prompted to the user.
+
+![Desktop Sign Up Messages](readme/docs/features/authentication/desktop-sign-up-messages.png)
+
+If all the fields are correctly populated and the Sign-Up button is clicked the user is navigated to the dashboard and a message is displayed to tell the user that they are successfully signed in. If the user has already registered and is looking to sign in then there is a handy link to the correct page in the text above the form.
+
+### Sign In
+The sign-in form requires only two fields to be entered. 
+
+* Username
+* Password
+
+![Desktop Sign In Form](readme/docs/features/authentication/desktop-sign-in.png)
+
+
+Like the signup form, there are messages displayed if incorrect or non-matching data is entered. And a link to the signup page if the user has not already done so. The sign-in button, with correct credentials, directs the user to the dashboard with a successfully logged in message.
+
+![Desktop Sign In Messages](readme/docs/features/authentication/desktop-sign-in-messages.png)
+
+### Log out
+
+This is the simplest of the three authentication form in the application. a simple choice of yes or no if the user would like to sign out. The yes button directs the user to the homepage with a message letting them know they have successfully logged out, and the no button directs the user back to the dashboard page.
+
+![Desktop Sign Out](readme/docs/features/authentication/desktop-sign-out.png)
 
 ## Features to be Implemented
 
