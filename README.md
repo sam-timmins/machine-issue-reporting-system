@@ -597,6 +597,25 @@ This is the simplest of the three authentication form in the application. a simp
 
 ![Desktop Sign Out](readme/docs/features/authentication/desktop-sign-out.png)
 
+## Buttons
+The buttons on the application, for consistency, have the same design, with the only difference being the colours.
+
+* Green is for confirming an update or creating
+
+![Green Button](readme/docs/features/buttons/button-green.png)
+
+* Red is for deletion
+
+![Red Button](readme/docs/features/buttons/button-red.png)
+
+* Orange is for editing or cancelling an action
+
+![Orange Button](readme/docs/features/buttons/button-orange.png)
+
+All buttons also have the same hover effect to keep the user experience consistant.
+
+![Button Hover](readme/docs/features/buttons/button-hover.gif)
+
 ## Features to be Implemented
 
 
