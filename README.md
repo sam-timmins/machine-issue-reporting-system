@@ -532,17 +532,28 @@ This page is only available to the staff users of the application. At the top of
 * Last name
 * Staff status
 
-![Desktop All Users](readme/docs/features/all-users/desktop-all-users.png)
+![Desktop All Users](readme/docs/features/profile/desktop-all-users.png)
 
 
 Each user also has an edit button associated with it and a delete button. The edit button allows a staff member to give another user full accessibility to the application. On clicking update, a message is displayed showing that the staff status has been changed for that particular user.
 
-![Desktop Edit Staff Status](readme/docs/features/all-users/desktop-all-users-edit-staff-status.png)
+![Desktop Edit Staff Status](readme/docs/features/profile/desktop-all-users-edit-staff-status.png)
 
 The delete button opens up a model for a defensive confirmation that this is the action wanted to be carried out. On deletion, the user is removed from the database.
 
-![Desktop Edit Staff Status](readme/docs/features/all-users/desktop-all-users-delete-model.png)
+![Desktop Edit Staff Status](readme/docs/features/profile/desktop-all-users-delete-model.png)
 
+### Edit Profile
+The edit profile page is available to all user levels. This page gives the user the ability to adjust their details:
+
+* Username
+* Email
+* First name
+* Last name
+
+The update button updates the database and gives the user a message to confirm the profile was updated, and the cancel button returns to the dashboard.
+
+![Desktop Edit Profile](readme/docs/features/profile/desktop-edit-profile.png)
 
 ## Features to be Implemented
 
