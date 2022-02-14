@@ -597,6 +597,25 @@ This is the simplest of the three authentication form in the application. a simp
 
 ![Desktop Sign Out](readme/docs/features/authentication/desktop-sign-out.png)
 
+## Buttons
+The buttons on the application, for consistency, have the same design, with the only difference being the colours.
+
+* Green is for confirming an update or creating
+
+![Green Button](readme/docs/features/buttons/button-green.png)
+
+* Red is for deletion
+
+![Red Button](readme/docs/features/buttons/button-red.png)
+
+* Orange is for editing or cancelling an action
+
+![Orange Button](readme/docs/features/buttons/button-orange.png)
+
+All buttons also have the same hover effect to keep the user experience consistant.
+
+![Button Hover](readme/docs/features/buttons/button-hover.gif)
+
 ## Features to be Implemented
 
 
@@ -627,7 +646,7 @@ This is the simplest of the three authentication form in the application. a simp
 |cloudinary |Image management|[cloudinary](https://cloudinary.com/ "cloudinary")|
 |django auth|User authentication|[auth](https://docs.djangoproject.com/en/3.2/topics/auth/ "auth")|
 |django widgit tweaks|Formats forms||
-|django booking|Manages bookings|[booking](https://djangopackages.org/packages/p/django-booking/ "booking")|
+
 
 ## Tools
 | Tools | Description | Link |
@@ -642,6 +661,7 @@ This is the simplest of the three authentication form in the application. a simp
 | Bootstrap | Responsive design |[Bootstrap](https://getbootstrap.com "Bootstrap")
 | Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")
 | Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
+| coverage | Testing | [Coverage](https://coverage.readthedocs.io/en/6.3.1/ "Coverage")
 
 # Testing
 
