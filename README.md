@@ -646,7 +646,7 @@ All buttons also have the same hover effect to keep the user experience consista
 |cloudinary |Image management|[cloudinary](https://cloudinary.com/ "cloudinary")|
 |django auth|User authentication|[auth](https://docs.djangoproject.com/en/3.2/topics/auth/ "auth")|
 |django widgit tweaks|Formats forms||
-|django booking|Manages bookings|[booking](https://djangopackages.org/packages/p/django-booking/ "booking")|
+
 
 ## Tools
 | Tools | Description | Link |
@@ -661,6 +661,7 @@ All buttons also have the same hover effect to keep the user experience consista
 | Bootstrap | Responsive design |[Bootstrap](https://getbootstrap.com "Bootstrap")
 | Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")
 | Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
+| coverage | Testing | [Coverage](https://coverage.readthedocs.io/en/6.3.1/ "Coverage")
 
 # Testing
 
