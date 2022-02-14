@@ -524,6 +524,25 @@ On deletion of the last issue or, if there have been none created yet, there is 
 
 ![Desktop No Issues](readme/docs/features/issues/desktop-issues-no-issues.png)
 
+### All Users
+This page is only available to the staff users of the application. At the top of the page, there is a search bar that can be used to search for the user's usernames, working in the same way as the previously detailed searches in the application. The main content consists of a table populated with a full list of all registered users and displays some of their details:
+
+* Username
+* First name
+* Last name
+* Staff status
+
+![Desktop All Users](readme/docs/features/all-users/desktop-all-users.png)
+
+
+Each user also has an edit button associated with it and a delete button. The edit button allows a staff member to give another user full accessibility to the application. On clicking update, a message is displayed showing that the staff status has been changed for that particular user.
+
+![Desktop Edit Staff Status](readme/docs/features/all-users/desktop-all-users-edit-staff-status.png)
+
+The delete button opens up a model for a defensive confirmation that this is the action wanted to be carried out. On deletion, the user is removed from the database.
+
+![Desktop Edit Staff Status](readme/docs/features/all-users/desktop-all-users-delete-model.png)
+
 
 ## Features to be Implemented
 
