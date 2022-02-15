@@ -493,6 +493,22 @@ There is also notification to the users if there are no machines currently creat
 
 ![Desktop Dashboard No Machines](readme/docs/features/dashboard/desktop-dashboard-no-machines.png)
 
+\
+&nbsp;
+### Machine Details
+
+The machine details page shows the detailed description of the provided by a staff member when the machine was created. This is also where a user can create an issue using the *Report an Issue* button. This opens the form in the way of a modal with the machine name populated. The Cancel button closes the modal, and the submit button add the issue to the database and gives the user a message of confirmation.
+
+\
+&nbsp;
+![Desktop Machine Detailed View](readme/docs/features/machine-details/desktop-detailed-view.png)
+
+\
+&nbsp;
+![Desktop Machine Create issue](readme/docs/features/machine-details/desktop-create-issue.png)
+\
+&nbsp;
+
 ### Issues
 
 At the very top of the issues page, there is a search bar, that works in the very same way as the machines name search, only it searches through the descriptions in the issues.
