@@ -678,6 +678,7 @@ All buttons also have the same hover effect to keep the user experience consista
 | Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")
 | Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
 | coverage | Testing | [Coverage](https://coverage.readthedocs.io/en/6.3.1/ "Coverage")
+| WAVE | Accessibility Testing | [WAVE](https://wave.webaim.org/ "Wave")
 
 # Testing
 
