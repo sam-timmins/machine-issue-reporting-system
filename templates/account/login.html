@@ -49,19 +49,21 @@ Sign In
 
           <!-- Form fields -->
           <div class="my-3 mt-md-5">
-            <label for="id_login" aria-label="Enter your username"><i
+            <label for="id_login" aria-labelledby="enter-your-username"><i
                 class="fas fa-user-circle text-blue text-medium me-3"></i></label>
             <input type="text" name="login" placeholder="Username" autocomplete="username" maxlength="150" required=""
               id="id_login">
           </div>
+          <span class="sr-only" id="enter-your-username">Input box for entering your username</span>
 
 
           <div class="my-3 mt-md-5">
-            <label for="id_login" aria-label="Enter your password"><i
+            <label for="id_password" aria-labelledby="enter-your-password"><i
                 class="fas fa-lock text-blue text-medium me-3"></i></label>
             <input type="password" name="password" placeholder="Password" autocomplete="current-password" required=""
               id="id_password">
           </div>
+          <span class="sr-only" id="enter-your-username">Input box for entering your password</span>
 
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
