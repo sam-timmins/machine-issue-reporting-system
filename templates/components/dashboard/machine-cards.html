@@ -16,7 +16,7 @@
                 {% endif %}
 
                 <div class="card-body dashboard-card-body d-flex align-items-center justify-content-center" style="height: 15rem;">
-                    <h5 class="p-3 text-center m-0 text-blue text-large">{{ machine.name }}
+                    <h2 class="p-3 text-center m-0 text-blue text-large">{{ machine.name }}
 
                         <!-- Shows alert message if the machine is faulty -->
                         {% if not machine.status %}
@@ -24,7 +24,7 @@
                                 {{ current_issue_text }}
                             </span>
                         {% endif %}
-                    </h5>
+                    </h2>
                 </div>
 
             </a>

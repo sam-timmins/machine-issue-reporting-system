@@ -22,18 +22,18 @@
 
             <div class="modal-footer background-blue orange-border-top d-flex justify-content-around align-items-center">
                 <button type="button" class="btn btn-orange text-white text-medium"
-                    data-bs-dismiss="modal" aria-labelledby="cancel-delete-user-modal">
+                    data-bs-dismiss="modal" aria-labelledby="cancel-delete-{{ user.id }}-modal">
                     Cancel
                 </button>
-                <span class="sr-only" id="cancel-delete-user-modal">
+                <span class="sr-only" id="ancel-delete-{{ user.id }}-modal">
                     Orange button with white text that closes the modal and returns to the all users page
                 </span>
 
                 <a href="{% url 'delete_user_profile' user.pk %}" class="btn btn-red text-white text-medium" 
-                    aria-labelledby="confirm-delete-user-modal">
+                    aria-labelledby="confirm-delete-{{ user.id }}-modal">
                     Delete
                 </a>
-                <span class="sr-only" id="confirm-delete-user-modal">
+                <span class="sr-only" id="confirm-delete-{{ user.id }}-modal">
                     Red button with white text that deletes the user and returns to the all users page
                 </span>
             </div>

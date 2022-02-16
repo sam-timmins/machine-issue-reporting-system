@@ -1,10 +1,11 @@
 
 <!-- Button to toggle the social links container -->
 <div class="position-relative">
-<button id="social-links-button"
+<button id="social-links-button" name="Social links container toggle" aria-labelledby="social-links-container-toggle"
     class="d-md-none text-medium social-links-button rounded btn-red text-white position-absolute top-50 end-0 translate-middle-y"><i
         class="fas fa-link"></i></button>
 </div>
+<span class="sr-only" id="social-links-container-toggle">A red button with white icon of a link, opens the social links container.</span>
 <!-- Mobile view of social media links -->
 <div id="social-links" class="position-fixed bottom-0 end-0 p-3 social-links-container">
     <div class="d-flex flex-column align-items-center justify-content-around social-links-inner-container">
