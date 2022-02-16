@@ -681,6 +681,24 @@ All buttons also have the same hover effect to keep the user experience consista
 
 # Testing
 
+## Accessibility
+
+With accessibility included as a user goal, I have tested the pages of the application using [WAVE](https://wave.webaim.org/ "Wave") to ensure there are no errors. The results can be seen by following the links below. Each test shows that there are 2 contrast errors, these errors are where WAVE is picking up screen reader only spans and suggesting that they have a poor ratio between the back and foreground colours. These two elements are not visible to the user as they hold the bootstrap class of *sr-only*, so the errors here can be ignored.
+
+* [Homepage accessibility results](readme/docs/accessibility/homepage-accessibility-check.png "Homepage")
+
+* [Dashboard accessibility results](readme/docs/accessibility/dashboard-accessibility-check.png "Dashboard")
+
+* [Individual Machine accessibility results](readme/docs/accessibility/individual-machine-accessibility-check.png "Individual Machine")
+
+* [Create Machine accessibility results](readme/docs/accessibility/create-machine-accessibility-check.png "Create Machine")
+
+* [Edit Machine accessibility results](readme/docs/accessibility/edit-machine-accessibility-check.png "Edit Machine")
+
+* [All Users accessibility results](readme/docs/accessibility/all-users-accessibility-check.png "All Users")
+
+* [Issues accessibility results](readme/docs/accessibility/issues-accessibility-check.png "Issues Machine")
+
 
 
 &nbsp;
