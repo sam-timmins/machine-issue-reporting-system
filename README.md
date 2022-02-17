@@ -747,7 +747,28 @@ With accessibility included as a user goal, I have tested the pages of the appli
 
 ## Code Validation
 
+### HTML
+The HTML code within the application has been validated by [W3C Markup Validation Service](https://validator.w3.org/ "W3C"). Pages were put through the validator seperatly and the results can be seen below.
 
+* [Homepage HTML validation results](readme/docs/validation/html/homepage-markup-validation.png "Homepage")
+
+* [Dashboard HTML validation results](readme/docs/validation/html/dashboard-markup-validation.png "Dashboard")
+
+* [Individual Machine HTML validation results](readme/docs/validation/html/individual-machine-validation/html-check.png "Individual Machine")
+
+* [Create Machine HTML validation results](readme/docs/validation/html/create-machine-markup-validation.png "Create Machine")
+
+* [Edit Machine HTML validation results](readme/docs/validation/html/edit-machine-markup-validation.png "Edit Machine")
+
+* [All Users HTML validation results](readme/docs/validation/html/all-users-markup-validation.png "All Users")
+
+* [Issues HTML validation results](readme/docs/validation/html/issues-markup-validation.png "Issues Machine")
+
+* [Signup HTML validation results](readme/docs/validation/html/signup-markup-validation.png "Sign up")
+
+* [Sign in HTML validation results](readme/docs/validation/html/signin-markup-validation.png "Sign in Machine")
+
+* [Log out HTML validation results](readme/docs/validation/html/logout-markup-validation.png "Log out Machine")
 
 
 \
