@@ -10,6 +10,7 @@
                         <th scope="col">Staff</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,10 +42,14 @@
                             </a>
                         </td>
 
+                        <td>
+                            <!-- Delete user modal -->
+                            {% include 'components/all-users/delete-user-modal.html' %}
+                        </td>
+
                     </tr>
 
-                    <!-- Delete user modal -->
-                    {% include 'components/all-users/delete-user-modal.html' %}
+
 
                     {% endfor %}
 
