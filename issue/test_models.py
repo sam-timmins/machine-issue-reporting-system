@@ -6,7 +6,7 @@ from .models import Machine, Issue
 class TestModels(TestCase):
     """
     Test models
-    """   
+    """
     def test_machine_string_item_returns_string(self):
         """
         Test to check the machine string item returns a string
