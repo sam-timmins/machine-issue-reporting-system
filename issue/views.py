@@ -138,7 +138,7 @@ class SearchIssues(ListView):
             return Issue.objects.order_by('-created_at')
         else:
             return results
-    
+
     extra_context = {
         'university_name': UNIVERSITY_NAME,
         'facebook': FACEBOOK_LINK,
