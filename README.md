@@ -679,6 +679,11 @@ All buttons also have the same hover effect to keep the user experience consista
 | Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
 | coverage | Testing | [Coverage](https://coverage.readthedocs.io/en/6.3.1/ "Coverage")
 | WAVE | Accessibility Testing | [WAVE](https://wave.webaim.org/ "Wave")
+| W3C | Markup Validation | [W3C Markup Validation Service](https://validator.w3.org/ "W3C")
+| W3C | CSS Validation | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C")
+| PEP8 | Python Validation | [PEP8](http://pep8online.com/ "PEP8")
+| JSHint | JavaScript and JQuery Validation | [JSHint](https://jshint.com/ "JSHint")
+
 
 # Testing
 
