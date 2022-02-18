@@ -676,6 +676,7 @@ All buttons also have the same hover effect to keep the user experience consista
 | Balsamic | Wireframes |[Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
 | Bootstrap | Responsive design |[Bootstrap](https://getbootstrap.com "Bootstrap")
 | Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")
+| miniwebtool | Secret Key |[Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/ "miniwebtool")
 | Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
 | coverage | Testing | [Coverage](https://coverage.readthedocs.io/en/6.3.1/ "Coverage")
 | WAVE | Accessibility Testing | [WAVE](https://wave.webaim.org/ "Wave")
@@ -791,13 +792,85 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 
 # Deployment
 
-<!-- ADD LIVE LINK HERE -->
+The live link to the application can be found [here](https://issue-reporting-system.herokuapp.com/ "Link")
+
+### Cloudinary
+* Visit Cloudinary by following this [link](https://cloudinary.com/ "Link")
+* Click on the *Sign Up For Free* button
+* When the account is created, you should see the *API Environment variable*, we will need this for a later process.
+
+### Github
+* Visit Github by following this [link](https://github.com/ "Link")
+* Create an account or log in
+
+#### Forking
+* Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
+* Click on the *Fork* button in the top right of the screen
+
+
+#### Github Desktop
+* Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
+* Click on the *Code* button above the file list
+* Select *Open with GitHub Desktop*
 
 
 ### Set up your Workspace
+When you have your version of the original repository, 
+* In the terminal run
+```
+pip3 install -r requirements.txt
+```
+* In the root directory create a file called **env.py** and add the following content, the content of these, must match the Config Vars in the Heroku deployment section
+
+```py
+import os
+
+os.environ['DATABASE_URL'] = "FROM HEROKU DEPLOYMENT SECTION, DATABASE_URL CONFIG VAR"
+os.environ['SECRET_KEY'] = "FROM HEROKU DEPLOYMENT SECTION SECRET_KEY CONFIG VAR"
+os.environ['CLOUDINARY_URL'] = "API ENVIRONMENT VARIABLE REMOVE 'CLOUDINARY_URL=' FROM BEGINING"
+os.environ['DEVELOP'] = '1'
+
+
+os.environ['UNIVERSITY_NAME'] = "ADD CONTENT HERE"
+os.environ['FACEBOOK_LINK'] = "ADD CONTENT HERE"
+os.environ['INSTAGRAM_LINK'] = "ADD CONTENT HERE"
+os.environ['TWITTER_LINK'] = "ADD CONTENT HERE"
+os.environ['MACHINE_CARDS_CURRENT_ISSUE_TEXT'] = "ADD CONTENT HERE"
+os.environ['NO_ISSUES_MODAL_TITLE'] = "ADD CONTENT HERE"
+os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
+```
 
 ### Deployment via Heroku
+* Visit [heroku.com](https://www.heroku.com/home "Heroku")
+* Create a new account or sign in
+* From the dashboard, select **New** and then **Create new app**
+* Enter an individual app name into the text box, select a region from the dropdown and then press **Create app**
+* A Heroku app has now been created and the **Deploy** tab is opened. 
+* Open the *Resources* tab and in the search bar for *Add-ons* type *Postgres*
+* Select *Heroku Postgres*, on the popup, ensure the dropdown is set to *Hobby Dev - Free* and then *Submit Order Form*
+* Open the *Settings* tab and then click on the *Reveal Config Vars* button and the database_url should be populated.
+* Fill out the rest of the config vars with the content of the table below by filling out the *Key* and *Value* and clicking on *Add* for each entry 
 
+| Key | Value |
+| --- | --- |
+| CLOUDINARY_URL | URL from Cloudinary
+| SECRET_KEY | Secret Key generated from [here](https://miniwebtool.com/django-secret-key-generator/ "Shhh...")
+| UNIVERSITY_NAME | Your university name
+| FACEBOOK_LINK | URL for facebook page
+| INSTAGRAM_LINK | URL for instagram page
+| TWITTER_LINK | URL for twitter page
+| MACHINE_CARDS_CURRENT_ISSUE_TEXT | 'Current Issues'
+| NO_ISSUES_MODAL_TITLE | 'No Issues'
+| NO_ISSUES_TEXT | 'There are currently no issues outstanding'
+
+
+* In the buildpacks section of the settings tab, click on **Add Buildpack**, select **python** and then save changes
+* Open the **Deploy** tab
+* In the deployment method section, select **GitHub** and confirm the connection.
+* Enter the repo-name into the text box and click **Search**. When the correct repo appears below, click **Connect**
+* In the Automatic deploys section, click **Enable Automatic Deploys**. This updates every time GitHub code is pushed
+* To complete the process click on the **Deploy Brach** button in the Manual deploy section, this will take a few seconds to complete while Heroku builds the app
+* A message will appear informing you that the app was successfully deployed and a **View** button will bring you to the live site
 
 
 \
@@ -808,7 +881,10 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 
 # Credits
 
-
+* [Code Institute](https://codeinstitute.net/all-access-coding-challenge/?gclsrc=aw.ds&&msclkid=1915e48bf28d11888d1785dfd2b04125&utm_source=bing&utm_medium=cpc&utm_campaign=a%26c_SEA_IRL_BR_Brand_Code_Institute&utm_term=code%20institute&utm_content=exa_Brand "CI") for the template
+* [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction and continual support
+* For gentle helping nudges, the Code Institute tutors
+* For testing and feedback, my 'testing focus group' (they know who they are!)
 
 \
 &nbsp;
