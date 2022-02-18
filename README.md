@@ -814,6 +814,35 @@ The live link to the application can be found [here](https://issue-reporting-sys
 
 
 ### Set up your Workspace
+When you have your version of the origional repository, 
+* In the terminal run
+```
+pip3 install -r requirements.txt
+```
+* In the root directory create a file called **env.py** and add the following content, the content of these, must match the Config Vars in the Heroku deployment section
+
+```py
+import os
+
+os.environ['DATABASE_URL'] = "FROM HEROKU DEPLOYMENT SECTION, DATABASE_URL CONFIG VAR"
+os.environ['SECRET_KEY'] = "FROM HEROKU DEPLOYMENT SECTION SECRET_KEY CONFIG VAR"
+os.environ['CLOUDINARY_URL'] = "API ENVIRONMENT VARIABLE REMOVE 'CLOUDINARY_URL=' FROM BEGINING"
+os.environ['DEVELOP'] = '1'
+
+
+os.environ['UNIVERSITY_NAME'] = "ADD CONTENT HERE"
+os.environ['FACEBOOK_LINK'] = "ADD CONTENT HERE"
+os.environ['INSTAGRAM_LINK'] = "ADD CONTENT HERE"
+os.environ['TWITTER_LINK'] = "ADD CONTENT HERE"
+os.environ['MACHINE_CARDS_CURRENT_ISSUE_TEXT'] = "ADD CONTENT HERE"
+os.environ['NO_ISSUES_MODAL_TITLE'] = "ADD CONTENT HERE"
+os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
+```
+
+
+
+
+
 
 
 
