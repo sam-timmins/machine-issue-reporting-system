@@ -800,7 +800,7 @@ The live link to the application can be found [here](https://issue-reporting-sys
 
 ### Github
 * Visit Github by following this [link](https://github.com/ "Link")
-* Create an account or login
+* Create an account or log in
 
 #### Forking
 * Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
@@ -814,7 +814,7 @@ The live link to the application can be found [here](https://issue-reporting-sys
 
 
 ### Set up your Workspace
-When you have your version of the origional repository, 
+When you have your version of the original repository, 
 * In the terminal run
 ```
 pip3 install -r requirements.txt
@@ -838,13 +838,6 @@ os.environ['MACHINE_CARDS_CURRENT_ISSUE_TEXT'] = "ADD CONTENT HERE"
 os.environ['NO_ISSUES_MODAL_TITLE'] = "ADD CONTENT HERE"
 os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 ```
-
-
-
-
-
-
-
 
 ### Deployment via Heroku
 * Visit [heroku.com](https://www.heroku.com/home "Heroku")
