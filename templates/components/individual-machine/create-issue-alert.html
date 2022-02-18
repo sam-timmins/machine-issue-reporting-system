@@ -1,10 +1,10 @@
 
 <!-- Create an issue button -->
 <div class="alert d-flex align-items-center justify-content-center rounded-0 my-md-5" role="alert">
-    <button data-bs-toggle="modal" data-bs-target="#createIssue" aria-labelledby="report-issue-{{ machine.name }}-button"
+    <button data-bs-toggle="modal" data-bs-target="#createIssue" aria-labelledby="report-issue-{{ machine.id }}-button"
         class="btn btn-green btn-wide text-medium text-white link-text text-decoration-none">
         <i class="fas fa-plus me-3"></i>
         Report an Issue
     </button>
-    <span class="sr-only" id="report-issue-{{ machine.name }}-button">Green button with white text that opens a modal with the form for creating an issue on {{ machine.name }}</span>
+    <span class="sr-only" id="report-issue-{{ machine.id }}-button">Green button with white text that opens a modal with the form for creating an issue on {{ machine.name }}</span>
 </div>
