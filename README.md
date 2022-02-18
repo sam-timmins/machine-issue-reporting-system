@@ -791,13 +791,43 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 
 # Deployment
 
-<!-- ADD LIVE LINK HERE -->
+The live link to the application can be found [here](https://issue-reporting-system.herokuapp.com/ "Link")
 
 
 ### Set up your Workspace
 
-### Deployment via Heroku
 
+### Deployment via Heroku
+* Visit [heroku.com](https://www.heroku.com/home "Heroku")
+* Create a new account or sign in
+* From the dashboard, select **New** and then **Create new app**
+* Enter an individual app name into the text box, select a region from the dropdown and then press **Create app**
+* A Heroku app has now been created and the **Deploy** tab is opened. 
+* Open the *Resources* tab and in the search bar for *Add-ons* type *Postgres*
+* Select *Heroku Postgres*, on the popup, ensure the dropdown is set to *Hobby Dev - Free* and then *Submit Order Form*
+* Open the *Settings* tab and then click on the *Reveal Config Vars* button and the database_url should be populated.
+* Fill out the rest of the config vars with the content of the table below by filling out the *Key* and *Value* and clicking on *Add* for each entry 
+
+| Key | Value |
+| --- | --- |
+| CLOUDINARY_URL | URL from Cloudinary
+| SECRET_KEY | Secret Key generated from [here](https://miniwebtool.com/django-secret-key-generator/ "Shhh...")
+| UNIVERSITY_NAME | Your university name
+| FACEBOOK_LINK | URL for facebook page
+| INSTAGRAM_LINK | URL for instagram page
+| TWITTER_LINK | URL for twitter page
+| MACHINE_CARDS_CURRENT_ISSUE_TEXT | 'Current Issues'
+| NO_ISSUES_MODAL_TITLE | 'No Issues'
+| NO_ISSUES_TEXT | 'There are currently no issues outstanding'
+
+
+* In the buildpacks section of the settings tab, click on **Add Buildpack**, select **python** and then save changes
+* Open the **Deploy** tab
+* In the deployment method section, select **GitHub** and confirm the connection.
+* Enter the repo-name into the text box and click **Search**. When the correct repo appears below, click **Connect**
+* In the Automatic deploys section, click **Enable Automatic Deploys**. This updates every time GitHub code is pushed
+* To complete the process click on the **Deploy Brach** button in the Manual deploy section, this will take a few seconds to complete while Heroku builds the app
+* A message will appear informing you that the app was successfully deployed and a **View** button will bring you to the live site
 
 
 \
