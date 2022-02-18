@@ -798,11 +798,22 @@ The live link to the application can be found [here](https://issue-reporting-sys
 * Click on the *Sign Up For Free* button
 * When the account is created, you should see the *API Environment variable*, we will need this for a later process.
 
+### Github
+* Visit Github by following this [link](https://github.com/ "Link")
+* Create an account or login
+
+#### Forking
+* Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
+* Click on the *Fork* button in the top right of the screen
+
+
+#### Github Desktop
+* Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
+* Click on the *Code* button above the file list
+* Select *Open with GitHub Desktop*
+
 
 ### Set up your Workspace
-
-
-
 
 
 
