@@ -793,8 +793,17 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 
 The live link to the application can be found [here](https://issue-reporting-system.herokuapp.com/ "Link")
 
+### Cloudinary
+* Visit Cloudinary by following this [link](https://cloudinary.com/ "Link")
+* Click on the *Sign Up For Free* button
+* When the account is created, you should see the *API Environment variable*, we will need this for a later process.
+
 
 ### Set up your Workspace
+
+
+
+
 
 
 ### Deployment via Heroku
