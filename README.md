@@ -777,6 +777,11 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 
 * [Log out HTML validation results](readme/docs/validation/html/logout-markup-validation.png "Log out Machine")
 
+### CSS
+The CSS code within the application has been validated by [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C"), and the results can be seen below.
+
+* [CSS validation results](readme/docs/validation/css/css-validation.png "CSS")
+
 
 ### Python
 The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
