@@ -185,7 +185,7 @@ body {
 }
 
 .image-container{
-    background: url("../images/landing-image.jpg") center center;
+    background: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1642957747/static/images/landing-image.dc5dcbd431ef.jpg") center center;
     background-size: cover;
     background-color:var(--blue-opaque);
     position: relative;
@@ -195,7 +195,7 @@ body {
 }
 
 .hero-container {
-    background: url("../images/landing-image2.jpg") center center;
+    background: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1642957745/static/images/landing-image2.37fffae1540f.jpg") center center;
     background-size: cover;
     background-color:var(--blue-opaque);
     height: 75vh;
