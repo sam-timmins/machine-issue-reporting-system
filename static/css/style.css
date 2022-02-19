@@ -322,3 +322,18 @@ select {
     background-color: var(--blue);
 }
 
+
+/* Spin loader */
+
+.spin-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--white);
+    z-index: 1000;
+}
