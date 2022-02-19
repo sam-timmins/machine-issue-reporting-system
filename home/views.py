@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 
-from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
