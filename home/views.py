@@ -1,9 +1,7 @@
 from pathlib import Path
 import os
 
-from django.shortcuts import render
 from django.views.generic import TemplateView
-
 
 # Prevent error when hidden env.py is not found
 if os.path.isfile('env.py'):
