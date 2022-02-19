@@ -332,6 +332,11 @@ This will be initally built at the start of the app as an empty model, giving me
 
 ## Existing Features
 
+### Spin Loader
+The spin loader was generated using [loading.io](https://loading.io/ "Link") and is displayed on all pages until the document is loaded. When it has, it fades away to show the content of the application.
+
+![Spin Loader](readme/docs/features/spin-loader/spin-loader.gif)
+
 ### Navbar
 The navbar is fully responsive and has been created to have different links available, depending on if the user is signed in or not.
 
@@ -684,6 +689,7 @@ All buttons also have the same hover effect to keep the user experience consista
 | W3C | CSS Validation | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C")
 | PEP8 | Python Validation | [PEP8](http://pep8online.com/ "PEP8")
 | JSHint | JavaScript and JQuery Validation | [JSHint](https://jshint.com/ "JSHint")
+| LOADING.IO | Spin Loader | [loading.io](https://loading.io/ "loading.io")
 
 
 # Testing
@@ -770,6 +776,11 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 * [Sign in HTML validation results](readme/docs/validation/html/signin-markup-validation.png "Sign in Machine")
 
 * [Log out HTML validation results](readme/docs/validation/html/logout-markup-validation.png "Log out Machine")
+
+### CSS
+The CSS code within the application has been validated by [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C"), and the results can be seen below.
+
+* [CSS validation results](readme/docs/validation/css/css-validation.png "CSS")
 
 
 ### Python
