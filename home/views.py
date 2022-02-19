@@ -3,7 +3,6 @@ import os
 
 from django.views.generic import TemplateView
 
-
 # Prevent error when hidden env.py is not found
 if os.path.isfile('env.py'):
     import env
