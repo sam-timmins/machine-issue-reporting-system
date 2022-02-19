@@ -911,6 +911,8 @@ os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 
 * [Code Institute](https://codeinstitute.net/all-access-coding-challenge/?gclsrc=aw.ds&&msclkid=1915e48bf28d11888d1785dfd2b04125&utm_source=bing&utm_medium=cpc&utm_campaign=a%26c_SEA_IRL_BR_Brand_Code_Institute&utm_term=code%20institute&utm_content=exa_Brand "CI") for the template
 * [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction and continual support
+* [CodingEntrepreneurs](https://www.youtube.com/channel/UCWEHue8kksIaktO8KTTN_zg "CodingEntrepreneurs") for help on Django and testing
+* [Codemy.com](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw "Codemy.com") for help on Django
 * For gentle helping nudges, the Code Institute tutors
 * For testing and feedback, my 'testing focus group' (they know who they are!)
 
