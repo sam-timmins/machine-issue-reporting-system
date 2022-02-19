@@ -821,8 +821,7 @@ The Python code within the application has been validated by [PEP* Validation Se
 
 ## Unfixed Bugs
 
-
-
+I have created my own custom views for the Django authentication pages, login, signup and logout to be able to add my global variables for ease of maintenance. The logout view has no issues, however where there is a form with inputs a bug arises. If a user enters incorrect data, the form's action redirects to the default *account/login* or *account/signup* page depending on which is submitted. This then does not have any of the global variables rendered as *extra_context* and the university name in both the header and footer, along with the URLs for the social links are blank. Changing the action of the form breaks the set-up of Django auth and does not allow a user to login or sign-up at all.
 \
 &nbsp;
 [Back to Top](#table-of-contents)
