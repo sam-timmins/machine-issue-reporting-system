@@ -817,12 +817,49 @@ The Python code within the application has been validated by [PEP* Validation Se
 
 ## Bugs
 
+1. [Issue #36](https://github.com/sam-timmins/machine-issue-reporting-system/issues/36 "#36") - Delete machine modal
+    * The incorrect title was entered on the modal, hot-fix changed this.
+1. [Issue #34](https://github.com/sam-timmins/machine-issue-reporting-system/issues/34 "#34") - Create machine form styling
+    * Styling was correct and made to be responsive
+1. [Issue #46](https://github.com/sam-timmins/machine-issue-reporting-system/issues/46 "#46") - Cancel button on Create Machine page
+    * The cancel button was not directed back to the correct dashboard page, hot-fix to the URL on the cancel href fixed the bug
+1. [Issue #56](https://github.com/sam-timmins/machine-issue-reporting-system/issues/56 "#56") - Create User error
+    * After attempting to create a custom user model, I reverted to the out of the box Django authentication system. This caused problems with my user's and superusers not being recognised. This problem was solved by deleting my Postgres database in Heroku, migrating and then creating a new superuser, then a basic user
+1. [Issue #68](https://github.com/sam-timmins/machine-issue-reporting-system/issues/68 "#68") - Create new machine layout
+    * When a user was logged in as a staff member, there was a create a machine card as part of the dashboard. This threw out the look of the page with the pagination set to 6. 7 cards were shown to the staff user and the styling looked very poor. The decision was made to add create a new machine to the navbar to keep the pagination looking correct
+1. [Issue #78](https://github.com/sam-timmins/machine-issue-reporting-system/issues/78 "#78") - Footer positioning
+    * The footer was set to position fixed to the bottom of the application. This created a visual problem as it covered content and I felt that it was in the way of more important content. The decision was made to make use of flexbox to ensure it is always sitting at the bottom of the content of the application
+1. [Issue #91](https://github.com/sam-timmins/machine-issue-reporting-system/issues/91 "#91") - Close social links container
+    * The social links container was only able to be closed by clicking on the links button. This was a poor user experience so a small bit of JQuery was written to fade it away if the user scrolls or taps the body of the application
+1. [Issue #94](https://github.com/sam-timmins/machine-issue-reporting-system/issues/94 "#94") - Mobile slide nav home link
+    * The logo link on the slide-out nav on mobile view was directed to the dashboard before a user has been authenticated. A quick if authenticated statement to change the link property was a quick fix
+1. [Issue #112](https://github.com/sam-timmins/machine-issue-reporting-system/issues/112 "#112") - Create new machine page
+    * This was the second bug relating to the layout of the create machine form. The root cause of this bug was the height property of the image container. By changing it to *min-height: 100vh;* the form's styling is perfect.
+1. [Issue #96](https://github.com/sam-timmins/machine-issue-reporting-system/issues/96 "#96") - Footer text alignment
+    * The footer text was not aligned to the middle of the screen because the social links were pushing it to the left slightly. By setting the position property of the social links to relative, the text could be centred properly.
+1. [Issue #104](https://github.com/sam-timmins/machine-issue-reporting-system/issues/104 "#104") - Deployment error
+    * I had issues trying to create my global variables and rendering them to the templates. Eventually, by reading the Django docs, I discovered that instead of just importing them into the template, I had to add them in via an extra_context dictionary.
+1. [Issue #121](https://github.com/sam-timmins/machine-issue-reporting-system/issues/121 "#121") - Extra content not showing on allauth views
+    * Once I had the extra_context dictionary rendering to the templates, I found that it did not apply to the allauth templates. By creating my own views that pointed to the allauth templates, I could render out my extra_context. However, this did lead to an unfixed bug which I go into detail about in the next section.
+1. [Issue #142](https://github.com/sam-timmins/machine-issue-reporting-system/issues/142 "#142") - Images not uploading to Cloudinary
+    * When the user created a machine and attempted to upload an image, the form was not talking to Cloudinary and the placeholder image was always displayed. The inclusion of the cloudinary tag at the top of the file and enctype to the form fixed this bug.
+
+    ```html
+    {% load cloudinary %}
+
+    <form method="post" enctype="multipart/form-data">
+    ```
+1. [Issue #145](https://github.com/sam-timmins/machine-issue-reporting-system/issues/145 "#145") - Messages overlapping text
+    * The messages given to the user when an action was completed, i.e. delete or create a machine were overlapping the content of the application. I created a spacer that acted as a placeholder for the messages so there was no content behind it
+1. [Issue #151](https://github.com/sam-timmins/machine-issue-reporting-system/issues/151 "#151") - Links on on allauth pages not working
+    * The signin text link on the signup page and signup text link on the signin page were still navigating to the out of the box Django templates. Hot-fix to the URL sorted this bug
+1. [Issue #90](https://github.com/sam-timmins/machine-issue-reporting-system/issues/90 "#90") - Images not showing on deployed site
+    * Neither of the background images were showing on the deployed site, this was rectified by adding the cloudinary URL directly into the CSS file instead of using an absolute file path
 
 
 ## Unfixed Bugs
 
-
-
+I have created my own custom views for the Django authentication pages, login, signup and logout to be able to add my global variables for ease of maintenance. The logout view has no issues, however where there is a form with inputs a bug arises. If a user enters incorrect data, the form's action redirects to the default *account/login* or *account/signup* page depending on which is submitted. This then does not have any of the global variables rendered as *extra_context* and the university name in both the header and footer, along with the URLs for the social links are blank. Changing the action of the form breaks the set-up of Django auth and does not allow a user to login or sign-up at all.
 \
 &nbsp;
 [Back to Top](#table-of-contents)
