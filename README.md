@@ -332,6 +332,11 @@ This will be initally built at the start of the app as an empty model, giving me
 
 ## Existing Features
 
+### Spin Loader
+The spin loader was generated using [loading.io](https://loading.io/ "Link") and is displayed on all pages until the document is loaded. When it has, it fades away to show the content of the application.
+
+![Spin Loader](readme/docs/features/spin-loader/spin-loader.gif)
+
 ### Navbar
 The navbar is fully responsive and has been created to have different links available, depending on if the user is signed in or not.
 
