@@ -684,6 +684,7 @@ All buttons also have the same hover effect to keep the user experience consista
 | W3C | CSS Validation | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C")
 | PEP8 | Python Validation | [PEP8](http://pep8online.com/ "PEP8")
 | JSHint | JavaScript and JQuery Validation | [JSHint](https://jshint.com/ "JSHint")
+| LOADING.IO | Spin Loader | [loading.io](https://loading.io/ "loading.io")
 
 
 # Testing
