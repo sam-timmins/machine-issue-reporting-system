@@ -9,6 +9,7 @@
 
 <body>
     <div class="d-flex flex-column min-vh-100">
+
         <nav class="navbar navbar-dark px-4 position-sticky top-0 left-0 container-fluid border-bottom-orange background-color-blue text-white">
             <!-- Navbar for devices <768px -->
             {% include 'components/navbar/mobile.html' %}
@@ -22,6 +23,10 @@
             {% include 'components/messages/messages.html' %}
         </header>
 
+        <section>
+            <!-- Spin loader -->
+            {% include 'components/spin-loader/spin-loader.html' %}
+        </section>
 
         <main class="flex-fill" id="main-content">
             
