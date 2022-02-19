@@ -772,6 +772,34 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 * [Log out HTML validation results](readme/docs/validation/html/logout-markup-validation.png "Log out Machine")
 
 
+### Python
+The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
+
+* issue_reporting project
+    * [settings.py validation results](readme/docs/validation/python/issue_reporting/issue_reporting-settings-python-validation.png "settings.py")
+    * [urls.py validation results](readme/docs/validation/python/issue_reporting/issue_reporting-urls-python-validation.png "urls.py")
+
+* accounts app
+    * [forms.py validation results](readme/docs/validation/python/accounts/accounts-forms-python-validation.png "forms.py")
+    * [test_forms.py validation results](readme/docs/validation/python/accounts/accounts-test_forms-python-validation.png "test_forms.py")
+    * [views.py validation results](readme/docs/validation/python/accounts/accounts-views-python-validation.png "views.py")
+    * [test_views.py validation results](readme/docs/validation/python/accounts/accounts-test_views-python-validation.png "test_views.py")
+    * [urls.py validation results](readme/docs/validation/python/accounts/accounts-urls-python-validation.png "urls.py")
+
+* home app
+    * [urls.py validation results](readme/docs/validation/python/home/home-urls-python-validation.png "urls.py")
+    * [views.py validation results](readme/docs/validation/python/home/home-views-python-validation.png "views.py")
+    * [test_views.py validation results](readme/docs/validation/python/home/home-test_views-python-validation.png "test_views.py")
+
+* issue app
+    * [admin.py validation results](readme/docs/validation/python/issue/issue-admin-python-validation.png "admin.py")
+    * [forms.py validation results](readme/docs/validation/python/issue/issue-forms-python-validation.png "forms.py")
+    * [models.py validation results](readme/docs/validation/python/issue/issue-models-python-validation.png "models.py")
+    * [views.py validation results](readme/docs/validation/python/issue/issue-views-python-validation.png "views.py")
+    * [urls.py validation results](readme/docs/validation/python/issue/issue-urls-python-validation.png "urls.py")
+    * [test_models.py validation results](readme/docs/validation/python/issue/issue-test_models-python-validation.png "test_models.py")
+    * [test_views.py validation results](readme/docs/validation/python/issue/issue-test_views-python-validation.png "test_views.py")
+
 \
 &nbsp; 
 
