@@ -713,44 +713,173 @@ With accessibility included as a user goal, I have tested the pages of the appli
 * [Issues accessibility results](readme/docs/accessibility/issues-accessibility-check.png "Issues Machine")
 
 
-
+\
 &nbsp;
-
-| Age | Tech Experience | Task Completed | Comments/ Improvements
-| --- | ----------      | -------------  | --------
-
-
-&nbsp;
-
-
 
 ### UX Testing
 
+#### Staff Member
+
 | Requirements & Expectations | Implemented | Tested | Comments
 | ------------ | ----------- | ------ | --------
-
+| A higher level account than a student | Yes | Yes | Create, edit and delete machines, delete issues and edit staff status of users
+| Different sections in the login to manage the different tasks | Yes | Yes | Dashboard deals with the machines, Issues with issues and Profile for users profiles
+| Create, Read, Update and Delete functionality | Yes | Yes | CRUD functionality for issues and machines
+| Simple and well laid out and visually appealing | Yes | Yes | Uncomplicated in the layout and clear navigation
+| TU Dublin colour pallet | Yes | Yes | Colours adapted from TU Dublin's website
+|I expect to quickly manage users|Yes|Yes| Staff status can be easily changed along with deleting a user
+|I expect to quickly manage machines|Yes|Yes|CRUD functionality is obvious to see and carry out
+|I expect to quickly delete issues on machines when required|Yes|Yes|Delete issues button clearly associated with the issue and defensive confirmation built-in
 
 &nbsp;
 
-&nbsp;
-
-| User Goals | Implemented | Tested | Comments
+| Goals | Implemented | Tested | Comments
 | ------------ | ----------- | ------ | --------
+|Create a machine with a short description|Yes|Yes|
+|Delete a machine when required|Yes|Yes| Complete
+|Edit a machine's details when required|Yes|Yes| Complete
+|See any issues that have been reported|Yes|Yes| Complete
+|Change the status of a machine with an issue|Yes|Yes| Complete
+|Delete an issue when it has been rectified|Yes|Yes| Complete
+|Clear navigation process|Yes|Yes| Complete
+|Visually clear that it is a TU Dublin application|Yes|Yes| Complete
 
-
+\
 &nbsp;
 
-&nbsp;
+#### Student User
 
-| Site Owners Goals | Implemented | Tested | Comments
+| Requirements & Expectations | Implemented | Tested | Comments
 | ------------ | ----------- | ------ | --------
+| Simple and well laid out and visually appealing | Yes | Yes | Uncomplicated in the layout and clear navigation
+| TU Dublin colour pallet | Yes | Yes | Colours adapted from TU Dublin's website
+|Easy to report an issue in just a few clicks|Yes|Yes|Report issue button is clear in its association with the machine and completed in three clicks
+|Responsive design is required (Mobile first) as users may be viewing the site on Mobile, Tablet or Desktop|Yes|Yes|Fully responsive and built mobile-first
+|I expect that when I report an issue I can see that it has been logged|Yes|Yes|Messages appear on the screen  to confirm an issue has been created
+|I expect to be able to report issues on multiple machines|Yes|Yes|Multiple issues can be reported on multiple machines
 
+
+&nbsp;
+
+| Goals | Implemented | Tested | Comments
+| ------------ | ----------- | ------ | --------
+|See what defects or issues have been reported|Yes|Yes|Complete
+|See what defects or issues I have reported|Yes|Yes|Complete
+|Clear display in a landing page|Yes|Yes|Complete
+|Clear navigation process|Yes|Yes|Complete
+|Ability to use the system on a mobile phone|Yes|Yes|Complete
 
 \
 &nbsp;
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+## Manual Testing
+
+Manual testing of the project was a continual process to ensure that all was working as expected. Items were fixed as the project was being carried out to ensure not to have a huge workload of fixes at the end. Manual testing and checks include:
+
+* Loading Spinner
+    * Displays on all pages while the content is loading
+    * Centered in the page
+    * Fade effect to display none
+
+* Navbar
+    * All links navigate to correct endpoint
+    * All hover and focus effects are correct
+    * Active link underlined
+    * Different views depending on staff status and authentication
+    * Search bar fades out when the body is clicked
+    * Accessibility is correct
+    * Responsiveness
+
+* Footer
+    * All links navigate to correct endpoint
+    * All hover and focus effects are correct
+    * External links open in a new tab
+    * Accessibility is correct
+    * Responsiveness
+
+* HomePage
+    * Text is clear and easily read
+    * Image is shown and colours are complementary to the site
+    * Information boxes clear and free of spelling mistakes
+    * Responsiveness
+
+* Login and Signup
+    * Form is clear
+    * Links navigate to the appropriate page
+    * Hover and focus effect on the button
+    * Background image clear visible
+    * Form completes its task correctly
+
+* Logout
+    * Options are clear
+    * Hover and focus effect on the buttons
+    * No button returns to the dashboard
+    * Yes button logs the user out and returns to the homepage
+    * Message displayed to the user on the homepage when logged out
+
+* Dashboard
+    * Username is displayed in the page title
+    * Content displayed if there are no machines created
+    * Create machine button to link to the correct page
+    * Hover and focus effect on the buttons
+    * Machine cards to display edit and delete buttons to staff users only
+    * Delete button opens confirmation modal
+    * Confirmation modal delete button deletes the machine
+    * Confirmation modal cancel button returns to the dashboard
+    * Image and machine name act as a link to the machine details view
+    * Current issues banner displayed when an issue is created against the machine
+    * Pagination occurs when there are more than 6 items
+    * Responsiveness
+
+* Create Machine
+    * Only accessible by a staff user
+    * Responsiveness
+    * Required fields must be completed
+    * File upload works as expected
+    * Hover and focus effect on the buttons
+    * Cancel button returns to the dashboard
+    * Submit button saves the machine, redirects and displays it on the dashboard
+
+* Issues
+    * Content displayed if there are no issues
+    * Pagination occurs when there are more than 6 items
+    * Username, date and description displayed in the issue card
+    * Hover and focus effect on the buttons
+    * Delete button only visible to a staff user
+    * Delete button opens confirmation modal
+    * Confirmation modal delete button deletes the issue
+    * Confirmation modal cancel button returns to the issues page
+    * Search bar filters the issues by description
+    * Search bar X button clears the filters and displays all issues
+
+* Edit Profile
+    * Responsiveness
+    * Required fields must be completed
+    * Hover and focus effect on the buttons
+    * Cancel button returns to the dashboard
+    * Update button saves the profile changes, redirects to the dashboard and displays a message to the user confirming a change
+
+* All Users
+    * Only accessible by a staff user
+    * Responsiveness
+    * Hover and focus effect on the buttons
+    * Delete button opens confirmation modal
+    * Confirmation modal delete button deletes the user
+    * Confirmation modal cancel button returns to the all users page
+    * Edit button navigates to the edit staff status page
+    * Correct staff icon displayed in the table
+    * Search bar filters the users by username
+    * Search bar X button clears the filters and displays all users
+
+* Edit Staff Status
+    * Username is displayed in the text content
+    * Checkbox is either ticked or not depending on the current status
+    * Hover and focus effect on the buttons
+    * Update button saves the changes, redirects to the all users page and displays a message for confirmation
+    * Cancel button navigates back to the all users page with no changes
 
 ## Code Validation
 
