@@ -746,6 +746,31 @@ With accessibility included as a user goal, I have tested the pages of the appli
 
 \
 &nbsp;
+
+#### Student User
+
+| Requirements & Expectations | Implemented | Tested | Comments
+| ------------ | ----------- | ------ | --------
+| Simple and well laid out and visually appealing | Yes | Yes | Uncomplicated in the layout and clear navigation
+| TU Dublin colour pallet | Yes | Yes | Colours adapted from TU Dublin's website
+|Easy to report an issue in just a few clicks|Yes|Yes|Report issue button is clear in its association with the machine and completed in three clicks
+|Responsive design is required (Mobile first) as users may be viewing the site on Mobile, Tablet or Desktop|Yes|Yes|Fully responsive and built mobile-first
+|I expect that when I report an issue I can see that it has been logged|Yes|Yes|Messages appear on the screen  to confirm an issue has been created
+|I expect to be able to report issues on multiple machines|Yes|Yes|Multiple issues can be reported on multiple machines
+
+
+&nbsp;
+
+| Goals | Implemented | Tested | Comments
+| ------------ | ----------- | ------ | --------
+|See what defects or issues have been reported|Yes|Yes|Complete
+|See what defects or issues I have reported|Yes|Yes|Complete
+|Clear display in a landing page|Yes|Yes|Complete
+|Clear navigation process|Yes|Yes|Complete
+|Ability to use the system on a mobile phone|Yes|Yes|Complete
+
+\
+&nbsp;
 [Back to Top](#table-of-contents)
 \
 &nbsp;
