@@ -713,38 +713,36 @@ With accessibility included as a user goal, I have tested the pages of the appli
 * [Issues accessibility results](readme/docs/accessibility/issues-accessibility-check.png "Issues Machine")
 
 
-
+\
 &nbsp;
-
-| Age | Tech Experience | Task Completed | Comments/ Improvements
-| --- | ----------      | -------------  | --------
-
-
-&nbsp;
-
-
 
 ### UX Testing
 
+#### Staff Member
+
 | Requirements & Expectations | Implemented | Tested | Comments
 | ------------ | ----------- | ------ | --------
-
+| A higher level account than a student | Yes | Yes | Create, edit and delete machines, delete issues and edit staff status of users
+| Different sections in the login to manage the different tasks | Yes | Yes | Dashboard deals with the machines, Issues with issues and Profile for users profiles
+| Create, Read, Update and Delete functionality | Yes | Yes | CRUD functionality for issues and machines
+| Simple and well laid out and visually appealing | Yes | Yes | Uncomplicated in the layout and clear navigation
+| TU Dublin colour pallet | Yes | Yes | Colours adapted from TU Dublin's website
+|I expect to quickly manage users|Yes|Yes| Staff status can be easily changed along with deleting a user
+|I expect to quickly manage machines|Yes|Yes|CRUD functionality is obvious to see and carry out
+|I expect to quickly delete issues on machines when required|Yes|Yes|Delete issues button clearly associated with the issue and defensive confirmation built-in
 
 &nbsp;
 
-&nbsp;
-
-| User Goals | Implemented | Tested | Comments
+| Goals | Implemented | Tested | Comments
 | ------------ | ----------- | ------ | --------
-
-
-&nbsp;
-
-&nbsp;
-
-| Site Owners Goals | Implemented | Tested | Comments
-| ------------ | ----------- | ------ | --------
-
+|Create a machine with a short description|Yes|Yes|
+|Delete a machine when required|Yes|Yes| Complete
+|Edit a machine's details when required|Yes|Yes| Complete
+|See any issues that have been reported|Yes|Yes| Complete
+|Change the status of a machine with an issue|Yes|Yes| Complete
+|Delete an issue when it has been rectified|Yes|Yes| Complete
+|Clear navigation process|Yes|Yes| Complete
+|Visually clear that it is a TU Dublin application|Yes|Yes| Complete
 
 \
 &nbsp;
