@@ -775,6 +775,112 @@ With accessibility included as a user goal, I have tested the pages of the appli
 \
 &nbsp;
 
+## Manual Testing
+
+Manual testing of the project was a continual process to ensure that all was working as expected. Items were fixed as the project was being carried out to ensure not to have a huge workload of fixes at the end. Manual testing and checks include:
+
+* Loading Spinner
+    * Displays on all pages while the content is loading
+    * Centered in the page
+    * Fade effect to display none
+
+* Navbar
+    * All links navigate to correct endpoint
+    * All hover and focus effects are correct
+    * Active link underlined
+    * Different views depending on staff status and authentication
+    * Search bar fades out when the body is clicked
+    * Accessibility is correct
+    * Responsiveness
+
+* Footer
+    * All links navigate to correct endpoint
+    * All hover and focus effects are correct
+    * External links open in a new tab
+    * Accessibility is correct
+    * Responsiveness
+
+* HomePage
+    * Text is clear and easily read
+    * Image is shown and colours are complementary to the site
+    * Information boxes clear and free of spelling mistakes
+    * Responsiveness
+
+* Login and Signup
+    * Form is clear
+    * Links navigate to the appropriate page
+    * Hover and focus effect on the button
+    * Background image clear visible
+    * Form completes its task correctly
+
+* Logout
+    * Options are clear
+    * Hover and focus effect on the buttons
+    * No button returns to the dashboard
+    * Yes button logs the user out and returns to the homepage
+    * Message displayed to the user on the homepage when logged out
+
+* Dashboard
+    * Username is displayed in the page title
+    * Content displayed if there are no machines created
+    * Create machine button to link to the correct page
+    * Hover and focus effect on the buttons
+    * Machine cards to display edit and delete buttons to staff users only
+    * Delete button opens confirmation modal
+    * Confirmation modal delete button deletes the machine
+    * Confirmation modal cancel button returns to the dashboard
+    * Image and machine name act as a link to the machine details view
+    * Current issues banner displayed when an issue is created against the machine
+    * Pagination occurs when there are more than 6 items
+    * Responsiveness
+
+* Create Machine
+    * Only accessible by a staff user
+    * Responsiveness
+    * Required fields must be completed
+    * File upload works as expected
+    * Hover and focus effect on the buttons
+    * Cancel button returns to the dashboard
+    * Submit button saves the machine, redirects and displays it on the dashboard
+
+* Issues
+    * Content displayed if there are no issues
+    * Pagination occurs when there are more than 6 items
+    * Username, date and description displayed in the issue card
+    * Hover and focus effect on the buttons
+    * Delete button only visible to a staff user
+    * Delete button opens confirmation modal
+    * Confirmation modal delete button deletes the issue
+    * Confirmation modal cancel button returns to the issues page
+    * Search bar filters the issues by description
+    * Search bar X button clears the filters and displays all issues
+
+* Edit Profile
+    * Responsiveness
+    * Required fields must be completed
+    * Hover and focus effect on the buttons
+    * Cancel button returns to the dashboard
+    * Update button saves the profile changes, redirects to the dashboard and displays a message to the user confirming a change
+
+* All Users
+    * Only accessible by a staff user
+    * Responsiveness
+    * Hover and focus effect on the buttons
+    * Delete button opens confirmation modal
+    * Confirmation modal delete button deletes the user
+    * Confirmation modal cancel button returns to the all users page
+    * Edit button navigates to the edit staff status page
+    * Correct staff icon displayed in the table
+    * Search bar filters the users by username
+    * Search bar X button clears the filters and displays all users
+
+* Edit Staff Status
+    * Username is displayed in the text content
+    * Checkbox is either ticked or not depending on the current status
+    * Hover and focus effect on the buttons
+    * Update button saves the changes, redirects to the all users page and displays a message for confirmation
+    * Cancel button navigates back to the all users page with no changes
+
 ## Code Validation
 
 ### HTML
