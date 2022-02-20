@@ -114,6 +114,12 @@ body {
     color: var(--orange);
 }
 
+.social-link-mobile:hover,
+.social-link-mobile:focus {
+    color: var(--blue);
+}
+
+
 /* Buttons */
 
 .btn {
