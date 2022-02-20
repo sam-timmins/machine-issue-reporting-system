@@ -986,6 +986,8 @@ The Python code within the application has been validated by [PEP* Validation Se
     * The signin text link on the signup page and signup text link on the signin page were still navigating to the out of the box Django templates. Hot-fix to the URL sorted this bug
 1. [Issue #90](https://github.com/sam-timmins/machine-issue-reporting-system/issues/90 "#90") - Images not showing on deployed site
     * Neither of the background images were showing on the deployed site, this was rectified by adding the cloudinary URL directly into the CSS file instead of using an absolute file path
+1. [Issue #183](https://github.com/sam-timmins/machine-issue-reporting-system/issues/183 "#183") - Social link hover on mobile
+    * The social links in hover and focus state did not have any styling, a hot-fix with the project's blue was added.
 
 
 ## Unfixed Bugs
