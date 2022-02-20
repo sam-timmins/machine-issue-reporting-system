@@ -1,5 +1,7 @@
 # Machinery Issue Reporting System
 
+![Issue Reporting System](readme/docs/readme-title.png)
+
 # Table of Contents
 * [Background](#background "Background")
 * [Mission Statement](#mission-statement "Mission Statement")
