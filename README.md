@@ -42,7 +42,9 @@
         * Libraries and Frameworks
         * Tools
     * [Testing](#testing "Testing")
+        * Accessibility
         * UX Testing
+        * Manual Testing
         * Code Validation
         * Bugs
         * Unfixed Bugs
