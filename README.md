@@ -36,6 +36,7 @@
         * Data Schema
         * Models
         * Forms
+    * [Branches](#branches "Branches")
     * [Features](#features "Features")
         * Existing Features
         * Features to be implemented
@@ -324,6 +325,23 @@ The data schema was created using [dbdiagram](https://dbdiagram.io/home "dbdiagr
 This will be initally built at the start of the app as an empty model, giving me the oportunity to adapt the Django User fields if required.
 
 ## Forms
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+
+# Branches
+The majority of my code was written using branches in Gitpod. As I was new to this process, occasionally I was over-eager and pushed my changes straight to the main branch however this is in a minority as can be seen through the commit history. In a normal project, I would have deleted all my branches, except for the default main, however, I have chosen to keep four as examples of the process.
+
+* [Branch 1](https://github.com/sam-timmins/machine-issue-reporting-system/tree/testing/Issue%2399-toggle-is_staff "#1") created to work on [Issue #99](https://github.com/sam-timmins/machine-issue-reporting-system/issues/99 "#99")
+* [Branch 2](https://github.com/sam-timmins/machine-issue-reporting-system/tree/testing/Issue%2399-toggle-is_staff "#2") created to work on [Issue #94](https://github.com/sam-timmins/machine-issue-reporting-system/issues/94 "#94")
+* [Branch 3](https://github.com/sam-timmins/machine-issue-reporting-system/tree/testing/Issue%2399-toggle-is_staff "#3") created to work on [Issue #91](https://github.com/sam-timmins/machine-issue-reporting-system/issues/91 "#91")
+* [Branch 4](https://github.com/sam-timmins/machine-issue-reporting-system/tree/testing/Issue%2399-toggle-is_staff "#4") created to work on [Issue #88](https://github.com/sam-timmins/machine-issue-reporting-system/issues/88 "#88")
+
+
 
 \
 &nbsp;
@@ -643,6 +661,12 @@ All buttons also have the same hover effect to keep the user experience consista
 
 ## Features to be Implemented
 
+* Multiple filters on the issues filter.
+    * By filtering by machine name and description, this would allow better flexibility for the user to narrow the search down and speed up the process of searching.
+* Booking system.
+    * By adding a booking system into this application, the users would easily see the availability of machines. If there were current issues on the machine, it would be unavailable for use.
+* Email or push notification
+    * A notification to the staff members that an issue has been created would speed up the process as they would not have to log in each time to see the status of machines
 
 \
 &nbsp;
@@ -915,6 +939,11 @@ The CSS code within the application has been validated by [W3C CSS Validation Se
 
 * [CSS validation results](readme/docs/validation/css/css-validation.png "CSS")
 
+
+### JS
+The JavaScript and JQuery code within the application has been validated by [JSHint](https://jshint.com/ "JSHint"), and the results can be seen below.
+
+* [JS validation results](readme/docs/validation/js/js-validation.png "CSS")
 
 ### Python
 The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
