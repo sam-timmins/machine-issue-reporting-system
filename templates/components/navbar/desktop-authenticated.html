@@ -3,7 +3,7 @@
         <!-- Dashboard dropdown options if the user is a staff member -->
         {% if user.is_staff %}
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-active me-5 text-medium p-0" href="{% url 'dashboard' %}"
+            <a class="nav-link dropdown-toggle nav-active mx-3 mx-lg-5 text-medium p-0" href="{% url 'dashboard' %}"
                 id="navbarDropdownDashboardDesktop" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                 aria-labelledby="dashboard-staff-lg">
                 <i class="fas fa-home me-2"></i> Dashboard
@@ -33,15 +33,15 @@
 
         <!-- Dashboard for basic user -->
         {% if not user.is_staff %}
-            <li class="ms-3 ms-lg-5">
-                <a href="{% url 'dashboard' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="dashboard-basic-lg">
+            <li>
+                <a href="{% url 'dashboard' %}" class="nav-link nav-active mx-3 mx-lg-5 text-medium p-0" aria-labelledby="dashboard-basic-lg">
                     <i class="fas fa-home me-2"></i> Dashboard
                 </a>
             </li>
         {% endif %}
 
-            <li class="ms-3 ms-lg-5">
-                <a href="{% url 'open-issues' %}" class="nav-link nav-active me-5 text-medium p-0" aria-labelledby="issues-lg">
+            <li>
+                <a href="{% url 'open-issues' %}" class="nav-link nav-active mx-3 mx-lg-5 text-medium p-0" aria-labelledby="issues-lg">
                     <i class="fas fa-exclamation-triangle me-2"></i> Issues
                 </a>
             </li>
@@ -49,7 +49,7 @@
         <!-- Profile dropdown options if the user is a staff member -->
         {% if user.is_staff %}
             <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle nav-active me-5 text-medium p-0"
+                <div class="nav-link dropdown-toggle nav-active mx-3 mx-lg-5 text-medium p-0"
                     id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                     aria-labelledby="profile-lg">
                     <i class="fas fa-user me-2"></i> Profile
@@ -80,8 +80,8 @@
 
         <!-- Profile for basic user -->
         {% if not user.is_staff %}
-            <li class="ms-3 ms-lg-5">
-                <a href="{% url 'edit-profile' %}" class="nav-link nav-active me-5 text-medium p-0"
+            <li>
+                <a href="{% url 'edit-profile' %}" class="nav-link nav-active mx-3 mx-lg-5 text-medium p-0"
                     aria-labelledby="profile-basic-lg">
                     <i class="fas fa-user me-2"></i> Profile
                 </a>
@@ -89,8 +89,8 @@
         {% endif %}
 
         <!-- Logout -->
-        <li class="ms-3 ms-lg-5">
-            <a href="{% url 'logout' %}" class="nav-link nav-active me-5 text-medium p-0"
+        <li>
+            <a href="{% url 'logout' %}" class="nav-link nav-active mx-3 mx-lg-5 text-medium p-0"
                 aria-labelledby="logout-lg">
                 <i class="fas fa-sign-out-alt me-2"></i> Logout
             </a>
