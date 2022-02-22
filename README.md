@@ -940,6 +940,11 @@ The CSS code within the application has been validated by [W3C CSS Validation Se
 * [CSS validation results](readme/docs/validation/css/css-validation.png "CSS")
 
 
+### JS
+The JavaScript and JQuery code within the application has been validated by [JSHint](https://jshint.com/ "JSHint"), and the results can be seen below.
+
+* [JS validation results](readme/docs/validation/js/js-validation.png "CSS")
+
 ### Python
 The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
 
