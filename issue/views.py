@@ -178,7 +178,7 @@ class EditMachine(SuccessMessageMixin, UpdateView):
     """
     queryset = Machine.objects
     template_name = 'pages/edit-machine.html'
-    fields = ['name', 'description', 'image', 'status']
+    fields = ['name', 'description', 'image']
     pk_url_kwarg = 'pk'
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully edited'
