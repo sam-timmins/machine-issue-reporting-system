@@ -1032,14 +1032,22 @@ I have created my own custom views for the Django authentication pages, login, s
 
 # Deployment
 
+
+This project was created using GitHub and the code was written using Gitpod. Branches were created and after committing to the branch it was pushed up to the repository. This project is also deployed to Heroku with Heroku deployment set to *Enable Automatic Deploys*. This means that every time that the repository was pushed to, Heroku was updated also.
+
 The live link to the application can be found [here](https://issue-reporting-system.herokuapp.com/ "Link")
+
+## Local Deployment
+
+As Gitpod was the IDE that was used to create the project, the following local deployment steps are specific to Gitpod.
+
 
 ### Cloudinary
 * Visit Cloudinary by following this [link](https://cloudinary.com/ "Link")
 * Click on the *Sign Up For Free* button
 * When the account is created, you should see the *API Environment variable*, we will need this for a later process.
 
-### Github
+### GitHub
 * Visit Github by following this [link](https://github.com/ "Link")
 * Create an account or log in
 
@@ -1047,15 +1055,14 @@ The live link to the application can be found [here](https://issue-reporting-sys
 * Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
 * Click on the *Fork* button in the top right of the screen
 
-
-#### Github Desktop
+#### GitHub Desktop
 * Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
 * Click on the *Code* button above the file list
 * Select *Open with GitHub Desktop*
 
-
 ### Set up your Workspace
-When you have your version of the original repository, 
+When you have your version of the original repository,
+
 * In the terminal run
 ```
 pip3 install -r requirements.txt
@@ -1079,6 +1086,25 @@ os.environ['MACHINE_CARDS_CURRENT_ISSUE_TEXT'] = "ADD CONTENT HERE"
 os.environ['NO_ISSUES_MODAL_TITLE'] = "ADD CONTENT HERE"
 os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 ```
+
+* Add the env.py file to the .gitignore file to ensure that its contents are not made public
+
+* Migrate the database models with the following command in the terminal
+```
+python3 manage.py migrate
+```
+
+* Create a superuser and set up the credentials with the following command
+```
+python3 manage.py createsuperuser
+```
+
+* Run the application locally with the command
+```
+python3 manage.py runserver
+```
+
+* To access the admin page using the superuser details just created, add /admin to the end of the URL.
 
 ### Deployment via Heroku
 * Visit [heroku.com](https://www.heroku.com/home "Heroku")
@@ -1108,6 +1134,22 @@ os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 * Open the **Deploy** tab
 * In the deployment method section, select **GitHub** and confirm the connection.
 * Enter the repo-name into the text box and click **Search**. When the correct repo appears below, click **Connect**
+* Return to the Gitpod workspace and in the root directory create a file called *Procfile*
+* In the *Procfile* enter the following line including your project name
+```
+web: gunicorn YOUR_PROJECT_NAME.wsgi
+```
+* Add and commit to GitHub
+```
+git add .
+git commit -m "commit message goes here"
+git push
+```
+* Add your Heroku app URL to ALLOWED_HOSTS in your settings.py file
+```
+ALLOWED_HOSTS = ['YOUR_PROJECT_NAME.herokuapp.com', 'localhost']
+```
+* Return to Heroku
 * In the Automatic deploys section, click **Enable Automatic Deploys**. This updates every time GitHub code is pushed
 * To complete the process click on the **Deploy Brach** button in the Manual deploy section, this will take a few seconds to complete while Heroku builds the app
 * A message will appear informing you that the app was successfully deployed and a **View** button will bring you to the live site
