@@ -52,7 +52,10 @@
         * Bugs
         * Unfixed Bugs
     * [Deployment](#deployment "Deployment")
+        * Local Deployment
+        * Deployment via Heroku
     * [Credits](#credits "Credits")
+    * [My Thoughts](#my-thoughts "My Thoughts")
 
 # Background
 With the restrictions in place within teaching in the Irish Universities due to the Coronavirus pandemic, the improved organisation of working methods to reduce contact with staff and students over more trivial tasks have to be looked at. With this in mind, TU Dublin's engineering department has been looking to implement a machinery issue reporting system for the many machines to which the students have access. Currently, the engineering department is using a manual process where students write into a diary, where unnecessary physical touchpoints are created, or send an email where there is potential for loss of information to happen. They are looking to create an automated system to improve the procedure for all stakeholders.
@@ -324,7 +327,6 @@ The data schema was created using [dbdiagram](https://dbdiagram.io/home "dbdiagr
 
 This will be initally built at the start of the app as an empty model, giving me the oportunity to adapt the Django User fields if required.
 
-## Forms
 
 \
 &nbsp;
@@ -520,8 +522,8 @@ There is also notification to the users if there are no machines currently creat
 
 ![Desktop Dashboard No Machines](readme/docs/features/dashboard/desktop-dashboard-no-machines.png)
 
-\
 &nbsp;
+
 ### Machine Details
 
 The machine details page shows the detailed description of the provided by a staff member when the machine was created. This is also where a user can create an issue using the *Report an Issue* button. This opens the form in the way of a modal with the machine name populated. The Cancel button closes the modal, and the submit button add the issue to the database and gives the user a message of confirmation.
@@ -667,6 +669,8 @@ All buttons also have the same hover effect to keep the user experience consista
     * By adding a booking system into this application, the users would easily see the availability of machines. If there were current issues on the machine, it would be unavailable for use.
 * Email or push notification
     * A notification to the staff members that an issue has been created would speed up the process as they would not have to log in each time to see the status of machines
+* Automatic logout after a set period of idle time
+    * A security addition if a staff user forgets to log out themselves out, the application does it automatically so another user cannot have access.
 
 \
 &nbsp;
@@ -909,6 +913,9 @@ Manual testing of the project was a continual process to ensure that all was wor
     * Update button saves the changes, redirects to the all users page and displays a message for confirmation
     * Cancel button navigates back to the all users page with no changes
 
+\
+&nbsp; 
+
 ## Code Validation
 
 ### HTML
@@ -1024,6 +1031,7 @@ The Python code within the application has been validated by [PEP* Validation Se
 ## Unfixed Bugs
 
 I have created my own custom views for the Django authentication pages, login, signup and logout to be able to add my global variables for ease of maintenance. The logout view has no issues, however where there is a form with inputs a bug arises. If a user enters incorrect data, the form's action redirects to the default *account/login* or *account/signup* page depending on which is submitted. This then does not have any of the global variables rendered as *extra_context* and the university name in both the header and footer, along with the URLs for the social links are blank. Changing the action of the form breaks the set-up of Django auth and does not allow a user to login or sign-up at all.
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -1032,14 +1040,22 @@ I have created my own custom views for the Django authentication pages, login, s
 
 # Deployment
 
+
+This project was created using GitHub and the code was written using Gitpod. Branches were created and after committing to the branch it was pushed up to the repository. This project is also deployed to Heroku with Heroku deployment set to *Enable Automatic Deploys*. This means that every time that the repository was pushed to, Heroku was updated also.
+
 The live link to the application can be found [here](https://issue-reporting-system.herokuapp.com/ "Link")
+
+## Local Deployment
+
+As Gitpod was the IDE that was used to create the project, the following local deployment steps are specific to Gitpod.
+
 
 ### Cloudinary
 * Visit Cloudinary by following this [link](https://cloudinary.com/ "Link")
 * Click on the *Sign Up For Free* button
 * When the account is created, you should see the *API Environment variable*, we will need this for a later process.
 
-### Github
+### GitHub
 * Visit Github by following this [link](https://github.com/ "Link")
 * Create an account or log in
 
@@ -1047,15 +1063,14 @@ The live link to the application can be found [here](https://issue-reporting-sys
 * Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
 * Click on the *Fork* button in the top right of the screen
 
-
-#### Github Desktop
+#### GitHub Desktop
 * Navigate to the repository by following this [link](https://github.com/sam-timmins/machine-issue-reporting-system "Link")
 * Click on the *Code* button above the file list
 * Select *Open with GitHub Desktop*
 
-
 ### Set up your Workspace
-When you have your version of the original repository, 
+When you have your version of the original repository,
+
 * In the terminal run
 ```
 pip3 install -r requirements.txt
@@ -1079,6 +1094,25 @@ os.environ['MACHINE_CARDS_CURRENT_ISSUE_TEXT'] = "ADD CONTENT HERE"
 os.environ['NO_ISSUES_MODAL_TITLE'] = "ADD CONTENT HERE"
 os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 ```
+
+* Add the env.py file to the .gitignore file to ensure that its contents are not made public
+
+* Migrate the database models with the following command in the terminal
+```
+python3 manage.py migrate
+```
+
+* Create a superuser and set up the credentials with the following command
+```
+python3 manage.py createsuperuser
+```
+
+* Run the application locally with the command
+```
+python3 manage.py runserver
+```
+
+* To access the admin page using the superuser details just created, add /admin to the end of the URL.
 
 ### Deployment via Heroku
 * Visit [heroku.com](https://www.heroku.com/home "Heroku")
@@ -1108,6 +1142,22 @@ os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 * Open the **Deploy** tab
 * In the deployment method section, select **GitHub** and confirm the connection.
 * Enter the repo-name into the text box and click **Search**. When the correct repo appears below, click **Connect**
+* Return to the Gitpod workspace and in the root directory create a file called *Procfile*
+* In the *Procfile* enter the following line including your project name
+```
+web: gunicorn YOUR_PROJECT_NAME.wsgi
+```
+* Add and commit to GitHub
+```
+git add .
+git commit -m "commit message goes here"
+git push
+```
+* Add your Heroku app URL to ALLOWED_HOSTS in your settings.py file
+```
+ALLOWED_HOSTS = ['YOUR_PROJECT_NAME.herokuapp.com', 'localhost']
+```
+* Return to Heroku
 * In the Automatic deploys section, click **Enable Automatic Deploys**. This updates every time GitHub code is pushed
 * To complete the process click on the **Deploy Brach** button in the Manual deploy section, this will take a few seconds to complete while Heroku builds the app
 * A message will appear informing you that the app was successfully deployed and a **View** button will bring you to the live site
@@ -1133,3 +1183,20 @@ os.environ['NO_ISSUES_TEXT'] = "ADD CONTENT HERE"
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+# My Thoughts
+
+I found this project a huge step up from the previous projects that I have created so far. It is my first all-around project incorporating both front and back end work. I feel that I've created a solid project that meets the requirements of TU Dublin, even if there are a few extra features that I will implement at a later date.
+
+I initially found working with Django, like trying to run through a concrete wall. However the more I read the documentation it eventually started to sink in. One regret that I do have with the project is not splitting up the issue app into two smaller ones, issue and machine. The way that it is at the moment, it is a monster. I did attempt to split it apart however it was towards the end of my timeline and I was losing too much time doing so.
+
+Another part of the project I still don't feel completely comfortable with is Django testing. I have made my best effort at creating tests but I think that I have a very long way to go in becoming proficient at this, a change in mindset and thinking procedure could be on the cards here.
+
+Overall, even though there were tough moments, another enjoyable project. 
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
