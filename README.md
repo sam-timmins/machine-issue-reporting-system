@@ -324,7 +324,6 @@ The data schema was created using [dbdiagram](https://dbdiagram.io/home "dbdiagr
 
 This will be initally built at the start of the app as an empty model, giving me the oportunity to adapt the Django User fields if required.
 
-## Forms
 
 \
 &nbsp;
@@ -520,8 +519,8 @@ There is also notification to the users if there are no machines currently creat
 
 ![Desktop Dashboard No Machines](readme/docs/features/dashboard/desktop-dashboard-no-machines.png)
 
-\
 &nbsp;
+
 ### Machine Details
 
 The machine details page shows the detailed description of the provided by a staff member when the machine was created. This is also where a user can create an issue using the *Report an Issue* button. This opens the form in the way of a modal with the machine name populated. The Cancel button closes the modal, and the submit button add the issue to the database and gives the user a message of confirmation.
@@ -911,6 +910,9 @@ Manual testing of the project was a continual process to ensure that all was wor
     * Update button saves the changes, redirects to the all users page and displays a message for confirmation
     * Cancel button navigates back to the all users page with no changes
 
+\
+&nbsp; 
+
 ## Code Validation
 
 ### HTML
@@ -1026,6 +1028,7 @@ The Python code within the application has been validated by [PEP* Validation Se
 ## Unfixed Bugs
 
 I have created my own custom views for the Django authentication pages, login, signup and logout to be able to add my global variables for ease of maintenance. The logout view has no issues, however where there is a form with inputs a bug arises. If a user enters incorrect data, the form's action redirects to the default *account/login* or *account/signup* page depending on which is submitted. This then does not have any of the global variables rendered as *extra_context* and the university name in both the header and footer, along with the URLs for the social links are blank. Changing the action of the form breaks the set-up of Django auth and does not allow a user to login or sign-up at all.
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
