@@ -253,7 +253,7 @@ class MachineDetail(View):
         else:
             messages.error(
                 request,
-                'Issue not saved,please enter a description.'
+                'Issue not saved, please enter a description.'
                 )
             issue_form = IssueForm()
 
