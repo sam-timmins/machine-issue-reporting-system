@@ -1,11 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /*
-Headings - font-weight 900
-font-family: 'Lato', sans-serif;
-
 Content - font-weight 300
 font-family: 'Roboto', sans-serif;
 */
+
+/* Contents*/
+
+/* 
+    1.  Global styles
+    2.  Fonts
+    3.  General Styles
+    4.  Hover & Focus Effects
+    5.  Buttons
+    6.  Alerts
+    7.  Forms
+    8.  Containers
+    9.  Navbar
+    10. Footer
+    11. Dashboard
+    12. Forms
+    14. Spin loader
+*/
+
+/* 1.  Global styles */
 
 :root {
     --blue: #004C6C;
@@ -26,7 +43,7 @@ body {
 }
 
 
-/* Fonts */
+/* 2. Fonts */
 
 .text-small {
     font-size: 1.5rem;
@@ -44,7 +61,6 @@ body {
     font-size: 5rem;
 }
 
-
 .text-blue {
     color: var(--blue);
 }
@@ -61,7 +77,7 @@ body {
     color: var(--white);
 }
 
-/* General Styles */
+/* 3. General Styles */
 
 .border-bottom-orange {
     border-bottom: 2px solid var(--orange);
@@ -96,14 +112,14 @@ body {
 }
 
 .box-shadow-blue {
-    box-shadow: 0px 0px 5px 0px var(--blue);
+    box-shadow: 0px 0px 0.5rem 0px var(--blue);
 }
 
 .spacer {
     height: 3rem;
 }
 
-/* Hover & Focus Effects */
+/* 4. Hover & Focus Effects */
 
 .nav-link:hover,
 .nav-link:focus,
@@ -120,7 +136,7 @@ body {
 }
 
 
-/* Buttons */
+/* 5. Buttons */
 
 .btn {
     width: 11rem;
@@ -155,27 +171,27 @@ body {
 
 .btn-white:hover,
 .btn-white:focus {
-    box-shadow: 0px 0px 5px 2px var(--orange) !important;
+    box-shadow: 0 0 0.5rem 2px var(--orange) !important;
     color: var(--orange);
 }
 
 .btn:hover,
 .btn:focus {
-    box-shadow: 0px 0px 5px 2px var(--blue);
+    box-shadow: 0 0 0.5rem 2px var(--blue);
 }
 
 .close-btn:hover,
 .close-btn:focus {
-    box-shadow: 0px 0px 5px 2px var(--orange);
+    box-shadow: 0 0 0.5rem 2px var(--orange);
 }
 
-/* Alerts */
+/* 6. Alerts */
 
 .alert-message {
     z-index: 2;
 }
 
-/* Forms */
+/* 7. Forms */
 
 .errorlist li {
     list-style: none;
@@ -185,7 +201,7 @@ body {
     margin: auto;
 }
 
-/* Containers */
+/* 8. Containers */
 .form-page-container {
     margin-bottom: 7rem;
 }
@@ -224,7 +240,7 @@ body {
     right: 0;
 }
         
-/* Navbar */
+/* 9. Navbar */
 
 .navbar {
     height: 5rem;
@@ -251,7 +267,7 @@ body {
     border-radius: 0.5rem;
 }
 
-/* Footer */
+/* 10. Footer */
 
 .footer {
     height: 5rem;
@@ -287,7 +303,7 @@ body {
     height: 100%;
 }
 
-/* Dashboard */
+/* 11. Dashboard */
 
 .machine-status-alert {
     width: 100%;
@@ -302,7 +318,7 @@ body {
     height: 15rem;
 }
 
-/* Forms */
+/* 12. Forms */
 
 .image-input input {
     max-width: 70%;
@@ -329,7 +345,7 @@ select {
 }
 
 
-/* Spin loader */
+/* 14. Spin loader */
 
 .spin-loader {
     display: flex;
