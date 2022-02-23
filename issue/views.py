@@ -168,6 +168,9 @@ class CreateMachine(SuccessMessageMixin, CreateView):
         }
 
     def add_message(self):
+        """
+        Returns a success message
+        """
         return self.success_message
 
 
@@ -191,6 +194,9 @@ class EditMachine(SuccessMessageMixin, UpdateView):
         }
 
     def add_message(self):
+        """
+        Returns a success message
+        """
         return self.success_message
 
 
@@ -202,6 +208,10 @@ class MachineDetail(View):
     both Machine and issue models.
     """
     def get(self, request, slug, *args, **kwargs):
+        """
+        Gets the appropriate machine based on the request from the
+        template and matching it to the machine's slug field.
+        """
         queryset = Machine.objects
         machine = get_object_or_404(queryset, slug=slug)
         issues = machine.issues
@@ -221,6 +231,12 @@ class MachineDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        Checks that the issue form is a valid form then posts the
+        data to the issue database. Changes the status of the machine
+        to False when a valid form is submitted and saves to the
+        machine database
+        """
         queryset = Machine.objects
         machine = get_object_or_404(queryset, slug=slug)
         issues = machine.issues
