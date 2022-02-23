@@ -667,6 +667,8 @@ All buttons also have the same hover effect to keep the user experience consista
     * By adding a booking system into this application, the users would easily see the availability of machines. If there were current issues on the machine, it would be unavailable for use.
 * Email or push notification
     * A notification to the staff members that an issue has been created would speed up the process as they would not have to log in each time to see the status of machines
+* Automatic logout after a set period of idle time
+    * A security addition if a staff user forgets to log out themselves out, the application does it automatically so another user cannot have access.
 
 \
 &nbsp;
