@@ -55,6 +55,7 @@
         * Local Deployment
         * Deployment via Heroku
     * [Credits](#credits "Credits")
+    * [My Thoughts](#my-thoughts "My Thoughts")
 
 # Background
 With the restrictions in place within teaching in the Irish Universities due to the Coronavirus pandemic, the improved organisation of working methods to reduce contact with staff and students over more trivial tasks have to be looked at. With this in mind, TU Dublin's engineering department has been looking to implement a machinery issue reporting system for the many machines to which the students have access. Currently, the engineering department is using a manual process where students write into a diary, where unnecessary physical touchpoints are created, or send an email where there is potential for loss of information to happen. They are looking to create an automated system to improve the procedure for all stakeholders.
@@ -1182,3 +1183,20 @@ ALLOWED_HOSTS = ['YOUR_PROJECT_NAME.herokuapp.com', 'localhost']
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+# My Thoughts
+
+I found this project a huge step up from the previous projects that I have created so far. It is my first all-around project incorporating both front and back end work. I feel that I've created a solid project that meets the requirements of TU Dublin, even if there are a few extra features that I will implement at a later date.
+
+I initially found working with Django, like trying to run through a concrete wall. However the more I read the documentation it eventually started to sink in. One regret that I do have with the project is not splitting up the issue app into two smaller ones, issue and machine. The way that it is at the moment, it is a monster. I did attempt to split it apart however it was towards the end of my timeline and I was losing too much time doing so.
+
+Another part of the project I still don't feel completely comfortable with is Django testing. I have made my best effort at creating tests but I think that I have a very long way to go in becoming proficient at this, a change in mindset and thinking procedure could be on the cards here.
+
+Overall, even though there were tough moments, another enjoyable project. 
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
