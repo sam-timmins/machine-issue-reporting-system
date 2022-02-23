@@ -52,6 +52,8 @@
         * Bugs
         * Unfixed Bugs
     * [Deployment](#deployment "Deployment")
+        * Local Deployment
+        * Deployment via Heroku
     * [Credits](#credits "Credits")
 
 # Background
