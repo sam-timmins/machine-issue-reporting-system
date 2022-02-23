@@ -242,16 +242,19 @@ class MachineDetail(View):
         issues = machine.issues
         issue_form = IssueForm(data=request.POST)
 
-        messages.success(request, 'Issue for was successfully created.')
-
         if issue_form.is_valid():
             issue_form.instance.user = request.user
             issue = issue_form.save(commit=False)
+            messages.success(request, 'Issue for was successfully created.')
             issue.machine = machine
             machine.status = False
             machine.save()
             issue.save()
         else:
+            messages.error(
+                request,
+                'Issue not saved, please enter a description.'
+                )
             issue_form = IssueForm()
 
         return render(
