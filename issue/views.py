@@ -155,7 +155,7 @@ class CreateMachine(SuccessMessageMixin, CreateView):
     new object using the Machine model
     """
     template_name = 'pages/create-machine.html'
-    fields = '__all__'
+    fields = ['name', 'slug', 'description', 'image']
     queryset = Machine.objects
     success_url = reverse_lazy('dashboard')
     success_message = '%(name)s was successfully created'
